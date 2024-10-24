@@ -62,6 +62,7 @@ Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
 });
 Route::get('/tables-datatable-pesanan',[OrderController::class,'index']);
+Route::get('/tables-datatable-pesanan',[OrderController::class,'update']);
 
 
 // ================================================================== end route backend =================================
