@@ -59,5 +59,8 @@ Route::get('/tables-editable', function () {
 Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
 });
+Route::get('/tables-datatable-weekly', function () {
+    return view('components.backend.tables-datatable-weekly');
+});
 
 // ================================================================== end route backend =================================
