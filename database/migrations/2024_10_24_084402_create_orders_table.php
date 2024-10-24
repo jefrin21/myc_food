@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('status_customer');
             $table->string('status_pesanan');
             $table->timestamps();
-             $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 
