@@ -78,10 +78,38 @@
                                     >
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a href="calendar" class="waves-effect"
                                     ><i class="dripicons-to-do"></i
                                     ><span> Calendar </span></a
+                                >
+                            </li> --}}
+                            <li class="menu-title">Orders</li>
+                            <li>
+                                <a href="tables-datatable" class="waves-effect"
+                                    ><i class="dripicons-to-do"></i
+                                    ><span> Pesanan </span></a
+                                >
+                            </li>
+                            {{-- <li>
+                                <a href="calendar" class="waves-effect"
+                                    ><i class="dripicons-to-do"></i
+                                    ><span> Detail Pemesanan </span></a
+                                >
+                            </li> --}}
+                            <li>
+                                <a href="calendar" class="waves-effect"
+                                    ><i class="dripicons-to-do"></i
+                                    ><span> History Pemesanan </span></a
+                                >
+                            </li>
+
+                            <li class="menu-title">Weekly Orders</li>
+
+                            <li>
+                                <a href="calendar" class="waves-effect"
+                                    ><i class="dripicons-to-do"></i
+                                    ><span>Pesanan Harian </span></a
                                 >
                             </li>
 

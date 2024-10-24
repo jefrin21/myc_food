@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('jumlah_pesanan');
             $table->integer('total_pembayaran');
             $table->date('tanggal_order');
+            $table->string('bukti_pembayaran');
+            $table->string('status_customer');
             $table->timestamps();
         });
     }
