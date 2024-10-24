@@ -11,10 +11,11 @@
         {{-- end loader --}}
         <div id="wrapper">
            
-            <x-sidebar></x-sidebar>
+            <x-sidebar_backend></x-sidebar_backend>
 
             @yield('app-content')
 
+            <x-footer_backend></x-footer_backend>
         </div>
 
       @yield('js')

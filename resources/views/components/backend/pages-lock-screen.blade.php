@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layout_backend>
+    @section('head')
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +9,17 @@
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets_backend/images/favicon.ico">
 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="assets_backend/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="assets_backend/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="assets_backend/css/style.css" rel="stylesheet" type="text/css">
 
     </head>
+    @endsection
 
-
-    <body class="fixed-left">
-
+  
+        @section('app-content')
         <!-- Begin page -->
         <div class="accountbg"></div>
         <div class="wrapper-page">
@@ -28,14 +28,14 @@
                 <div class="card-body">
 
                     <div class="text-center m-b-15">
-                        <a href="index.html" class="logo logo-admin"><img src="assets/images/logo.png" height="24" alt="logo"></a>
+                        <a href="index.html" class="logo logo-admin"><img src="assets_backend/images/logo.png" height="24" alt="logo"></a>
                     </div>
 
                     <div class="p-3">
                         <form class="form-horizontal" action="index.html">
 
                             <div class="user-thumb text-center m-b-30">
-                                <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="thumbnail">
+                                <img src="assets_backend/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="thumbnail">
                             </div>
 
                             <div class="form-group row">
@@ -61,23 +61,23 @@
                 </div>
             </div>
         </div>
+        @endsection
 
-
+        @section('js')
         <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets_backend/js/jquery.min.js"></script>
+        <script src="assets_backend/js/popper.min.js"></script>
+        <script src="assets_backend/js/bootstrap.min.js"></script>
+        <script src="assets_backend/js/modernizr.min.js"></script>
+        <script src="assets_backend/js/detect.js"></script>
+        <script src="assets_backend/js/fastclick.js"></script>
+        <script src="assets_backend/js/jquery.slimscroll.js"></script>
+        <script src="assets_backend/js/jquery.blockUI.js"></script>
+        <script src="assets_backend/js/waves.js"></script>
+        <script src="assets_backend/js/jquery.nicescroll.js"></script>
+        <script src="assets_backend/js/jquery.scrollTo.min.js"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
-
-    </body>
-</html>
+        <script src="assets_backend/js/app.js"></script>
+        @endsection
+</x-layout_backend>
