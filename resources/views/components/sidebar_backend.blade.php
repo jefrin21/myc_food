@@ -10,11 +10,11 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center bg-logo">
-                        <a href="index.html" class="logo"
+                        <a href="index" class="logo"
                             ><i class="mdi mdi-bowling text-success"></i>
-                            Zoogler</a
+                            MYC-Food</a
                         >
-                        <!-- <a href="index.html" class="logo"><img src="assets_backend/images/logo.png" height="24" alt="logo"></a> -->
+                        <!-- <a href="index" class="logo"><img src="assets_backend/images/logo.png" height="24" alt="logo"></a> -->
                     </div>
                 </div>
                 <div class="sidebar-user">
@@ -67,7 +67,7 @@
                             <li class="menu-title">Main</li>
 
                             <li>
-                                <a href="index.html" class="waves-effect">
+                                <a href="/" class="waves-effect">
                                     <i class="dripicons-device-desktop"></i>
                                     <span>
                                         Dashboard
@@ -79,7 +79,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="calendar.html" class="waves-effect"
+                                <a href="calendar" class="waves-effect"
                                     ><i class="dripicons-to-do"></i
                                     ><span> Calendar </span></a
                                 >
@@ -100,40 +100,40 @@
                                 >
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="form-advanced.html"
+                                        <a href="form-advanced"
                                             >Form Advanced</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="form-elements.html"
+                                        <a href="form-elements"
                                             >Form Elements</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="form-editors.html"
+                                        <a href="form-editors"
                                             >Form Editors</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="form-uploads.html"
+                                        <a href="form-uploads"
                                             >Form File Upload</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="form-mask.html">Form Mask</a>
+                                        <a href="form-mask">Form Mask</a>
                                     </li>
                                     <li>
-                                        <a href="form-summernote.html"
+                                        <a href="form-summernote"
                                             >Summernote</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="form-validation.html"
+                                        <a href="form-validation"
                                             >Form Validation</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="form-xeditable.html"
+                                        <a href="form-xeditable"
                                             >Form Xeditable</a
                                         >
                                     </li>
@@ -153,22 +153,22 @@
                                 ></a>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="tables-basic.html"
+                                        <a href="tables-basic"
                                             >Basic Tables</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="tables-datatable.html"
+                                        <a href="tables-datatable"
                                             >Data Table</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="tables-editable.html"
+                                        <a href="tables-editable"
                                             >Editable Table</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="tables-responsive.html"
+                                        <a href="tables-responsive"
                                             >Responsive Table</a
                                         >
                                     </li>
@@ -190,33 +190,22 @@
                                 ></a>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="pages-login.html">Login</a>
+                                        <a href="pages-login">Login</a>
                                     </li>
                                     <li>
-                                        <a href="pages-register.html"
+                                        <a href="pages-register"
                                             >Register</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="pages-recoverpw.html"
+                                        <a href="pages-recoverpw"
                                             >Recover Password</a
                                         >
                                     </li>
                                     <li>
-                                        <a href="pages-lock-screen.html"
+                                        <a href="pages-lock-screen"
                                             >Lock Screen</a
                                         >
-                                    </li>
-                                    <li>
-                                        <a href="pages-blank.html"
-                                            >Blank Page</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="pages-404.html">Error 404</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-500.html">Error 500</a>
                                     </li>
                                 </ul>
                             </li>

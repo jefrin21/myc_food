@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout_backend>
 @section('head')
     <head>
         <meta charset="utf-8" />
@@ -7,7 +7,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
         />
-        <title>Zoogler - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>MYC-Food | Dashboard</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -1433,8 +1433,6 @@
                     <!-- Page content Wrapper -->
                 </div>
                 <!-- content -->
-
-                <footer class="footer">© 2022 Zoogler by Mannatthemes.</footer>
             </div>
             @endsection
             <!-- End Right content here -->
@@ -1460,4 +1458,4 @@
         <!-- App js -->
         <script src="assets_backend/js/app.js"></script>
         @endsection
-</x-layout>
+</x-layout_backend>
