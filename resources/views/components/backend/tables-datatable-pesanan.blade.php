@@ -67,7 +67,7 @@
                                                 @foreach ( $orders as $order )
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $order->nama_customer }}</td>
+                                                    <td>{{ $order->customerDetails->nama_customer }}</td>
                                                     <td>{{ $order->jumlah_pesanan }}</td>
                                                     <td>{{ $order->total_harga }}</td>
                                                     <td>{{ $order->created_at }}</td>
