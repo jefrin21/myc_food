@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('jenis_paket_pesanan');
             $table->string('nama_paket_pesanan');
             $table->integer('harga_paket_pesanan');
+            $table->string('bukti_pembayaran');
             $table->date('tanggal_pengambilan_pesanan');
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

@@ -86,7 +86,7 @@
                             </li> --}}
                             <li class="menu-title">Orders</li>
                             <li>
-                                <a href="tables-datatable" class="waves-effect"
+                                <a href="tables-datatable-pesanan" class="waves-effect"
                                     ><i class="dripicons-to-do"></i
                                     ><span> Pesanan </span></a
                                 >
