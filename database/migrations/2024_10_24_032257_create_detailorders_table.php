@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('order_id');
             $table->string('jenis_makanan');
             $table->string('jenis_paket_pesanan');
+            $table->string('nama_paket_pesanan');
             $table->integer('harga_paket_pesanan');
             $table->date('tanggal_pengambilan_pesanan');
             $table->timestamps();

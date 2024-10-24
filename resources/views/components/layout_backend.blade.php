@@ -12,7 +12,7 @@
         <div id="wrapper">
            
             <x-sidebar_backend></x-sidebar_backend>
-
+            <x-navbar_backend></x-navbar_backend>
             @yield('app-content')
 
             <x-footer_backend></x-footer_backend>
