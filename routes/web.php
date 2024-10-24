@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,7 +34,8 @@ Route::get('/form-validation', function () {
     return view('components.backend.form-validation');
 });
 Route::get('/form-xeditable', function () {
-    return view('components.backend.form-xeditable');
+    return view('components.backend.form-x
+    editable');
 });
 Route::get('/pages-lock-screen', function () {
     return view('components.backend.pages-lock-screen');
@@ -58,9 +60,6 @@ Route::get('/tables-editable', function () {
 });
 Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
-});
-Route::get('/tables-datatable-weekly', function () {
-    return view('components.backend.tables-datatable-weekly');
 });
 
 // ================================================================== end route backend =================================
