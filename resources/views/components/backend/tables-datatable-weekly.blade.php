@@ -68,11 +68,11 @@
                                                 <tbody>
                                                 @foreach ($weeklys as $order)
                                                 <tr>
-                                                    <td>{{ $order->tanggal }}</td> 
-                                                    <td>{{ $order->silver_a }}</td>
-                                                    <td>{{ $order->silver_b }}</td>
-                                                    <td>{{ $order->gold_a }}</td>  
-                                                    <td>{{ $order->gold_b }}</td> 
+                                                    <td>{{ $order->jumlah_pesanan }}</td> 
+                                                    <td>{{ $order->total_harga }}</td>
+                                                    <td>{{ $order->tanggal_order }}</td>
+                                                    <td>{{ $order->tanggal_order }}</td>  
+                                                    <td>{{ $order->tanggal_order }}</td> 
                                                 </tr>
                                                 @endforeach
                                             </table>
