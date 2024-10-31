@@ -107,7 +107,7 @@
                             <li class="menu-title">Weekly Orders</li>
 
                             <li>
-                                <a href="calendar" class="waves-effect"
+                                <a href="tables-datatable-weekly" class="waves-effect"
                                     ><i class="dripicons-to-do"></i
                                     ><span>Pesanan Harian </span></a
                                 >

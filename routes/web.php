@@ -67,6 +67,7 @@ Route::get('/tables-detailorder-pesanan', function () {
 Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
 });
+
 Route::get('/tables-datatable-pesanan',[OrderController::class,'index']);
 Route::get('/order-details/{id}',[OrderController::class,'detailsOrder']);
 Route::get('/detail-order/{id}',[DetailOrderController::class,'detailOrder']);
