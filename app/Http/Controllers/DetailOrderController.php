@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DetailOrder;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class DetailOrderController extends Controller
@@ -13,6 +14,10 @@ class DetailOrderController extends Controller
     public function index()
     {
         //
+    }
+    public function detailOrder($id){
+        $order = Order::with('details')->find($id);
+        return view('components.backend.tables-detailorder-pesanan',['orders'=>$order]);
     }
 
     /**

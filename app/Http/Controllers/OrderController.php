@@ -12,7 +12,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('components.backend.tables-datatable-pesanan',['orders' => Order::all()]);
+        return view('components.backend.tables-datatable-pesanan',[
+            'orders' => Order::where('status_pesanan','diproses')->get()
+        ]);
     }
 
     /**
@@ -61,5 +63,13 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+ 
+    public function storyPesanan(){
+        return view('components.backend.tables-story-pesanan',[
+            'orders'=>Order::where('status_pesanan','Dikirim')->get()
+        
+        ]);
     }
 }

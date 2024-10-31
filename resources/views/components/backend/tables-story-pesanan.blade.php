@@ -36,10 +36,10 @@
                                         <div class="btn-group float-right">
                                             <ol class="breadcrumb hide-phone p-0 m-0">
                                                 <li class="breadcrumb-item"><a href="#">Pesanan</a></li>
-                                                <li class="breadcrumb-item active">Data Pesanan</li>
+                                                <li class="breadcrumb-item active">History Pemesanan</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Data Pesanan</h4>
+                                        <h4 class="page-title">History Pemesanan </h4>
                                     </div>
                                 </div>
                             </div>

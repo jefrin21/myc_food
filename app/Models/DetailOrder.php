@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class DetailOrder extends Model
 {
     use HasFactory;
-      public function order()
-    {
-        return $this->belongsTo(Order::class, 'order_id');
+    protected $guarded ='id';
+      public function orderdetail() : BelongsTo{
+        return $this->belongsTo(Order::class, 'order_id','id');
     }
 }

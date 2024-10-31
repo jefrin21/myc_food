@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
+use App\Models\DetailOrder;
 use Illuminate\Support\Facades\Route;
 
 
@@ -58,11 +60,19 @@ Route::get('/tables-datatable', function () {
 Route::get('/tables-editable', function () {
     return view('components.backend.tables-editable');
 });
+Route::get('/tables-detailorder-pesanan', function () {
+    return view('components.backend.tables-detailorder-pesanan');
+});
+
 Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
 });
 Route::get('/tables-datatable-pesanan',[OrderController::class,'index']);
-Route::get('/tables-datatable-pesanan',[OrderController::class,'update']);
+Route::get('/order-details/{id}',[OrderController::class,'detailsOrder']);
+Route::get('/detail-order/{id}',[DetailOrderController::class,'detailOrder']);
+Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
+
+
 
 
 // ================================================================== end route backend =================================
