@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
-use App\Models\DetailOrder;
 use Illuminate\Support\Facades\Route;
 
 
