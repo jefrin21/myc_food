@@ -76,3 +76,43 @@ Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
 
 
 // ================================================================== end route backend =================================
+
+
+// ================================================================== routes frondend ===================================
+
+Route::get('/home', function () {
+    return view('components.frontend.mycindex');
+});
+
+Route::get('/account', function () {
+    return view('components.frontend.mycaccount');
+});
+
+Route::get('/cart', function () {
+    return view('components.frontend.myccart');
+});
+
+Route::get('/checkout', function () {
+    return view('components.frontend.myccheckout');
+});
+
+Route::get('/about', function () {
+    return view('components.frontend.mycabout');
+});
+
+Route::get('/invoice', function () {
+    return view('components.frontend.mycinvoice');
+});
+
+Route::get('/login', function () {
+    return view('components.frontend.myclogin');
+});
+
+Route::get('/register', function () {
+    return view('components.frontend.mycregister');
+});
+
+Route::get('/orders', function () {
+    return view('components.frontend.mycorders');
+});
+// ================================================================== routes frondend ===================================
