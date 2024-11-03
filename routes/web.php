@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\KonfirmasiOrderController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -67,10 +68,11 @@ Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
 });
 
-Route::get('/tables-datatable-pesanan',[OrderController::class,'index']);
+Route::get('/tables-datatable-pesanan',[OrderController::class,'index'])->name('tables-datatable-pesanan');
 Route::get('/order-details/{id}',[OrderController::class,'detailsOrder']);
 Route::get('/detail-order/{id}',[DetailOrderController::class,'detailOrder']);
 Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
+Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmasi']);
 
 
 
