@@ -65,7 +65,6 @@
                                                     <th>Nama Paket Pesanan</th>
                                                     <th>Tanggal Pengambilan</th>
                                                     <th>Harga Paket Pesanan</th>
-                                                    <th>Konfirmasi Pesanan</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -77,16 +76,16 @@
                                                     <td>{{ $order->nama_paket_pesanan }}</td>
                                                     <td> {{ \Carbon\Carbon::parse($order->tanggal_pengambilan_pesanan)->format('d F Y') }}</td>
                                                     <td>{{ $order->harga_paket_pesanan }}</td>
-                                                    <td class="text-center">
-                                                      <a href="/detail-order/{{ $order->id }}">  <button type="button" class="btn-primary " >
-                                                            Konfirmasi
-                                                        </button>
-                                                    </a>
-                                                    </td>
                                                 </tr>
                                                 @endforeach
                                                 </tbody>
                                             </table>
+                                            <div class="d-flex justify-content-end mt-4 ">
+                                                <a href="/konfirmasi-order/{{ $orders->id }}" >  <button type="button" class="btn-primary " >
+                                                            Konfirmasi
+                                                        </button>
+                                                    </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col -->
@@ -134,5 +133,6 @@
 
         <!-- App js -->
         <script src="assets_backend/js/app.js"></script>
+
         @endsection
   </x-layout_backend>

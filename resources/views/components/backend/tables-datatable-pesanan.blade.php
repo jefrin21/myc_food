@@ -8,7 +8,7 @@
         <meta content="Admin Dashboard" name="description" />
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+        <base href="{{ url('/') }}">
         <link rel="shortcut icon" href="assets_backend/images/favicon.ico">
 
         <!-- DataTables -->
@@ -41,6 +41,11 @@
                                         </div>
                                         <h4 class="page-title">Data Pesanan</h4>
                                     </div>
+                                     @if (session()->has('succes'))
+                                            <div class="alert alert-success text-center" role="alert">
+                                            {{ session('succes') }}
+                                        </div> 
+                                    @endif
                                 </div>
                             </div>
                             <!-- end page title end breadcrumb -->

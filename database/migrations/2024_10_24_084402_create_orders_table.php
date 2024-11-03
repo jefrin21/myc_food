@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('customer_id');
             $table->integer('jumlah_pesanan');
+            $table->string('kupon_pesanan');
             $table->integer('total_harga');
             $table->date('tanggal_order');
             $table->string('status_customer');

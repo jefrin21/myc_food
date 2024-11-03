@@ -59,7 +59,6 @@
                                                     <th>Tanggal Order</th>
                                                     <th>Status Mahasiswa</th>
                                                     <th>Status Pesanan</th>
-                                                    <th>Konfirmasi Pesanan</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -72,12 +71,6 @@
                                                     <td>{{ $order->created_at->format('d F Y') }}</td>
                                                     <td>{{ $order->status_customer }}</td>
                                                     <td>{{ $order->status_pesanan }}</td>
-                                                    <td class="text-center">
-                                                      <a href="/detail-order/{{ $order->id }}">  <button type="button" class="btn-primary " >
-                                                            Detail Pesanan
-                                                        </button>
-                                                    </a>
-                                                    </td>
                                                 </tr>
                                                 @endforeach
                                                 </tbody>

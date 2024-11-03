@@ -19,7 +19,7 @@ class DetailOrderController extends Controller
         $order = Order::with('details')->find($id);
         return view('components.backend.tables-detailorder-pesanan',['orders'=>$order]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
