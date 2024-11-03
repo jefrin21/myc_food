@@ -19,11 +19,22 @@ class KonfirmasiOrderController extends Controller
             'customer_name' => $customer->customer->nama_customer,
             'total_price' => $order->total_harga,
             'kupon_pesanan'=>$order->kupon_pesanan,
+            'harga_total'=>$order->total_harga,
+            'tanggal_pembelian' =>$order->tanggal_order,
            'pesanan' => $order->details->map(function ($detail) {
             $formattedDate = \Carbon\Carbon::parse($detail->tanggal_pengambilan_pesanan)->format('d F Y');
-            return  "[Tanggal Pengambilan] : {$formattedDate}  [nama pesanan] : {$detail->jenis_makanan}";
+            // return  "[Tanggal Pengambilan] : {$formattedDate}  [nama pesanan] : {$detail->jenis_makanan}";
+            return [
+            'tanggal_pengambilan' => $formattedDate,
+            'nama_pesanan' => $detail->jenis_makanan,
+            'jenis_paket' => $detail->jenis_paket_pesanan,
+            'kategori' => $detail->nama_paket_pesanan,
+            'harga' => $detail->harga_paket_pesanan,
+            ];
         })->toArray(),
         ];
+
+        
         $pdf = Pdf::loadView('components.backend.invoice',$data);
 
         $pdfcontent =$pdf->output();
