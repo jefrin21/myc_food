@@ -1,6 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<x-layout_frontend>
+@section('head')
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -57,8 +56,9 @@
         }
     </script>
 </head>
+@endsection
 
-<body>
+@section('app-content')
 
     <!-- blog page section start -->
     <div class="blog_page_section mb-110">
@@ -171,11 +171,11 @@
     </div>
     </div>
     </div>
-
-
+    <!--footer area end-->
+    @endsection
     <!-- JS
 ============================================ -->
-
+    @section('js')
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets_frontend/js/vendor/bootstrap.bundle.min.js"></script>
@@ -191,8 +191,5 @@
 
     <!-- Main JS -->
     <script src="assets_frontend/js/main.js"></script>
-
-
-</body>
-
-</html>
+    @endsection
+    </x-layout_frontend>  

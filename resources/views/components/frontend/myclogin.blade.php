@@ -58,7 +58,7 @@
     </script>
 </head>
 
-<body>
+@section('app-content')
     <!-- breadcrumbs area end -->
     <div class="login-register-area mt-5">
         <div class="container">
@@ -105,11 +105,11 @@
         </div>
     </div>
 
-
-
+ <!--footer area end-->
+ @endsection
     <!-- JS
 ============================================ -->
-
+    @section('js')
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets_frontend/js/vendor/bootstrap.bundle.min.js"></script>
@@ -124,7 +124,7 @@
     <script src="assets_frontend/js/jquery.zoom.min.js"></script>
     <!-- Main JS -->
     <script src="assets_frontend/js/main.js"></script>
-
+    @endsection
 
 </body>
 
