@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>MYC Food</title>
     <meta name="description"
-        content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world." />
+        content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular library in the world." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="canonical" href="Replace_with_your_PAGE_URL" />
@@ -72,7 +72,7 @@
                             <h1 class="wow fadeInUp text-white" data-wow-delay="0.2s" data-wow-duration="1.2s">MYC Food 
                                 <br>Service</h1>
                             <a class="btn btn-link wow fadeInUp " data-wow-delay="0.3s" data-wow-duration="1.3s"
-                                href="mycindex.html#sk">Order Now</a>
+                                href="#sk">Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -158,19 +158,17 @@
                     <div class="col-lg-4 ">
                         <div class="single_blog wow fadeInUp" style="text-align: center;" data-wow-delay="0.1s" data-wow-duration="1.1s">
                             <div class="blog_thumb">
-                                <a href="blog-detail-left-sidebar.html"><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
+                                <a href="blog-detail-left-sidebar"><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_arrow_btn">
-                                    <a href="blog-detail-left-sidebar.html"><i class="ion-arrow-right-c"></i></a>
+                                    <a href="blog-detail-left-sidebar"><i class="ion-arrow-right-c"></i></a>
                                 </div>
                                 
-                                <h3><a href="blog-detail-left-sidebar.html">View Menu</a></h3>
+                                <h3><a href="blog-detail-left-sidebar">View Menu</a></h3>
                                 <div class="blog__meta " >  
                                     <div class="blog__meta__text" >
-                                        <ul >
-                                            <li><i class="pe-7s-alarm" style="font-size: 25px;"></i> 22 Aug, 2021</li>
-                                        </ul>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -179,21 +177,18 @@
                     <div class="col-lg-4  ">
                         <div class="single_blog wow fadeInUp" style="text-align: center;" data-wow-delay="0.1s" data-wow-duration="1.1s">
                             <div class="blog_thumb">
-                                <a href="blog-detail-left-sidebar.html"><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
+                                <a href="cart"><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_arrow_btn">
-                                    <a href="myccart.html"><i class="ion-arrow-right-c"></i></a>
+                                    <a href="cart"><i class="ion-arrow-right-c"></i></a>
                                 </div>
                                
-                                <h3><a href="blog-detail-left-sidebar.html">Order Now !</a></h3>
+                                <h3><a href="cart">Order Now !</a></h3>
                                 <div class="blog__meta ">
                                     
                                     <div class="blog__meta__text">
-                                        <ul >
-                                            
-                                            <li><i class="pe-7s-alarm" style="font-size: 25px;"></i> 22 Aug, 2021</li>
-                                        </ul>
+                                        
                                     </div>
                                 </div>
                             </div>
