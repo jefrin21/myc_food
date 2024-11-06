@@ -97,7 +97,7 @@ Route::get('/account', function () {
 
 Route::get('/cart', function () {
     return view('components.frontend.myccart');
-})->middleware('auth');
+});
 
 Route::get('/checkout', function () {
     return view('components.frontend.myccheckout');
@@ -121,5 +121,5 @@ Route::get('/register', function () {
 
 Route::get('/orders', function () {
     return view('components.frontend.mycorders');
-})->middleware('auth');
+});
 // ================================================================== routes frondend ===================================

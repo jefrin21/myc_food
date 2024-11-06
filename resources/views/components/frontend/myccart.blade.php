@@ -207,7 +207,7 @@
                                         </form>
                                     </div>
                                     <div class="form_input_btn d-flex justify-content-end mt-3">
-                                        <button type="submit" class="btn btn-link"><a href="myccheckout.html"">Checkout</a></button>
+                                        <button type="submit" class="btn btn-link"><a href="checkout">Checkout</a></button>
                                     </div>
                                 </div>
                             </div>

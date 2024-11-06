@@ -177,15 +177,31 @@
                     <div class="col-lg-4  ">
                         <div class="single_blog wow fadeInUp" style="text-align: center;" data-wow-delay="0.1s" data-wow-duration="1.1s">
                             <div class="blog_thumb">
-                                <a href="cart"><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
+                                <a 
+                                    @if (auth()->user())
+                                    href="cart"
+                                    @else
+                                    data-bs-toggle="modal" data-bs-target="#createCustomer"
+                                    @endif ><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_arrow_btn">
-                                    <a href="cart"><i class="ion-arrow-right-c"></i></a>
+                                    <a 
+                                    @if (auth()->user())
+                                    href="cart"
+                                    @else
+                                    data-bs-toggle="modal" data-bs-target="#createCustomer"
+                                    @endif ><i class="ion-arrow-right-c"></i></a>
                                 </div>
                                
-                                <h3><a href="cart">Order Now !</a></h3>
-                                <div class="blog__meta ">
+                                <h3>
+                                    <a 
+                                    @if (auth()->user())
+                                    href="cart"
+                                    @else
+                                    data-bs-toggle="modal" data-bs-target="#createCustomer"
+                                    @endif >Order Now !</a></h3>
+                                    <div class="blog__meta ">
                                     
                                     <div class="blog__meta__text">
                                         
@@ -200,7 +216,66 @@
             </div>
         </div>
      </section>
-    
+     
+       {{-- start modal  create customer--}}
+                                   
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="createCustomer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{-- content create --}}
+                                            <form action="/customer-create/create" method="POST">
+                                                    @csrf
+                                                    <div class="row d-flex justify-content-center">
+                                                        <div class="">
+                                                            <form action="#">
+                                                                <div class="login-form">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <label>Email Address*</label>
+                                                                            <input type="email" placeholder="Email Address">
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <label>Password*</label>
+                                                                            <input type="password" placeholder="Password">
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-sm-4 align-self-center">
+                                                                            <div class="check-box">
+                                                                                <input type="checkbox" id="remember_me">
+                                                                                <label for="remember_me">Remember me</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                            <div class="forgotton-password_info">
+                                                                                <a href="#"> Forgot pasword?</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                            <div class="forgotton-password_info">
+                                                                                <a href="mycregister.html"> Don't have account?</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12 pt-5 d-flex justify-content-end">
+                                                                            <button class="btn custom-btn md-size">Login</button>
+                                                                        </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                            {{-- end content --}}
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                {{-- end modal create customer  --}}
   
 
 
