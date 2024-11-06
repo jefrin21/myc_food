@@ -3,6 +3,7 @@
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\WeeklyController;
 use Illuminate\Support\Facades\Route;
 
@@ -123,3 +124,6 @@ Route::get('/orders', function () {
     return view('components.frontend.mycorders');
 });
 // ================================================================== routes frondend ===================================
+
+
+Route::post('/mylogin',[LoginController::class,'authentication']);

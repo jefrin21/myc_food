@@ -80,6 +80,12 @@
             </div>
         </div>
     </div>
+      @if (session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            <h5 class="text-danger"> {{ session('loginError') }}</h5> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+     @endif
     <!-- breadcrumbs area end -->
     <div class="account-page-area">
         <div class="container">
@@ -198,7 +204,9 @@
                             <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
                                 aria-labelledby="account-dashboard-tab">
                                 <div class="myaccount-details">
-                                    <form action="#" class="myaccount-form">
+                                    {{-- <form action="#" class="myaccount-form"> --}}
+                                    <form action="/mylogin" method="POST" class="myaccount-form">
+                                      @csrf
                                         <div class="myaccount-form-inner">
                                             <div class="single-input ">
                                                 <h3>You Need to Log In to Get Your Account Information</h3>
@@ -221,16 +229,25 @@
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-                                                            <form action="/mylogin" method="POST">
                                                             <div class="modal-body">
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <label>Email Address*</label>
-                                                                        <input class="@error('email_customer') is-invalid @enderror" type="email" placeholder="Email Address" name="email_customer" id="email_customer">
+                                                                        <input class="@error('email_customer') is-invalid @enderror" type="email" placeholder="Email Address" name="email_customer" id="email_customer" value="{{ old('email_customer') }}" required >
+                                                                        @error('email_customer')
+                                                                            <div class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </div>
+                                                                        @enderror
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <label>Password*</label>
-                                                                        <input type="password" placeholder="Password">
+                                                                        <input class="@error('password') is-invalid @enderror" type="password" placeholder="Password" name="password" id="password" required>
+                                                                        @error('password')
+                                                                            <div class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </div>
+                                                                        @enderror
                                                                     </div>
 
                                                                     
@@ -250,8 +267,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                             <button
-                                                            class="btn custom-btn md-size">Login</button>
-
+                                                            class="btn custom-btn md-size" type="submit">Login</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -338,8 +354,6 @@
                                     </form>
                                 </div>
                             </div>
-
-
                         @endif
 
 
