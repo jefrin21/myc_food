@@ -308,7 +308,7 @@
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <label>Confirm Password*</label>
-                                                                        <input type="confirmpassword"
+                                                                        <input type="password"
                                                                             placeholder="Password">
                                                                     </div>
 
