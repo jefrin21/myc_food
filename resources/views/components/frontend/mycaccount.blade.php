@@ -210,7 +210,6 @@
                                                     <span>LOGIN</span>
                                                 </button>
                                                 <!-- Modal Login -->
-                                                <form action="post"></form>
                                                 <div class="modal fade" id="login" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
                                                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -222,11 +221,12 @@
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
+                                                            <form action="/mylogin" method="POST">
                                                             <div class="modal-body">
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <label>Email Address*</label>
-                                                                        <input type="email" placeholder="Email Address">
+                                                                        <input class="@error('email_customer') is-invalid @enderror" type="email" placeholder="Email Address" name="email_customer" id="email_customer">
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <label>Password*</label>
@@ -256,6 +256,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </form>
 
                                                 <!-- Modal Register -->
 
