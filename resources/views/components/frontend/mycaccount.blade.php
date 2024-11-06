@@ -316,7 +316,7 @@
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <label>Confirm Password*</label>
-                                                                        <input type="password"
+                                                                        <input type="confirmpassword"
                                                                             placeholder="Password">
                                                                     </div>
 
@@ -324,7 +324,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn custom-btn md-size"
-                                                                    data-bs-dismiss="modal" data-bs-target="#login" data-bs-toggle="modal">Back to Login</button>
+                                                                    data-bs-dismiss="modal" data-bs-target="#login" data-bs-toggle="modal">Back to</button>
                                                                 <button class="btn custom-btn md-size" data-bs-target="#login" data-bs-toggle="modal">Register</button>
 
                                                             </div>
