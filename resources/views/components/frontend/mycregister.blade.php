@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<x-layout_frontend>
+@section('head')
 
 <head>
     <meta charset="utf-8">
@@ -57,31 +57,16 @@
         }
     </script>
 </head>
-<body>
+@endsection
+
+@section('app-content')
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Launch static backdrop modal
 </button>
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
     <!-- breadcrumbs area end -->
@@ -99,15 +84,35 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <label>Last Name</label>
-                                    <input type="text" placeholder="Last Name">
+                                    <input type="text" placeholder="Last Name" >
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Faculty</label>
-                                    <input type="faculty" placeholder="Faculty">
+                                <label>Faculty</label>
+                                    <form class="select_option" action="#">
+                                        <select name="orderby" id="short">
+                                            <option selected value="1">Select Faculty</option>
+                                            <option value="2">Faculty of Information Technology</option>
+                                            <option value="3">Faculty of Business</option>
+                                            <option value="4"> Faculty of Science and Technology</option>
+                                            <option value="5"> Faculty of Nursing</option>
+                                            <option value="6">Faculty of Medicine</option>
+                                        </select>
+                                    </form>
                                 </div>
+                                
+                                
                                 <div class="col-md-6">
                                     <label>Dorm Location</label>
-                                    <input type="lokasidorm" placeholder="Lokasi Dorm">
+                                    <form class="select_option" action="#">
+                                        <select name="orderby" id="short">
+                                            <option selected value="1">Select Dorm Location</option>
+                                            <option value="2">Faculty of Information Technology</option>
+                                            <option value="3">Faculty of Business</option>
+                                            <option value="4"> Faculty of Science and Technology</option>
+                                            <option value="5"> Faculty of Nursing</option>
+                                            <option value="6">Faculty of Medicine</option>
+                                        </select>
+                                    </form>
                                 </div>
                                 <div class="col-md-6">
                                     <label>Room Number</label>
@@ -123,11 +128,23 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <label>Password*</label>
-                                    <input type="password" placeholder="Password">
+                                    <div class="newsletter_subscribe">
+                                        <form id="mc-form">
+                                            <input type="password" placeholder="Password" id="passwordInput">
+                                            <button type="button" onclick="togglePasswordVisibility()" ><i class="pe-7s-look"></i></button>
+                                        </form>
+                                    </div>
+                                   
+                            
                                 </div>
                                 <div class="col-lg-12">
                                     <label>Confirm Password*</label>
-                                    <input type="confirmpassword" placeholder="Password">
+                                    <div class="newsletter_subscribe">
+                                        <form id="mc-form">
+                                            <input type="password" placeholder="Password" id="confirmpasswordInput">
+                                            <button type="button" onclick="togglePasswordVisibility2()" ><i class="pe-7s-look"></i></button>
+                                        </form>
+                                    </div>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn custom-btn md-size">Register</button>
@@ -135,15 +152,44 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
                
             </div>
         </div>
     </div>
 
+    <!--footer area end-->
+    @endsection
     <!-- JS
 ============================================ -->
     @section('js')
+    <script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("passwordInput");
+        
+        // Mengubah tipe input antara password dan text
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+           
+        } else {
+            passwordInput.type = "password";
+           
+        }
+    }
+    function togglePasswordVisibility2() {
+        const confirmpasswordInput = document.getElementById("confirmpasswordInput");
+        
+        // Mengubah tipe input antara password dan text
+        if (confirmpasswordInput.type === "password") {
+            confirmpasswordInput.type = "text";
+           
+        } else {
+            confirmpasswordInput.type = "password";
+           
+        }
+    }
+</script>
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets_frontend/js/vendor/bootstrap.bundle.min.js"></script>
@@ -159,6 +205,4 @@
     <!-- Main JS -->
     <script src="assets_frontend/js/main.js"></script>
     @endsection
-</body>
-
-</html>
+    </x-layout_frontend>  

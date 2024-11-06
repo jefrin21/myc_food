@@ -1963,9 +1963,9 @@ textarea:-ms-input-placeholder {
 .newsletter_subscribe form input {
     width: 100%;
     font-weight: 300;
-    border: 0;
+    border: 1;
     height: 45px;
-    border-radius: 15px;
+   
     padding: 0 70px 0 18px;
 }
 .newsletter_subscribe form button {
@@ -1980,6 +1980,11 @@ textarea:-ms-input-placeholder {
     background: #fc7c7c;
     color: #ffffff;
     border-radius: 15px;
+}
+
+.newsletter_subscribe form button:active {
+    color: #fc7c7c;
+    background: #ffffff; /* Warna saat tombol diklik */
 }
 
 .mailchimp-error {
