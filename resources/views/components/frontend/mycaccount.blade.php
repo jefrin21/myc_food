@@ -210,7 +210,7 @@
                                                     <span>LOGIN</span>
                                                 </button>
                                                 <!-- Modal Login -->
-
+                                                <form action="post"></form>
                                                 <div class="modal fade" id="login" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
                                                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -259,7 +259,7 @@
 
                                                 <!-- Modal Register -->
 
-
+                                               
                                                 <div class="modal fade" id="register" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
                                                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -271,32 +271,39 @@
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
+                                                        <form action="/myregister" method="POST">
+                                                            @csrf
                                                             <div class="modal-body">
                                                                 <div class="row">
                                                                     <div class="col-md-6 col-12">
                                                                         <label>First Name</label>
-                                                                        <input type="text" placeholder="First Name"
+                                                                        <input class="@error('nama_customer') is-invalid @enderror" name="nama_customer" id="nama_customer" type="text" placeholder="First Name"
                                                                             required>
+                                                                        @error('nama_customer')
+                                                                        <div class="invalid-feedback">
+                                                                            {{ $message }}
+                                                                        </div>
+                                                                        @enderror
                                                                     </div>
                                                                     <div class="col-md-6 col-12">
                                                                         <label>Last Name</label>
-                                                                        <input type="text" placeholder="Last Name">
+                                                                        <input type="text" placeholder="Last Name (opsional)" name="last_name_customer" id="last_name_customer">
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Faculty</label>
-                                                                        <input type="faculty" placeholder="Faculty">
+                                                                        <input type="text" placeholder="Faculty" name="fakultas_customer">
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Dorm Location</label>
-                                                                        <input type="lokasidorm" placeholder="Lokasi Dorm">
+                                                                        <input type="text" placeholder="Lokasi Dorm">
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Room Number</label>
-                                                                        <input type="nomorkamar" placeholder="No Kamar">
+                                                                        <input type="text" placeholder="No Kamar">
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Phone Number</label>
-                                                                        <input type="nomorhp" placeholder="No HP">
+                                                                        <input type="text" placeholder="No HP">
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <label>Email</label>
@@ -320,7 +327,9 @@
                                                                 <button class="btn custom-btn md-size" data-bs-target="#login" data-bs-toggle="modal">Register</button>
 
                                                             </div>
+                                                        </form>
                                                         </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
