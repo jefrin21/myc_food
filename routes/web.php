@@ -3,6 +3,7 @@
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
+use App\Http\Controllers\WeeklyController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -75,6 +76,10 @@ Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
 Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmasi']);
 
 
+Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
+
+
+
 
 
 // ================================================================== end route backend =================================
@@ -92,7 +97,7 @@ Route::get('/account', function () {
 
 Route::get('/cart', function () {
     return view('components.frontend.myccart');
-});
+})->middleware('auth');
 
 Route::get('/checkout', function () {
     return view('components.frontend.myccheckout');
@@ -108,7 +113,7 @@ Route::get('/invoice', function () {
 
 Route::get('/login', function () {
     return view('components.frontend.myclogin');
-});
+})->name('login')->middleware('guest');
 
 Route::get('/register', function () {
     return view('components.frontend.mycregister');
@@ -116,5 +121,5 @@ Route::get('/register', function () {
 
 Route::get('/orders', function () {
     return view('components.frontend.mycorders');
-});
+})->middleware('auth');
 // ================================================================== routes frondend ===================================

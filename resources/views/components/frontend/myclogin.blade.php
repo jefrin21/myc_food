@@ -22,29 +22,29 @@
     <meta property="og:description" content="Bucker – About Us" />
 
     <!-- Add site Favicon -->
-    <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png" sizes="32x32" />
+    {{-- <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-192x192.png"
         sizes="192x192" />
-    <link rel="apple-touch-icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-180x180.png" />
+    <link rel="apple-touch-icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-180x180.png" /> --}}
     <meta name="msapplication-TileImage"
         content="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-270x270.png" />
 
     <!-- CSS 
     ========================= -->
     <link rel="stylesheet" href="assets_frontend/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets_frontend/css/slick.css">
+    {{-- <link rel="stylesheet" href="assets_frontend/css/slick.css">
     <link rel="stylesheet" href="assets_frontend/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets_frontend/css/ionicons.min.css">
     <link rel="stylesheet" href="assets_frontend/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="assets_frontend/css/animate.css">
     <link rel="stylesheet" href="assets_frontend/css/nice-select.css">
     <link rel="stylesheet" href="assets_frontend/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets_frontend/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets_frontend/css/jquery-ui.min.css"> --}}
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets_frontend/css/style.css">
 
     <!--modernizr min js here-->
-    <script src="assets_frontend/js/vendor/modernizr-3.11.2.min.js"></script>
+    {{-- <script src="assets_frontend/js/vendor/modernizr-3.11.2.min.js"></script>
 
 
     <!-- Structured Data  -->
@@ -55,10 +55,9 @@
         "name": "Replace_with_your_site_title",
         "url": "Replace_with_your_site_URL"
         }
-    </script>
+    </script> --}}
 </head>
 
-@section('app-content')
     <!-- breadcrumbs area end -->
     <div class="login-register-area mt-5">
         <div class="container">
@@ -106,10 +105,9 @@
     </div>
 
  <!--footer area end-->
- @endsection
     <!-- JS
 ============================================ -->
-    @section('js')
+    {{-- @section('js')
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets_frontend/js/vendor/bootstrap.bundle.min.js"></script>
@@ -124,7 +122,7 @@
     <script src="assets_frontend/js/jquery.zoom.min.js"></script>
     <!-- Main JS -->
     <script src="assets_frontend/js/main.js"></script>
-    @endsection
+    @endsection --}}
 
 </body>
 

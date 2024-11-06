@@ -15,7 +15,7 @@
                                         <li><a class="active" href="mycindex.html">Home</a>
                                            
                                         </li>
-                                        <li><a href="myccart.html">Order</a></li>
+                                        <li><a href="cart">Order</a></li>
                                         <li><a href="mycfaq.html">FAQ</a>  
                                         </li>
                                 
@@ -29,8 +29,8 @@
                                     
                                     <div class="header_account">
                                         <ul class="d-flex">
-                                            <li class="header_wishlist">
-                                                <a href="mycaccount.html"><i class="pe-7s-user"></i></a>
+                                            <li class="header_wishlist" data-bs-toggle="modal" data-bs-target="#createCustomer">
+                                                <a href="#"><i class="pe-7s-user"></i></a>
                                             </li>
                                             <li class="shopping_cart">
                                                 <a href="javascript:void(0)"><i class="pe-7s-shopbag"></i></a>
@@ -115,3 +115,63 @@
         </div>
 
     </section>
+
+    {{-- start modal  create customer--}}
+                                   
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="createCustomer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{-- content create --}}
+                                            <form action="/customer-create/create" method="POST">
+                                                    @csrf
+                                                    <div class="row d-flex justify-content-center">
+                                                        <div class="">
+                                                            <form action="#">
+                                                                <div class="login-form">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <label>Email Address*</label>
+                                                                            <input type="email" placeholder="Email Address">
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <label>Password*</label>
+                                                                            <input type="password" placeholder="Password">
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-sm-4 align-self-center">
+                                                                            <div class="check-box">
+                                                                                <input type="checkbox" id="remember_me">
+                                                                                <label for="remember_me">Remember me</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                            <div class="forgotton-password_info">
+                                                                                <a href="#"> Forgot pasword?</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                            <div class="forgotton-password_info">
+                                                                                <a href="mycregister.html"> Don't have account?</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12 pt-5 d-flex justify-content-end">
+                                                                            <button class="btn custom-btn md-size">Login</button>
+                                                                        </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                            {{-- end content --}}
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                {{-- end modal create customer  --}}
