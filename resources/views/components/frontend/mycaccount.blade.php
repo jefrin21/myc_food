@@ -308,11 +308,30 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Faculty</label>
-                                                                        <input type="text" placeholder="Faculty" name="fakultas_customer">
+                                                                        <form class="select_option" action="#">
+                                                                            <select name="fakultas_customer" id="fakultas">
+                                                                                <option selected value="1">Select Faculty</option>
+                                                                                <option value="2">Faculty of Information Technology</option>
+                                                                                <option value="3">Faculty of Business</option>
+                                                                                <option value="4"> Faculty of Science and Technology</option>
+                                                                                <option value="5"> Faculty of Nursing</option>
+                                                                                <option value="6">Faculty of Medicine</option>
+                                                                            </select>
+                                                                        </form>
+                                                                        
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Dorm Location</label>
-                                                                        <input type="text" placeholder="Lokasi Dorm">
+                                                                        <form class="select_option" action="#">
+                                                                        <select name="dorm_customer" id="dorm">
+                                                                            <option selected value="1">Select Dorm Location</option>
+                                                                            <option value="2">Faculty of Information Technology</option>
+                                                                            <option value="3">Faculty of Business</option>
+                                                                            <option value="4"> Faculty of Science and Technology</option>
+                                                                            <option value="5"> Faculty of Nursing</option>
+                                                                            <option value="6">Faculty of Medicine</option>
+                                                                        </select>
+                                                                    </form>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Room Number</label>
@@ -328,12 +347,21 @@
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <label>Password*</label>
-                                                                        <input type="password" placeholder="Password">
+                                                                        <div class="newsletter_subscribe">
+                                                                            <form id="mc-form">
+                                                                                <input type="password" placeholder="Password" id="passwordInput">
+                                                                                <button type="button" onclick="togglePasswordVisibility()" ><i class="pe-7s-look"></i></button>
+                                                                            </form>
+                                                                        </div>
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <label>Confirm Password*</label>
-                                                                        <input type="confirmpassword"
-                                                                            placeholder="Password">
+                                                                        <div class="newsletter_subscribe">
+                                                                            <form id="mc-form">
+                                                                                <input type="password" placeholder="Password" id="confirmpasswordInput">
+                                                                                <button type="button" onclick="togglePasswordVisibility2()" ><i class="pe-7s-look"></i></button>
+                                                                            </form>
+                                                                        </div>
                                                                     </div>
 
                                                                 </div>
@@ -369,6 +397,32 @@
     <!-- JS
 ============================================ -->
     @section('js')
+    <script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("passwordInput");
+        
+        // Mengubah tipe input antara password dan text
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+           
+        } else {
+            passwordInput.type = "password";
+           
+        }
+    }
+    function togglePasswordVisibility2() {
+        const confirmpasswordInput = document.getElementById("confirmpasswordInput");
+        
+        // Mengubah tipe input antara password dan text
+        if (confirmpasswordInput.type === "password") {
+            confirmpasswordInput.type = "text";
+           
+        } else {
+            confirmpasswordInput.type = "password";
+           
+        }
+    }
+</script>
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets_frontend/js/vendor/bootstrap.bundle.min.js"></script>
