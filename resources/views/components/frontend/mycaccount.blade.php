@@ -327,6 +327,30 @@
                                                                                 <option value="Faculty-of-Nursing"> Faculty of Nursing</option>
                                                                                 <option value="Faculty-of-Medicine">Faculty of Medicine</option>
                                                                         </select>
+                                                                        <form class="select_option" action="#">
+                                                                            <select name="fakultas_customer" id="fakultas">
+                                                                                <option selected value="1">Select Faculty</option>
+                                                                                <option value="2">Faculty of Information Technology</option>
+                                                                                <option value="3">Faculty of Business</option>
+                                                                                <option value="4"> Faculty of Science and Technology</option>
+                                                                                <option value="5"> Faculty of Nursing</option>
+                                                                                <option value="6">Faculty of Medicine</option>
+                                                                            </select>
+                                                                        </form>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <label>Dorm Location</label>
+                                                                        <form class="select_option" action="#">
+                                                                        <select name="dorm_customer" id="dorm">
+                                                                            <option selected value="1">Select Dorm Location</option>
+                                                                            <option value="2">Faculty of Information Technology</option>
+                                                                            <option value="3">Faculty of Business</option>
+                                                                            <option value="4"> Faculty of Science and Technology</option>
+                                                                            <option value="5"> Faculty of Nursing</option>
+                                                                            <option value="6">Faculty of Medicine</option>
+                                                                        </select>
+                                                                    </form>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Room Number</label>
@@ -359,7 +383,9 @@
                                                                         <label>Password*</label>
                                                                         <div class="newsletter_subscribe">
                                                                             <form id="mc-form">
+                                                                            
                                                                                 <input type="password" placeholder="Password" name="password" id="password" required>
+                                                                                <input type="password" placeholder="Password" id="passwordInput">
                                                                                 <button type="button" onclick="togglePasswordVisibility()" ><i class="pe-7s-look"></i></button>
                                                                             </form>
                                                                         </div>
@@ -369,6 +395,7 @@
                                                                         <div class="newsletter_subscribe">
                                                                             <form id="mc-form">
                                                                                 <input type="password" placeholder="Password" name="confirmpassword" id="confirmpassword" required>
+                                                                                <input type="password" placeholder="Password" id="confirmpasswordInput">
                                                                                 <button type="button" onclick="togglePasswordVisibility2()" ><i class="pe-7s-look"></i></button>
                                                                             </form>
                                                                         </div>
