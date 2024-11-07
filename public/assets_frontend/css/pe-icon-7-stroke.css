@@ -368,6 +368,8 @@
 }
 .pe-7s-delete-user:before {
 	content: "\e6a7";
+
+	
 }
 .pe-7s-paint:before {
 	content: "\e62a";
