@@ -80,12 +80,12 @@
             </div>
         </div>
     </div>
-      @if (session()->has('loginError'))
+    @if (session()->has('loginError'))
         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-            <h5 class="text-danger"> {{ session('loginError') }}</h5> 
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-     @endif
+            <h5 class="text-danger"> {{ session('loginError') }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <!-- breadcrumbs area end -->
     <div class="account-page-area">
         <div class="container">
@@ -201,219 +201,243 @@
                             </div>
 
                         @else
-                            <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
-                                aria-labelledby="account-dashboard-tab">
-                                <div class="myaccount-details">
-                                    {{-- <form action="#" class="myaccount-form"> --}}
-                                    <form action="/mylogin" method="POST" class="myaccount-form">
-                                      @csrf
-                                        <div class="myaccount-form-inner">
-                                            <div class="single-input ">
-                                                <h3>You Need to Log In to Get Your Account Information</h3>
-                                            </div>
-
-                                            <div class="single-input single-input-half">
-                                                <button class="btn custom-btn" type="submit" data-bs-toggle="modal"
-                                                    data-bs-target="#login">
-                                                    <span>LOGIN</span>
-                                                </button>
-                                                <!-- Modal Login -->
-                                                <div class="modal fade" id="login" data-bs-backdrop="static"
-                                                    data-bs-keyboard="false" tabindex="-1"
-                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="staticBackdropLabel"> Login
-                                                                </h5>
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
+                                            aria-labelledby="account-dashboard-tab">
+                                            <div class="myaccount-details">
+                                                {{-- <form action="#" class="myaccount-form"> --}}
+                                                    <form action="/mylogin" method="POST" class="myaccount-form">
+                                                        @csrf
+                                                        <div class="myaccount-form-inner">
+                                                            <div class="single-input ">
+                                                                <h3>You Need to Log In to Get Your Account Information</h3>
                                                             </div>
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12">
-                                                                        <label>Email Address*</label>
-                                                                        <input class="@error('email_customer') is-invalid @enderror" type="email" placeholder="Email Address" name="email_customer" id="email_customer" value="{{ old('email_customer') }}" required >
-                                                                        @error('email_customer')
-                                                                            <div class="invalid-feedback">
-                                                                                {{ $message }}
+
+                                                            <div class="single-input single-input-half">
+                                                                <button class="btn custom-btn" type="submit" data-bs-toggle="modal"
+                                                                    data-bs-target="#login">
+                                                                    <span>LOGIN</span>
+                                                                </button>
+                                                                <!-- Modal Login -->
+                                                                <div class="modal fade" id="login" data-bs-backdrop="static"
+                                                                    data-bs-keyboard="false" tabindex="-1"
+                                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="staticBackdropLabel"> Login
+                                                                                </h5>
+                                                                                <button type="button" class="btn-close"
+                                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
                                                                             </div>
-                                                                        @enderror
+                                                                            <div class="modal-body">
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-12">
+                                                                                        <label>Email Address*</label>
+                                                                                        <input
+                                                                                            class="@error('email_customer') is-invalid @enderror"
+                                                                                            type="email" placeholder="Email Address"
+                                                                                            name="email_customer" id="email_customer"
+                                                                                            value="{{ old('email_customer') }}"
+                                                                                            required>
+                                                                                        @error('email_customer')
+                                                                                            <div class="invalid-feedback">
+                                                                                                {{ $message }}
+                                                                                            </div>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                    <div class="col-lg-12">
+                                                                                        <label>Password*</label>
+                                                                                        <input
+                                                                                            class="@error('password') is-invalid @enderror"
+                                                                                            type="password" placeholder="Password"
+                                                                                            name="password" id="password" required>
+                                                                                        @error('password')
+                                                                                            <div class="invalid-feedback">
+                                                                                                {{ $message }}
+                                                                                            </div>
+                                                                                        @enderror
+                                                                                    </div>
+
+
+                                                                                    <div class="col-sm-4 pt-1 mt-md-0">
+                                                                                        <div class="forgotton-password_info">
+                                                                                            <a href="#"> Forgot pasword?</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-4 pt-1 mt-md-0">
+                                                                                        <div class="forgotton-password_info">
+                                                                                            <a data-bs-target="#register"
+                                                                                                data-bs-toggle="modal"> Don't have
+                                                                                                account?</a>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button class="btn custom-btn md-size"
+                                                                                    type="submit">Login</button>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-lg-12">
-                                                                        <label>Password*</label>
-                                                                        <input class="@error('password') is-invalid @enderror" type="password" placeholder="Password" name="password" id="password" required>
-                                                                        @error('password')
-                                                                            <div class="invalid-feedback">
-                                                                                {{ $message }}
+                                                                </div>
+                                                    </form>
+
+                                                    <!-- Modal Register -->
+
+                                                    <form action="/myregister" method="POST">
+                                                    @csrf
+                                                        <div class="modal fade" id="register" data-bs-backdrop="static"
+                                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticBackdropLabel"> Register
+                                                                        </h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="login-form">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-12">
+                                                                                    <label>First Name</label>
+                                                                                    <input
+                                                                                        class="@error('nama_customer') is-invalid @enderror"
+                                                                                        name="nama_customer" id="nama_customer"
+                                                                                        type="text" placeholder="First Name" required>
+                                                                                    @error('nama_customer')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-6 col-12">
+                                                                                    <label>Last Name</label>
+                                                                                    <input type="text" placeholder="Last Name "
+                                                                                        name="last_name_customer"
+                                                                                        id="last_name_customer" required>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <label>Faculty</label>
+                                                                                    <select name="fakultas_customer"
+                                                                                        id="fakultas_customer">
+                                                                                        <option disabled selected value="1">Select
+                                                                                            Faculty</option>
+                                                                                        <option
+                                                                                            value="Faculty-of-Information-Technology">
+                                                                                            Faculty of Information Technology</option>
+                                                                                        <option value="Faculty-of-Business">Faculty of
+                                                                                            Business</option>
+                                                                                        <option
+                                                                                            value="Faculty-of-Science-and-Technology">
+                                                                                            Faculty of Science and Technology</option>
+                                                                                        <option value="Faculty-of-Nursing"> Faculty of
+                                                                                            Nursing</option>
+                                                                                        <option value="Faculty-of-Medicine">Faculty of
+                                                                                            Medicine</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <label>Dorm Location</label>
+                                                                                    <select name="lokasi_dorm_customer"
+                                                                                        id="lokasi_dorm_customer" required>
+                                                                                        <option disabled selected value="1">Select Dorm
+                                                                                            Location</option>
+                                                                                        <option value="MYC-Dorm">MYC Dorm</option>
+                                                                                        <option value="Paddock-Dorm">Paddock Dorm
+                                                                                        </option>
+                                                                                        <option value="G-Building-Dorm">G Building Dorm
+                                                                                        </option>
+                                                                                        <option value="Swimming-Pool-Dorm">Swimming Pool
+                                                                                            Dorm</option>
+                                                                                        <option value="Soccer-Field-Dorm">Soccer Field
+                                                                                            Dorm</option>
+                                                                                    </select>
+
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <label>Room Number</label>
+                                                                                    <input type="text" placeholder="No Kamar"
+                                                                                        name="no_kamar" id="no_kamar"
+                                                                                        class="@error('no_kamar') is-invalid @enderror">
+                                                                                    @error('no_kamar')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <label>Phone Number</label>
+                                                                                    <input type="text" placeholder="No HP"
+                                                                                        name="no_hp_customer" id="no_hp_customer"
+                                                                                        class="@error('no_hp_customer') is-invalid @enderror">
+                                                                                    @error('no_hp_customer')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <label>Email</label>
+                                                                                    <input type="email" placeholder="Email"
+                                                                                        name="email_customer" id="email_customer"
+                                                                                        class="@error('email_customer') is-invalid @enderror"
+                                                                                        required>
+                                                                                    @error('email_customer')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-lg-12">
+                                                                                    <label>Password*</label>
+                                                                                    <div class="newsletter_subscribe">
+                                                                                        <form id="mc-form">
+                                                                                            <input type="password"
+                                                                                                placeholder="Password"
+                                                                                                id="passwordInput">
+                                                                                            <button type="button"
+                                                                                                onclick="togglePasswordVisibility()"><i class="pe-7s-look"></i></button>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-lg-12">
+                                                                                    <label>Confirm Password*</label>
+                                                                                    <div class="newsletter_subscribe">
+                                                                                        <form id="mc-form">
+                                                                                            <input type="confirmpassword"
+                                                                                                placeholder="Confirm Password"
+                                                                                                id="confirmpasswordInput">
+                                                                                            <button type="button"
+                                                                                                onclick="togglePasswordVisibility2()"><i
+                                                                                                    class="pe-7s-look"></i></button>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+
                                                                             </div>
-                                                                        @enderror
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn custom-btn md-size"
+                                                                            data-bs-dismiss="modal" data-bs-target="#login"
+                                                                            data-bs-toggle="modal">Back to</button>
+                                                                        <button type="submit"
+                                                                            class="btn custom-btn md-size">Register</button>
                                                                     </div>
 
-                                                                    
-                                                                    <div class="col-sm-4 pt-1 mt-md-0">
-                                                                        <div class="forgotton-password_info">
-                                                                            <a href="#"> Forgot pasword?</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-4 pt-1 mt-md-0">
-                                                                        <div class="forgotton-password_info">
-                                                                            <a data-bs-target="#register" data-bs-toggle="modal"> Don't have
-                                                                                account?</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    
                                                                 </div>
                                                             </div>
-                                                            <div class="modal-footer">
-                                                            <button
-                                                            class="btn custom-btn md-size" type="submit">Login</button>
-                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                </form>
-
-                                                <!-- Modal Register -->
-
-                                             <form action="/myregister" method="POST">
-                                                <div class="modal fade" id="register" data-bs-backdrop="static"
-                                                    data-bs-keyboard="false" tabindex="-1"
-                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="staticBackdropLabel"> Register
-                                                                </h5>
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            @csrf
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    <div class="col-md-6 col-12">
-                                                                        <label>First Name</label>
-                                                                        <input class="@error('nama_customer') is-invalid @enderror" name="nama_customer" id="nama_customer" type="text" placeholder="First Name"
-                                                                            required>
-                                                                        @error('nama_customer')
-                                                                        <div class="invalid-feedback">
-                                                                            {{ $message }}
-                                                                        </div>
-                                                                        @enderror
-                                                                    </div>
-                                                                    <div class="col-md-6 col-12">
-                                                                        <label>Last Name</label>
-                                                                        <input type="text" placeholder="Last Name " name="last_name_customer" id="last_name_customer" required>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label>Faculty</label>
-                                                                            <select name="fakultas_customer"  id="fakultas_customer">
-                                                                                <option  disabled selected value="1">Select Faculty</option>
-                                                                                <option value="Faculty-of-Information-Technology">Faculty of Information Technology</option>
-                                                                                <option value="Faculty-of-Business">Faculty of Business</option>
-                                                                                <option value="Faculty-of-Science-and-Technology"> Faculty of Science and Technology</option>
-                                                                                <option value="Faculty-of-Nursing"> Faculty of Nursing</option>
-                                                                                <option value="Faculty-of-Medicine">Faculty of Medicine</option>
-                                                                            </select>
-                                                                            <div id="selectedFaculty" class="selected-label">Select Faculty</div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label>Dorm Location</label>
-                                                                        <select name="lokasi_dorm_customer" id="lokasi_dorm_customer" required>
-                                                                                <option  disabled selected value="1">Select Faculty</option>
-                                                                                <option value="Faculty-of-Information-Technology">Faculty of Information Technology</option>
-                                                                                <option value="Faculty-of-Business">Faculty of Business</option>
-                                                                                <option value="Faculty-of-Science-and-Technology"> Faculty of Science and Technology</option>
-                                                                                <option value="Faculty-of-Nursing"> Faculty of Nursing</option>
-                                                                                <option value="Faculty-of-Medicine">Faculty of Medicine</option>
-                                                                        </select>
-                                                                        <form class="select_option" action="#">
-                                                                            <select name="fakultas_customer" id="fakultas">
-                                                                                <option selected value="1">Select Faculty</option>
-                                                                                <option value="2">Faculty of Information Technology</option>
-                                                                                <option value="3">Faculty of Business</option>
-                                                                                <option value="4"> Faculty of Science and Technology</option>
-                                                                                <option value="5"> Faculty of Nursing</option>
-                                                                                <option value="6">Faculty of Medicine</option>
-                                                                            </select>
-                                                                        </form>
-                                                                        
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label>Dorm Location</label>
-                                                                        <form class="select_option" action="#">
-                                                                        <select name="dorm_customer" id="dorm">
-                                                                            <option selected value="1">Select Dorm Location</option>
-                                                                            <option value="2">Faculty of Information Technology</option>
-                                                                            <option value="3">Faculty of Business</option>
-                                                                            <option value="4"> Faculty of Science and Technology</option>
-                                                                            <option value="5"> Faculty of Nursing</option>
-                                                                            <option value="6">Faculty of Medicine</option>
-                                                                        </select>
-                                                                    </form>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label>Room Number</label>
-                                                                        <input type="text" placeholder="No Kamar" name="no_kamar" id="no_kamar" class="@error('no_kamar') is-invalid @enderror">
-                                                                        @error('no_kamar')
-                                                                            <div class="invalid-feedback">
-                                                                                {{ $message }}
-                                                                            </div>
-                                                                        @enderror
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <label>Phone Number</label>
-                                                                        <input type="text" placeholder="No HP" name="no_hp_customer" id="no_hp_customer" class="@error('no_hp_customer') is-invalid @enderror">
-                                                                        @error('no_hp_customer')
-                                                                            <div class="invalid-feedback">
-                                                                                {{ $message }}
-                                                                            </div>
-                                                                        @enderror
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <label>Email</label>
-                                                                        <input type="email" placeholder="Email" name="email_customer" id="email_customer" class="@error('email_customer') is-invalid @enderror" required>
-                                                                        @error('email_customer')
-                                                                            <div class="invalid-feedback">
-                                                                                {{ $message }}
-                                                                            </div>
-                                                                        @enderror
-                                                                    </div>
-                                                                    <div class="col-lg-12">
-                                                                        <label>Password*</label>
-                                                                        <div class="newsletter_subscribe">
-                                                                            <form id="mc-form">
-                                                                            
-                                                                                <input type="password" placeholder="Password" name="password" id="password" required>
-                                                                                <input type="password" placeholder="Password" id="passwordInput">
-                                                                                <button type="button" onclick="togglePasswordVisibility()" ><i class="pe-7s-look"></i></button>
-                                                                            </form>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-12">
-                                                                        <label>Confirm Password*</label>
-                                                                        <div class="newsletter_subscribe">
-                                                                            <form id="mc-form">
-                                                                                <input type="password" placeholder="Password" name="confirmpassword" id="confirmpassword" required>
-                                                                                <input type="password" placeholder="Password" id="confirmpasswordInput">
-                                                                                <button type="button" onclick="togglePasswordVisibility2()" ><i class="pe-7s-look"></i></button>
-                                                                            </form>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn custom-btn md-size"data-bs-dismiss="modal" data-bs-target="#login" data-bs-toggle="modal">Back to</button>
-                                                                <button type="submit" class="btn custom-btn md-size" >Register</button>
-                                                            </div>
-                                                      
-                                                        </div>
-                                                    </div>
-                                                      </form>
-                                                </div>
+                                                    </form>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                         @endif
@@ -421,10 +445,10 @@
 
 
 
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
+    </div>
+    </div>
     </div>
 
 
@@ -433,31 +457,31 @@
 ============================================ -->
     @section('js')
     <script>
-    function togglePasswordVisibility() {
-        const passwordInput = document.getElementById("passwordInput");
-        
-        // Mengubah tipe input antara password dan text
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-           
-        } else {
-            passwordInput.type = "password";
-           
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("passwordInput");
+
+            // Mengubah tipe input antara password dan text
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+
+            } else {
+                passwordInput.type = "password";
+
+            }
         }
-    }
-    function togglePasswordVisibility2() {
-        const confirmpasswordInput = document.getElementById("confirmpasswordInput");
-        
-        // Mengubah tipe input antara password dan text
-        if (confirmpasswordInput.type === "password") {
-            confirmpasswordInput.type = "text";
-           
-        } else {
-            confirmpasswordInput.type = "password";
-           
+        function togglePasswordVisibility2() {
+            const confirmpasswordInput = document.getElementById("confirmpasswordInput");
+
+            // Mengubah tipe input antara password dan text
+            if (confirmpasswordInput.type === "password") {
+                confirmpasswordInput.type = "text";
+
+            } else {
+                confirmpasswordInput.type = "password";
+
+            }
         }
-    }
-</script>
+    </script>
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets_frontend/js/vendor/bootstrap.bundle.min.js"></script>
