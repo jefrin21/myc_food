@@ -128,4 +128,5 @@ Route::get('/orders', function () {
 
 
 Route::post('/mylogin',[LoginController::class,'authentication']);
+Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/myregister',[RegisterController::class,'store']);
