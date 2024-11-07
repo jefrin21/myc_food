@@ -65,16 +65,21 @@
             
             
                                                 <tbody>
-                                                <tbody>
-                                                @foreach ($weeklys as $order)
-                                                <tr>
-                                                    <td>{{ $order->jumlah_pesanan }}</td> 
-                                                    <td>{{ $order->total_harga }}</td>
-                                                    <td>{{ $order->tanggal_order }}</td>
-                                                    <td>{{ $order->tanggal_order }}</td>  
-                                                    <td>{{ $order->tanggal_order }}</td> 
-                                                </tr>
-                                                @endforeach
+                                                    @forelse ($weeklys as $order)
+                                                        <tr>
+                                                            <td>{{ $order->tanggal_pengambilan_pesanan }}</td>
+                                                            <td>{{ $order->silver_a }}</td>
+                                                            <td>{{ $order->silver_b }}</td>
+                                                            <td>{{ $order->gold_a }}</td>
+                                                            <td>{{ $order->gold_b }}</td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="5" class="text-center">Tidak ada data untuk ditampilkan</td>
+                                                        </tr>
+                                                    @endforelse
+                                                </tbody>
+                                                
                                             </table>
             
                                         </div>
