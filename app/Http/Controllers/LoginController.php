@@ -23,7 +23,6 @@ class LoginController extends Controller
             'password'=>'required|min:5|max:255'
         ]);
 
-
         if (Auth::guard('customer')->attempt(['email_customer' => $credentials['email_customer'], 'password' => $credentials['password']])) {
         $request->session()->regenerate();
 

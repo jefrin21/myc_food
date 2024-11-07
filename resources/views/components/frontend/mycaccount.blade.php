@@ -276,7 +276,7 @@
 
                                                 <!-- Modal Register -->
 
-                                               
+                                             <form action="/myregister" method="POST">
                                                 <div class="modal fade" id="register" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
                                                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -288,7 +288,6 @@
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-                                                        <form action="/myregister" method="POST">
                                                             @csrf
                                                             <div class="modal-body">
                                                                 <div class="row">
@@ -304,52 +303,63 @@
                                                                     </div>
                                                                     <div class="col-md-6 col-12">
                                                                         <label>Last Name</label>
-                                                                        <input type="text" placeholder="Last Name (opsional)" name="last_name_customer" id="last_name_customer">
+                                                                        <input type="text" placeholder="Last Name " name="last_name_customer" id="last_name_customer" required>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Faculty</label>
-                                                                        <form class="select_option" action="#">
-                                                                            <select name="fakultas_customer" id="fakultas">
-                                                                                <option selected value="1">Select Faculty</option>
-                                                                                <option value="2">Faculty of Information Technology</option>
-                                                                                <option value="3">Faculty of Business</option>
-                                                                                <option value="4"> Faculty of Science and Technology</option>
-                                                                                <option value="5"> Faculty of Nursing</option>
-                                                                                <option value="6">Faculty of Medicine</option>
+                                                                            <select name="fakultas_customer"  id="fakultas_customer">
+                                                                                <option  disabled selected value="1">Select Faculty</option>
+                                                                                <option value="Faculty-of-Information-Technology">Faculty of Information Technology</option>
+                                                                                <option value="Faculty-of-Business">Faculty of Business</option>
+                                                                                <option value="Faculty-of-Science-and-Technology"> Faculty of Science and Technology</option>
+                                                                                <option value="Faculty-of-Nursing"> Faculty of Nursing</option>
+                                                                                <option value="Faculty-of-Medicine">Faculty of Medicine</option>
                                                                             </select>
-                                                                        </form>
-                                                                        
+                                                                            <div id="selectedFaculty" class="selected-label">Select Faculty</div>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Dorm Location</label>
-                                                                        <form class="select_option" action="#">
-                                                                        <select name="dorm_customer" id="dorm">
-                                                                            <option selected value="1">Select Dorm Location</option>
-                                                                            <option value="2">Faculty of Information Technology</option>
-                                                                            <option value="3">Faculty of Business</option>
-                                                                            <option value="4"> Faculty of Science and Technology</option>
-                                                                            <option value="5"> Faculty of Nursing</option>
-                                                                            <option value="6">Faculty of Medicine</option>
+                                                                        <select name="lokasi_dorm_customer" id="lokasi_dorm_customer" required>
+                                                                                <option  disabled selected value="1">Select Faculty</option>
+                                                                                <option value="Faculty-of-Information-Technology">Faculty of Information Technology</option>
+                                                                                <option value="Faculty-of-Business">Faculty of Business</option>
+                                                                                <option value="Faculty-of-Science-and-Technology"> Faculty of Science and Technology</option>
+                                                                                <option value="Faculty-of-Nursing"> Faculty of Nursing</option>
+                                                                                <option value="Faculty-of-Medicine">Faculty of Medicine</option>
                                                                         </select>
-                                                                    </form>
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Room Number</label>
-                                                                        <input type="text" placeholder="No Kamar">
+                                                                        <input type="text" placeholder="No Kamar" name="no_kamar" id="no_kamar" class="@error('no_kamar') is-invalid @enderror">
+                                                                        @error('no_kamar')
+                                                                            <div class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </div>
+                                                                        @enderror
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <label>Phone Number</label>
-                                                                        <input type="text" placeholder="No HP">
+                                                                        <input type="text" placeholder="No HP" name="no_hp_customer" id="no_hp_customer" class="@error('no_hp_customer') is-invalid @enderror">
+                                                                        @error('no_hp_customer')
+                                                                            <div class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </div>
+                                                                        @enderror
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <label>Email</label>
-                                                                        <input type="email" placeholder="Email">
+                                                                        <input type="email" placeholder="Email" name="email_customer" id="email_customer" class="@error('email_customer') is-invalid @enderror" required>
+                                                                        @error('email_customer')
+                                                                            <div class="invalid-feedback">
+                                                                                {{ $message }}
+                                                                            </div>
+                                                                        @enderror
                                                                     </div>
                                                                     <div class="col-lg-12">
                                                                         <label>Password*</label>
                                                                         <div class="newsletter_subscribe">
                                                                             <form id="mc-form">
-                                                                                <input type="password" placeholder="Password" id="passwordInput">
+                                                                                <input type="password" placeholder="Password" name="password" id="password" required>
                                                                                 <button type="button" onclick="togglePasswordVisibility()" ><i class="pe-7s-look"></i></button>
                                                                             </form>
                                                                         </div>
@@ -358,7 +368,7 @@
                                                                         <label>Confirm Password*</label>
                                                                         <div class="newsletter_subscribe">
                                                                             <form id="mc-form">
-                                                                                <input type="password" placeholder="Password" id="confirmpasswordInput">
+                                                                                <input type="password" placeholder="Password" name="confirmpassword" id="confirmpassword" required>
                                                                                 <button type="button" onclick="togglePasswordVisibility2()" ><i class="pe-7s-look"></i></button>
                                                                             </form>
                                                                         </div>
@@ -367,15 +377,13 @@
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn custom-btn md-size"
-                                                                    data-bs-dismiss="modal" data-bs-target="#login" data-bs-toggle="modal">Back to</button>
-                                                                <button class="btn custom-btn md-size" data-bs-target="#login" data-bs-toggle="modal">Register</button>
-
+                                                                <button type="button" class="btn custom-btn md-size"data-bs-dismiss="modal" data-bs-target="#login" data-bs-toggle="modal">Back to</button>
+                                                                <button type="submit" class="btn custom-btn md-size" >Register</button>
                                                             </div>
-                                                        </form>
+                                                      
                                                         </div>
-                                                        
                                                     </div>
+                                                      </form>
                                                 </div>
                                             </div>
                                         </div>
