@@ -217,7 +217,7 @@
         </div>
      </section>
      
-       {{-- start modal  create customer--}}
+       {{-- start modal  login--}}
                                    
                                     <!-- Modal -->
                                     <div class="modal fade" id="createCustomer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -228,8 +228,8 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            {{-- content create --}}
-                                            <form action="/customer-create/create" method="POST">
+                                            {{-- content login --}}
+                                            <form action="/mylogin" method="POST">
                                                     @csrf
                                                     <div class="row d-flex justify-content-center">
                                                         <div class="">
@@ -238,11 +238,11 @@
                                                                     <div class="row">
                                                                         <div class="col-lg-12">
                                                                             <label>Email Address*</label>
-                                                                            <input type="email" placeholder="Email Address">
+                                                                            <input type="email" placeholder="Email Address" name="email" id="email">
                                                                         </div>
                                                                         <div class="col-lg-12">
                                                                             <label>Password*</label>
-                                                                            <input type="password" placeholder="Password">
+                                                                            <input type="password" placeholder="Password" name="password" id="password">
                                                                         </div>
                                                                         
                                                                         <div class="col-sm-4 align-self-center">
@@ -275,7 +275,7 @@
                                         </div>
                                     </div>
                                     </div>
-                                {{-- end modal create customer  --}}
+                                {{-- end modal login  --}}
   
 
 
