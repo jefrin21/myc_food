@@ -4,6 +4,7 @@ use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WeeklyController;
 use Illuminate\Support\Facades\Route;
 
@@ -90,7 +91,7 @@ Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
 
 Route::get('/home', function () {
     return view('components.frontend.mycindex');
-});
+})->name('home');
 
 Route::get('/account', function () {
     return view('components.frontend.mycaccount');
@@ -127,3 +128,4 @@ Route::get('/orders', function () {
 
 
 Route::post('/mylogin',[LoginController::class,'authentication']);
+Route::post('/myregister',[RegisterController::class,'store']);
