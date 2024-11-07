@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Customer extends Authenticatable
 {
     use HasFactory;
-    protected $guarded ='id';
+    protected $guarded =[];
 
     public function Orders(): HasMany{
         return $this->hasMany(Order::class, 'customer_id','id');

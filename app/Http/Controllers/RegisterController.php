@@ -12,25 +12,26 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
-       $validatedData = $request->validate([
+        $validatedData = $request->validate([
             'nama_customer'=> 'required|max:255',
             'last_name_customer'=> 'required|max:255',
             'fakultas_customer'=> 'required',
             'email_customer'=>'required|email:dns',
             'no_hp_customer'=> 'required|numeric|digits_between:10,15',
-            // 'status_customer'=> 'required',
             'lokasi_dorm_customer'=> 'required',
             'no_kamar'=> 'required',
-            'password'=>'required|max:255'
+            'password'=>'required|max:255',
+            'confirmpassword'=> 'required|same:password'
         ]);
 
-        @dd($validatedData);
-
+        
         if($request->password !== $request->confirmpassword){
             return back()->withErrors(['confirmpassword'=>'konfirmasi password tidak sesuai'])->withInput();
         }
-        
-    //    $validatedData['password'] = bcrypt($validatedData['password']); 
+        $validatedData['password'] = bcrypt($validatedData['password']); 
+        unset($validatedData['confirmpassword']);
+
+        // @dd($validatedData);
 
         Customer::create($validatedData);
         
