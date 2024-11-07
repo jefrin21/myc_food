@@ -110,8 +110,11 @@
 
                         <li class="nav-item">
                             <i class="icofont-logout"></i>
-                            <a class="nav-link" id="account-logout-tab" href="mycindex.html" role="tab"
-                                aria-selected="false">Logout <i class="icofont-logout"></i></a>
+                            <form action="/logout" method="POST">
+                                @csrf
+                            <a class="nav-link" id="account-logout-tab" role="tab"
+                                aria-selected="false"><button type="submit">Logout</button>  <i class="icofont-logout"></i></a>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -125,31 +128,31 @@
                                         <div class="myaccount-form-inner">
                                             <div class="single-input single-input-half">
                                                 <label>First Name</label>
-                                                <input type="text">
+                                                <input type="text" value="{{ auth()->user()->name }}">
                                             </div>
                                             <div class="single-input single-input-half">
                                                 <label>Last Name</label>
-                                                <input type="text">
+                                                <input type="text" value="{{ auth()->user()->last_name_customer }}">
                                             </div>
                                             <div class="single-input">
                                                 <label>Faculty</label>
-                                                <input type="text">
+                                                <input type="text" value="{{ auth()->user()->fakultas_customer }}">
                                             </div>
                                             <div class="single-input single-input-half">
                                                 <label>Dorm Location</label>
-                                                <input type="text">
+                                                <input type="text" value="{{ auth()->user()->lokasi_dorm_customer }}">
                                             </div>
                                             <div class="single-input single-input-half">
                                                 <label>Room Number</label>
-                                                <input type="text">
+                                                <input type="text" value="{{ auth()->user()->no_kamar }}">
                                             </div>
                                             <div class="single-input single-input-half">
                                                 <label>Phone Number</label>
-                                                <input type="text">
+                                                <input type="text" value="{{ auth()->user()->no_hp_customer }}">
                                             </div>
                                             <div class="single-input single-input-half">
                                                 <label>Email</label>
-                                                <input type="text">
+                                                <input type="text" value="{{ auth()->user()->email }}">
                                             </div>
 
                                             <div class="single-input single-input-half">
@@ -240,12 +243,12 @@
                                                                                     <div class="col-lg-12">
                                                                                         <label>Email Address*</label>
                                                                                         <input
-                                                                                            class="@error('email_customer') is-invalid @enderror"
+                                                                                            class="@error('email') is-invalid @enderror"
                                                                                             type="email" placeholder="Email Address"
-                                                                                            name="email_customer" id="email_customer"
-                                                                                            value="{{ old('email_customer') }}"
+                                                                                            name="email" id="email"
+                                                                                            value="{{ old('email') }}"
                                                                                             required>
-                                                                                        @error('email_customer')
+                                                                                        @error('email')
                                                                                             <div class="invalid-feedback">
                                                                                                 {{ $message }}
                                                                                             </div>
@@ -310,10 +313,10 @@
                                                                                 <div class="col-md-6 col-12">
                                                                                     <label>First Name</label>
                                                                                     <input
-                                                                                        class="@error('nama_customer') is-invalid @enderror"
-                                                                                        name="nama_customer" id="nama_customer"
+                                                                                        class="@error('name') is-invalid @enderror"
+                                                                                        name="name" id="name"
                                                                                         type="text" placeholder="First Name" required>
-                                                                                    @error('nama_customer')
+                                                                                    @error('name')
                                                                                         <div class="invalid-feedback">
                                                                                             {{ $message }}
                                                                                         </div>
@@ -390,10 +393,10 @@
                                                                                 <div class="col-md-12">
                                                                                     <label>Email</label>
                                                                                     <input type="email" placeholder="Email"
-                                                                                        name="email_customer" id="email_customer"
-                                                                                        class="@error('email_customer') is-invalid @enderror"
+                                                                                        name="email" id="email"
+                                                                                        class="@error('email') is-invalid @enderror"
                                                                                         required>
-                                                                                    @error('email_customer')
+                                                                                    @error('email')
                                                                                         <div class="invalid-feedback">
                                                                                             {{ $message }}
                                                                                         </div>

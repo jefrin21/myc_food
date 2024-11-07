@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('user_id');
             $table->integer('jumlah_pesanan');
             $table->string('kupon_pesanan');
             $table->integer('total_harga');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('status_customer');
             $table->string('status_pesanan');
             $table->timestamps();
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

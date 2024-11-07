@@ -19,42 +19,22 @@ class LoginController extends Controller
 
     public function authentication(Request $request){
       $credentials =  $request->validate([
-            'email_customer'=>'required|email:dns',
-            'password'=>'required|min:5|max:255'
+            'email'=>'required|email:dns',
+            'password'=>'required|max:255'
         ]);
 
-        if (Auth::guard('customer')->attempt(['email_customer' => $credentials['email_customer'], 'password' => $credentials['password']])) {
-        $request->session()->regenerate();
 
-        return redirect()->intended('/cart');
-        } 
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
 
-        else if (Auth::attempt(['email' => $credentials['email_customer'], 'password' => $credentials['password']])) {
-        $request->session()->regenerate();
-
-        return redirect()->intended('/home');
-        
+            return redirect()->intended('/cart');
         }
 
         return back()->with('loginError','Email Atau Password salah. Login Gagal');
 
         // @dd('berhasil login');
     }
-    // public function authentication(Request $request)
-    // {
-    //     $credentials = $request->validate([
-    //         'email_customer' => 'required|email:dns',
-    //         'password' => 'required|min:5|max:255',
-    //     ]);
-
-    //     if (Auth::guard('customer')->attempt(['email_customer' => $credentials['email_customer'], 'password' => $credentials['password']])) {
-    //         $request->session()->regenerate();
-
-    //         return redirect()->intended('/cart');
-    //     }
-
-    //     return back()->with('loginError', 'Email atau Password salah. Login gagal.');
-    // }
+    
 
     public function logout(Request $request){
         Auth::logout();
