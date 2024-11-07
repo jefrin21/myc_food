@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('fakultas_customer');
             $table->string('email_customer');
             $table->char('no_hp_customer');
-            $table->string('status_customer');
             $table->string('lokasi_dorm_customer');
             $table->char('no_kamar');
             $table->string('password');

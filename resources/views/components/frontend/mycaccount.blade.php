@@ -86,6 +86,12 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            <h5 class="text-success"> {{ session('success') }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <!-- breadcrumbs area end -->
     <div class="account-page-area">
         <div class="container">
@@ -396,27 +402,29 @@
                                                                                 <div class="col-lg-12">
                                                                                     <label>Password*</label>
                                                                                     <div class="newsletter_subscribe">
-                                                                                        <form id="mc-form">
-                                                                                            <input type="password"
-                                                                                                placeholder="Password"
-                                                                                                id="passwordInput">
+                                                                                        <input type="password"
+                                                                                            placeholder="Password"
+                                                                                            id="passwordInput"
+                                                                                            name="password">
+                                                                                        {{-- <form id="mc-form">
                                                                                             <button type="button"
                                                                                                 onclick="togglePasswordVisibility()"><i class="pe-7s-look"></i></button>
-                                                                                        </form>
+                                                                                        </form> --}}
                                                                                     </div>
                                                                                 </div>
 
                                                                                 <div class="col-lg-12">
                                                                                     <label>Confirm Password*</label>
                                                                                     <div class="newsletter_subscribe">
-                                                                                        <form id="mc-form">
-                                                                                            <input type="confirmpassword"
-                                                                                                placeholder="Confirm Password"
-                                                                                                id="confirmpasswordInput">
+                                                                                        <input type="confirmpassword"
+                                                                                            placeholder="Confirm Password"
+                                                                                            id="confirmpasswordInput" 
+                                                                                            name="confirmpassword">
+                                                                                        {{-- <form id="mc-form">
                                                                                             <button type="button"
                                                                                                 onclick="togglePasswordVisibility2()"><i
                                                                                                     class="pe-7s-look"></i></button>
-                                                                                        </form>
+                                                                                        </form> --}}
                                                                                     </div>
                                                                                 </div>
 
