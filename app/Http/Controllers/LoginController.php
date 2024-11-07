@@ -26,7 +26,7 @@ class LoginController extends Controller
         if (Auth::guard('customer')->attempt(['email_customer' => $credentials['email_customer'], 'password' => $credentials['password']])) {
         $request->session()->regenerate();
 
-        return redirect()->intended('/cart');
+        return redirect()->intended('/');
         } 
 
         else if (Auth::attempt(['email' => $credentials['email_customer'], 'password' => $credentials['password']])) {
