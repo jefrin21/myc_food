@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DetailOrderController;
+use App\Http\Controllers\EditController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
 use App\Http\Controllers\LoginController;
@@ -130,3 +131,4 @@ Route::get('/orders', function () {
 Route::post('/mylogin',[LoginController::class,'authentication']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/myregister',[RegisterController::class,'store']);
+Route::resource('/edit',EditController::class);

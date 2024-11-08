@@ -98,43 +98,46 @@
             <div class="row">
                 <div class="col-lg-3">
                     <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
-                    @if (auth()->user())
-                        <li class="nav-item">
-                            <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
-                                href="#account-dashboard" role="tab" aria-controls="account-dashboard"
-                                aria-selected="true">Account Details</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders"
-                                role="tab" aria-controls="account-orders" aria-selected="false">History</a>
-                        </li>
+                        @if (auth()->user())
+                            <li class="nav-item">
+                                <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
+                                    href="#account-dashboard" role="tab" aria-controls="account-dashboard"
+                                    aria-selected="true">Account Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders"
+                                    role="tab" aria-controls="account-orders" aria-selected="false">History</a>
+                            </li>
 
-                        <li class="nav-item">
-                        <form action="/logout" method="POST">
-                            @csrf
-                        <div class="form_input_btn mt-3">
-                            <button type="submit" class="btn btn-link" >Logout  
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right ms-2" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                                </svg>
-                            </button>
-                            
-                            
-                        </div>
-                        </form>
-                        </li>
-                    @else
-                    <li class="nav-item">
-                            <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
-                                href="#account-dashboard" role="tab" aria-controls="account-dashboard"
-                                aria-selected="true">Account Details</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders"
-                                role="tab" aria-controls="account-orders" aria-selected="false">History</a>
-                        </li>
-                    @endif
+                            <li class="nav-item">
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <div class="form_input_btn mt-3">
+                                        <button type="submit" class="btn btn-link">Logout
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-box-arrow-right ms-2" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                                            </svg>
+                                        </button>
+
+
+                                    </div>
+                                </form>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
+                                    href="#account-dashboard" role="tab" aria-controls="account-dashboard"
+                                    aria-selected="true">Account Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders"
+                                    role="tab" aria-controls="account-orders" aria-selected="false">History</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
                 <div class="col-lg-9">
@@ -175,14 +178,180 @@
                                             </div>
 
                                             <div class="single-input single-input-half">
-                                                <button class="btn custom-btn" type="submit">
+                                                <button class="btn custom-btn" type="submit" data-bs-toggle="modal"
+                                                data-bs-target="#edit">
                                                     <span>EDIT INFORMATION</span>
                                                 </button>
-                                            </div>
-                                            <div class="single-input single-input-half">
-                                                <button class="btn custom-btn" type="submit">
-                                                    <span>SAVE CHANGES</span>
-                                                </button>
+
+                                                <!-- Modal Edit -->
+                                                 <form action="{{ route('edit.update', auth()->user() -> id) }}" method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <div class="modal fade" id="edit" data-bs-backdrop="static"
+                                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticBackdropLabel"> Edit Information
+                                                                        </h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="login-form">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-12">
+                                                                                    <label>First Name</label>
+                                                                                    <input class="@error('name') is-invalid @enderror"
+                                                                                        name="name" id="name" type="text"
+                                                                                        value="{{ auth()->user()->name }}"required>
+                                                                                    @error('name')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-6 col-12">
+                                                                                    <label>Last Name</label>
+                                                                                    <input type="text" placeholder="Last Name "
+                                                                                        name="last_name_customer"
+                                                                                        id="last_name_customer" 
+                                                                                        value="{{ auth()->user()->last_name_customer }}"
+                                                                                        required>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <label>Faculty</label>
+                                                                                    <select name="fakultas_customer" id="fakultas_customer" required>
+                                                                                        <option disabled value="1" {{ auth()->user()->fakultas_customer == null ? 'selected' : '' }}>
+                                                                                            Select Faculty
+                                                                                        </option>
+                                                                                        <option value="Faculty of Information Technology" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Information-Technology' ? 'selected' : '' }}>
+                                                                                            Faculty of Information Technology
+                                                                                        </option>
+                                                                                        <option value="Faculty of Business" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Business' ? 'selected' : '' }}>
+                                                                                            Faculty of Business
+                                                                                        </option>
+                                                                                        <option value="Faculty of Science and Technology" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Science-and-Technology' ? 'selected' : '' }}>
+                                                                                            Faculty of Science and Technology
+                                                                                        </option>
+                                                                                        <option value="Faculty of Nursing" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Nursing' ? 'selected' : '' }}>
+                                                                                            Faculty of Nursing
+                                                                                        </option>
+                                                                                        <option value="Faculty of Medicine" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Medicine' ? 'selected' : '' }}>
+                                                                                            Faculty of Medicine
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+
+                                                                                <div class="col-12">
+                                                                                    <label>Dorm Location</label>
+                                                                                    <select name="lokasi_dorm_customer"
+                                                                                        id="lokasi_dorm_customer" required>
+                                                                                        <option disabled selected value="1" {{ auth()->user()->lokasi_dorm_customer == null ? 'selected' : '' }}>Select Dorm
+                                                                                            Location</option>
+                                                                                        <option value="MYC-Dorm"
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'MYC-Dorm' ? 'selected' : '' }}>MYC Dorm</option>
+                                                                                        <option value="Paddock-Dorm"
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Paddock-Dorm' ? 'selected' : '' }}>Paddock Dorm
+                                                                                        </option>
+                                                                                        <option value="G-Building-Dorm"
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'G-Building-Dorm' ? 'selected' : '' }}>G Building Dorm
+                                                                                        </option>
+                                                                                        <option value="Swimming-Pool-Dorm"
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Swimming-Pool-Dorm' ? 'selected' : '' }}>Swimming Pool
+                                                                                            Dorm</option>
+                                                                                        <option value="Soccer-Field-Dorm"
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Soccer-Field-Dorm' ? 'selected' : '' }}>Soccer Field
+                                                                                            Dorm</option>
+                                                                                    </select>
+
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <label>Room Number</label>
+                                                                                    <input type="text" placeholder="No Kamar"
+                                                                                        name="no_kamar" id="no_kamar"
+                                                                                        value="{{ auth()->user()->no_kamar }}"
+                                                                                        class="@error('no_kamar') is-invalid @enderror">
+                                                                                    @error('no_kamar')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <label>Phone Number</label>
+                                                                                    <input type="text" placeholder="No HP"
+                                                                                        name="no_hp_customer" id="no_hp_customer"
+                                                                                        value="{{ auth()->user()->no_hp_customer }}"
+                                                                                        class="@error('no_hp_customer') is-invalid @enderror">
+                                                                                    @error('no_hp_customer')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <label>Email</label>
+                                                                                    <input type="email" placeholder="Email" name="email"
+                                                                                        id="email"
+                                                                                        value="{{ auth()->user()->email }}"
+                                                                                        class="@error('email') is-invalid @enderror"
+                                                                                        required>
+                                                                                    @error('email')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-lg-12">
+                                                                                    <label>Password*</label>
+                                                                                    <div class="newsletter_subscribe">
+                                                                                        <input type="password" placeholder="Password"
+                                                                                            id="passwordInput" name="password">
+                                                                                        {{-- <form id="mc-form">
+                                                                                            <button type="button"
+                                                                                                onclick="togglePasswordVisibility()"><i
+                                                                                                    class="pe-7s-look"></i></button>
+                                                                                        </form> --}}
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+
+                                                                                <div class="col-lg-12">
+                                                                                    <label>Confirm Password*</label>
+                                                                                    <div class="newsletter_subscribe">
+                                                                                        <input type="confirmpassword"
+                                                                                            placeholder="Confirm Password"
+                                                                                            id="confirmpasswordInput"
+                                                                                            name="confirmpassword">
+                                                                                        {{-- <form id="mc-form">
+                                                                                            <button type="button"
+                                                                                                onclick="togglePasswordVisibility2()"><i
+                                                                                                    class="pe-7s-look"></i></button>
+                                                                                        </form> --}}
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="submit"
+                                                                            class="btn custom-btn md-size">Update Information</button>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                 </form>
                                             </div>
                                         </div>
                                     </form>
@@ -258,48 +427,65 @@
                                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                                             </div>
                                                                             <div class="modal-body">
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-12">
-                                                                                        <label>Email Address*</label>
-                                                                                        <input
-                                                                                            class="@error('email') is-invalid @enderror"
-                                                                                            type="email" placeholder="Email Address"
-                                                                                            name="email" id="email"
-                                                                                            value="{{ old('email') }}"
-                                                                                            required>
-                                                                                        @error('email')
-                                                                                            <div class="invalid-feedback">
-                                                                                                {{ $message }}
-                                                                                            </div>
-                                                                                        @enderror
-                                                                                    </div>
-                                                                                    <div class="col-lg-12">
-                                                                                        <label>Password*</label>
-                                                                                        <input
-                                                                                            class="@error('password') is-invalid @enderror"
-                                                                                            type="password" placeholder="Password"
-                                                                                            name="password" id="password" required>
-                                                                                        @error('password')
-                                                                                            <div class="invalid-feedback">
-                                                                                                {{ $message }}
-                                                                                            </div>
-                                                                                        @enderror
-                                                                                    </div>
-
-
-                                                                                    <div class="col-sm-4 pt-1 mt-md-0">
-                                                                                        <div class="forgotton-password_info">
-                                                                                            <a href="#"> Forgot pasword?</a>
+                                                                                <div class="login-form">
+                                                                                    <div class="row d-flex justify-content-center">
+                                                                                        <div class="col-lg-12">
+                                                                                            <label>Email Address*</label>
+                                                                                            <input
+                                                                                                class="@error('email') is-invalid @enderror"
+                                                                                                type="email" placeholder="Email Address"
+                                                                                                name="email" id="email"
+                                                                                                value="{{ old('email') }}" required>
+                                                                                            @error('email')
+                                                                                                <div class="invalid-feedback">
+                                                                                                    {{ $message }}
+                                                                                                </div>
+                                                                                            @enderror
                                                                                         </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4 pt-1 mt-md-0">
-                                                                                        <div class="forgotton-password_info">
-                                                                                            <a data-bs-target="#register"
-                                                                                                data-bs-toggle="modal"> Don't have
-                                                                                                account?</a>
+                                                                                        <div class="col-lg-12">
+                                                                                            <label>Password*</label>
+                                                                                            <input
+                                                                                                class="@error('password') is-invalid @enderror"
+                                                                                                type="password" placeholder="Password"
+                                                                                                name="password" id="password" required>
+                                                                                            @error('password')
+                                                                                                <div class="invalid-feedback">
+                                                                                                    {{ $message }}
+                                                                                                </div>
+                                                                                            @enderror
                                                                                         </div>
-                                                                                    </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col"></div>
+                                                                                            <div class="col-sm-4 d-flex align-items-center">
+                                                                                                <input type="checkbox" id="remember_me" style="transform: scale(0.8); width: 16px; height: 16px; margin-right: 5px;">
+                                                                                                <label for="remember_me" style="margin: 0;">Remember me</label>
+                                                                                            </div>
+                                                                                            <div class="col"></div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                                            <div class="forgotton-password_info">
+                                                                                                <a href="#"> Forgot pasword?</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col"></div>
+                                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                                            <div class="forgotton-password_info">
+                                                                                                <a data-bs-target="#register"
+                                                                                                    data-bs-toggle="modal"> Don't have
+                                                                                                    account?</a>
+                                                                                            </div>
+                                                                                        </div>
 
+                                                                                        </div>
+                
+
+                                                                                        
+
+
+                                                                                        
+
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="modal-footer">
@@ -309,12 +495,13 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
                                                     </form>
 
                                                     <!-- Modal Register -->
 
                                                     <form action="/myregister" method="POST">
-                                                    @csrf
+                                                        @csrf
                                                         <div class="modal fade" id="register" data-bs-backdrop="static"
                                                             data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                                             aria-hidden="true">
@@ -331,10 +518,9 @@
                                                                             <div class="row">
                                                                                 <div class="col-md-6 col-12">
                                                                                     <label>First Name</label>
-                                                                                    <input
-                                                                                        class="@error('name') is-invalid @enderror"
-                                                                                        name="name" id="name"
-                                                                                        type="text" placeholder="First Name" required>
+                                                                                    <input class="@error('name') is-invalid @enderror"
+                                                                                        name="name" id="name" type="text"
+                                                                                        placeholder="First Name" required>
                                                                                     @error('name')
                                                                                         <div class="invalid-feedback">
                                                                                             {{ $message }}
@@ -411,8 +597,8 @@
                                                                                 </div>
                                                                                 <div class="col-md-12">
                                                                                     <label>Email</label>
-                                                                                    <input type="email" placeholder="Email"
-                                                                                        name="email" id="email"
+                                                                                    <input type="email" placeholder="Email" name="email"
+                                                                                        id="email"
                                                                                         class="@error('email') is-invalid @enderror"
                                                                                         required>
                                                                                     @error('email')
@@ -424,13 +610,12 @@
                                                                                 <div class="col-lg-12">
                                                                                     <label>Password*</label>
                                                                                     <div class="newsletter_subscribe">
-                                                                                        <input type="password"
-                                                                                            placeholder="Password"
-                                                                                            id="passwordInput"
-                                                                                            name="password">
+                                                                                        <input type="password" placeholder="Password"
+                                                                                            id="passwordInput" name="password">
                                                                                         {{-- <form id="mc-form">
                                                                                             <button type="button"
-                                                                                                onclick="togglePasswordVisibility()"><i class="pe-7s-look"></i></button>
+                                                                                                onclick="togglePasswordVisibility()"><i
+                                                                                                    class="pe-7s-look"></i></button>
                                                                                         </form> --}}
                                                                                     </div>
                                                                                 </div>
@@ -440,7 +625,7 @@
                                                                                     <div class="newsletter_subscribe">
                                                                                         <input type="confirmpassword"
                                                                                             placeholder="Confirm Password"
-                                                                                            id="confirmpasswordInput" 
+                                                                                            id="confirmpasswordInput"
                                                                                             name="confirmpassword">
                                                                                         {{-- <form id="mc-form">
                                                                                             <button type="button"

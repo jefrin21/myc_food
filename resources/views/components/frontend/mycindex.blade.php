@@ -229,7 +229,7 @@
                                         </div>
                                         <div class="modal-body">
                                             {{-- content login --}}
-                                            <form action="/mylogin" method="POST">
+                                            <form action="/mylogin" method="POST" class="myaccount-form">
                                                     @csrf
                                                     <div class="row d-flex justify-content-center">
                                                         <div class="">
