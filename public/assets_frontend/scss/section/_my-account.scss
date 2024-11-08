@@ -21,15 +21,15 @@
                 font-weight: 600;
                 padding: 10px 20px;
                 &.active {
-                    background: #fc7c7c;
-                    border-color: #fc7c7c;
+                    background: #ec613b;
+                    border-color: #ec613b;
                     color: #fff;
                     &:hover {
                         color: #fff;
                     }
                 }
                 &:hover {
-                    color: #fc7c7c;
+                    color: #ec613b;
                 }
             }
         }
@@ -52,7 +52,7 @@
             margin-bottom: 0;
             .account-order-id {
                 &:hover {
-                    color: #fc7c7c;
+                    color: #ec613b;
                 }
             }
             &.table-hover {
@@ -133,7 +133,7 @@
         a {
             font-size: 13px;
             &:hover {
-                color: #fc7c7c;
+                color: #ec613b;
             }
         }
     }

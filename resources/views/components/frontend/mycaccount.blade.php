@@ -93,7 +93,7 @@
         </div>
     @endif
     <!-- breadcrumbs area end -->
-    <div class="account-page-area">
+    <div class="account-page-area m-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -112,7 +112,7 @@
                             <li class="nav-item">
                                 <form action="/logout" method="POST">
                                     @csrf
-                                    <div class="form_input_btn mt-3">
+                                    <div class="form_input_btn mb-3 ">
                                         <button type="submit" class="btn btn-link">Logout
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-box-arrow-right ms-2" viewBox="0 0 16 16">

@@ -85,7 +85,7 @@
         margin-bottom: 26px;
         line-height: 1.4;
         font-size: 22px;
-        color: #e0e0e0;
+        color: #030202;
         @media #{$desktop-device} {}
         @media #{$tablet-device} {}
         @media #{$large-mobile} {}
@@ -102,7 +102,7 @@
     }
     & p {
         font-weight: 500;
-        color: #e0e0e0;
+        color: #030202;
         & a {
             color: $secondary_color;
         }
@@ -177,7 +177,7 @@
 
 .footer_contact_info_text {
     & p {
-        color: #e0e0e0;
+        color: #030202;
         font-weight: 500;
         @media #{$large-mobile} {
             font-size: 15px;
@@ -190,7 +190,7 @@
             & a {
                 font-weight: 500;
                 line-height: 26px;
-                color: #e0e0e0;
+                color: #030202;
                 &:hover {
                     color: $secondary_color;
                 }
@@ -215,7 +215,7 @@
             }
             & a {
                 line-height: 32px;
-                color: #e0e0e0;
+                color: #030202;
                 display: inline-block;
                 &:hover {
                     color: $secondary_color;
@@ -248,7 +248,7 @@
         text-align: center;
     }
     & p {
-        color: #e0e0e0;
+        color: #030202;
         text-transform: capitalize;
         @media #{$large-mobile} {
             font-size: 15px;
@@ -260,7 +260,7 @@
             }
         }
         & i {
-            color: #fc7c7c;
+            color: #ec613b;
             font-size: 18px;
         }
     }
@@ -281,7 +281,7 @@
     }
     & p {
         font-weight: 500;
-        color: #e0e0e0;
+        color: #030202;
         & a {
             color: $secondary_color;
         }
