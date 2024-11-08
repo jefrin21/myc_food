@@ -98,6 +98,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
+                    @if (auth()->user())
                         <li class="nav-item">
                             <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
                                 href="#account-dashboard" role="tab" aria-controls="account-dashboard"
@@ -123,6 +124,17 @@
                         </div>
                         </form>
                         </li>
+                    @else
+                    <li class="nav-item">
+                            <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
+                                href="#account-dashboard" role="tab" aria-controls="account-dashboard"
+                                aria-selected="true">Account Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders"
+                                role="tab" aria-controls="account-orders" aria-selected="false">History</a>
+                        </li>
+                    @endif
                     </ul>
                 </div>
                 <div class="col-lg-9">
