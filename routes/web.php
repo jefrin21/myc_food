@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\OrderController;
@@ -96,7 +97,7 @@ Route::get('/home', function () {
 
 Route::get('/account', function () {
     return view('components.frontend.mycaccount');
-});
+})->name('account');
 
 Route::get('/cart', function () {
     return view('components.frontend.myccart');
@@ -132,3 +133,15 @@ Route::post('/mylogin',[LoginController::class,'authentication']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/myregister',[RegisterController::class,'store']);
 Route::resource('/edit',EditController::class);
+
+// =====================================================================================================================
+
+Route::post('/addToCart',[CartController::class,'addtocart']);
+Route::get('/cart', [CartController::class, 'showcart']);
+Route::delete('/hapuscart/{id}',[CartController::class,'hapuscart']);
+
+
+
+// =================================================================================================================
+
+Route::put('/editprofile/{id}',[EditController::class,'update']);

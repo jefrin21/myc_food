@@ -4,62 +4,59 @@ namespace App\Http\Controllers;
 
 use App\Models\order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 
 class CartController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    public function addtocart(Request $request){
+        
+      $cart=Session::get('cart',[]);
+
+        if($request->filled('jenispaket1')){
+            $cart[]=[
+            'id' =>uniqid(),
+            'tanggal' =>$request->input('tanggalpemesanan'),
+            'paket'=>'Lunch',
+            'jenispaket' => $request->input('jenispaket1')
+            ];
+        }
+        if($request->filled('jenispaket2')){
+            $cart[]=[
+            'id'=>uniqid(),
+            'tanggal' =>$request->input('tanggalpemesanan'),
+            'paket'=>'Dinner',
+            'jenispaket' => $request->input('jenispaket2')
+            ];
+        }
+
+        Session::put('cart',$cart);
+        return redirect('/cart');
+    //  Session::flush();
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function showcart(){
+        $cart = Session::get('cart',[]);
+        return view ('components.frontend.myccart',['cart'=>$cart]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function hapuscart($id)
     {
-        //
+    
+   $cart = Session::get('cart', []);
+
+    // Loop dan hapus item berdasarkan ID
+    foreach ($cart as $key => $item) {
+        if ($item['id'] == $id) {
+            unset($cart[$key]); // Hapus item berdasarkan key
+            break;
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(order $order)
-    {
-        //
-    }
+    // Menggunakan array_values untuk merapikan indeks array setelah item dihapus
+    Session::put('cart', array_values($cart)); 
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(order $order)
-    {
-        //
+    return redirect('/cart')->with('message', 'Item berhasil dihapus.');
     }
 }

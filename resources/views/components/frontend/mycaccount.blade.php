@@ -178,13 +178,14 @@
                                             </div>
 
                                             <div class="single-input single-input-half">
-                                                <button class="btn custom-btn" type="submit" data-bs-toggle="modal"
+                                                <button class="btn custom-btn" data-bs-toggle="modal"
                                                 data-bs-target="#edit">
                                                     <span>EDIT INFORMATION</span>
                                                 </button>
-
+                                    </form>
+                                            
                                                 <!-- Modal Edit -->
-                                                 <form action="{{ route('edit.update', auth()->user() -> id) }}" method="POST">
+                                                 <form action="/editprofile/{{ auth()->user()->id }}" method="POST">
                                                     @csrf
                                                     @method('PUT')
                                                     <div class="modal fade" id="edit" data-bs-backdrop="static"
@@ -344,17 +345,14 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="submit"
-                                                                            class="btn custom-btn md-size">Update Information</button>
+                                                                        <button type="submit" class="btn custom-btn md-size">Update Information</button>
                                                                     </div>
-
                                                                 </div>
                                                             </div>
                                                         </div>
                                                  </form>
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="account-orders" role="tabpanel"

@@ -55,6 +55,8 @@
         "url": "Replace_with_your_site_URL"
         }
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 
 @endsection
@@ -82,16 +84,15 @@
     <!-- contact section start -->
     <div class="contact_page_section ">
         <div class="container">
+            <form action="/addToCart" method="POST">
+                @csrf
                 <div class="row">
                         <div class="contact_info_content d-flex justify-content-center" >
                             
                             <h2 class="pe-4">Pilih tanggal</h2>
                             
                             <div class="contact_search" >
-                                <form action="#" style="text-align: center;">
-                                    <input placeholder="Masukan tanggal penerimaan" type="text">
-                                    <button type="submit"><i class="pe-7s-date"></i></button>
-                                </form>
+                                    <input id="tanggalpemesanan" name="tanggalpemesanan" placeholder="Pilih tanggal pengambilan" type="text" required>
                             </div>
                             
                         </div>
@@ -99,13 +100,13 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-5 col-md-6 mb-4">
                             <div class="contact_form" data-bgimg="assets_frontend/img/others/contact-form-bg-shape.png">
-                                <h2>Lunch</h2>
+                                <h2 >Lunch</h2>
                                 <div class="country-select clearfix">
-                                    <select class="myniceselect nice-select wide" >
+                                    <select class="myniceselect nice-select wide" name="jenispaket1" id="jenispaket1" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="GoldA">Gold A</option>
-                                        <option value="GoldB">Gold B</option>
-                                        <option value="GoldC">Gold C</option>
+                                        <option value="paketA">Paket A</option>
+                                        <option value="paketB">Paket B</option>
+                                        <option value="paketC">Paket C</option>
                                     </select>
                                 </div>
                             </div>
@@ -114,11 +115,11 @@
                             <div class="contact_form" data-bgimg="assets_frontend/img/others/contact-form-bg-shape.png">
                                 <h2>Dinner</h2>
                                 <div class="country-select clearfix">
-                                    <select class="myniceselect nice-select wide" >
+                                    <select class="myniceselect nice-select wide" name="jenispaket2" id="jenispaket2" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="GoldA">Gold A</option>
-                                        <option value="GoldB">Gold B</option>
-                                        <option value="GoldC">Gold C</option>
+                                        <option value="paketA">Paket A</option>
+                                        <option value="paketB">Paket B</option>
+                                        <option value="paketC">Paket C</option>
                                     </select>
                                 </div>
                                 
@@ -126,9 +127,9 @@
                         </div>
                         <div class="form_input_btn d-flex justify-content-center mt-3">
                             <button type="submit" class="btn btn-link">Add to cart</button>
-                            <button type="submit" class="btn btn-link ms-3">Update cart</button>
                         </div>
                     </div>
+                    </form>
                     <div class="row mt-5">
                         <div class="cart-area">
                             <div class="container">
@@ -142,14 +143,16 @@
                                                             <th class="cart-product-name">Product</th>
                                                             <th class="product-price">Unit Price</th>
                                                             <th class="product-quantity">Quantity</th>
+                                                            <th class="product-quantity">package type</th>
                                                             <th class="product-subtotal">Total</th>
+                                                            <th class="product-subtotal">Tanggal Pengambilan</th>
                                                             <th class="product_remove">remove</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach ($cart as $carts )
                                                         <tr>
-    
-                                                            <td class="product-name"><a href="#">Products Name Here</a>
+                                                            <td class="product-name"><a href="#">{{ $carts['jenispaket'] }}</a>
                                                             </td>
                                                             <td class="product-price"><span class="amount">$22.00</span></td>
                                                             <td class="product_pro_button quantity">
@@ -157,49 +160,24 @@
                                                                     <input type="text" value="1">
                                                                 </div>
                                                             </td>
-                                                            <td class="product-subtotal"><span class="amount">$22.00</span></td>
+                                                            <td class="product-subtotal"><span class="amount">{{ $carts['paket'] }}</span></td>
+                                                            <td class="product-subtotal"><span class="amount">{{ $carts['jenispaket'] }}</span></td>
+                                                            <td class="product-subtotal"><span class="amount">{{ $carts['tanggal'] }}</span></td>
                                                             <td class="product_remove">
-                                                                <a href="#">
-                                                                    <i class="pe-7s-close" title="Remove"></i>
-                                                                </a>
+                                                                <form action="/hapuscart/{{ $carts['id'] }}" method="POST" >
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit" title="Remove">
+                                                                        <i class="pe-7s-close"></i>
+                                                                    </button>
+                                                                </form>
                                                             </td>
+                                                            {{-- @dd($carts); --}}
                                                         </tr>
-                                                        <tr>
-                                                            
-                                                            <td class="product-name"><a href="#">Products Name Here</a>
-                                                            </td>
-                                                            <td class="product-price"><span class="amount">$22.00</span></td>
-                                                            <td class="product_pro_button quantity">
-                                                                <div class="pro-qty border">
-                                                                    <input type="text" value="1">
-                                                                </div>
-                                                            </td>
-                                                            <td class="product-subtotal"><span class="amount">$22.00</span></td>
-                                                            <td class="product_remove">
-                                                                <a href="#">
-                                                                    <i class="pe-7s-close" title="Remove"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            
-                                                            <td class="product-name"><a href="#">Products Name Here</a>
-                                                            </td>
-                                                            <td class="product-price"><span class="amount">$22.00</span></td>
-                                                            <td class="product_pro_button quantity">
-                                                                <div class="pro-qty border">
-                                                                    <input type="text" value="1">
-                                                                </div>
-                                                            </td>
-                                                            <td class="product-subtotal"><span class="amount">$22.00</span></td>
-                                                            <td class="product_remove">
-                                                                <a href="#">
-                                                                    <i class="pe-7s-close" title="Remove"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
+                                                {{-- @dd($carts); --}}
                                                 
                                             </div>
                                             
@@ -241,5 +219,20 @@
 
     <!-- Main JS -->
     <script src="assets_frontend/js/main.js"></script>
+    <script>
+        flatpickr("#tanggalpemesanan", {
+        dateFormat: "Y-m-d", // Format tanggal
+        minDate: new Date().fp_incr(3), // Tiga hari ke depan dari hari ini
+        disable: [
+            function(date) {
+                // Menonaktifkan Sabtu (6) dan Minggu (0)
+                return (date.getDay() === 0 || date.getDay() === 6);
+            }
+        ],
+        locale: {
+            firstDayOfWeek: 1 // Atur agar minggu dimulai dari hari Senin
+        }
+    }); 
+    </script>
     @endsection
     </x-layout_frontend>  
