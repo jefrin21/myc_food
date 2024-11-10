@@ -92,9 +92,14 @@
                             <h2 class="pe-4">Pilih tanggal</h2>
                             
                             <div class="contact_search" >
-                                    <input id="tanggalpemesanan" name="tanggalpemesanan" placeholder="Pilih tanggal pengambilan" type="text" required>
+                                    <input id="tanggalpemesanan" name="tanggalpemesanan" placeholder="Pilih tanggal pengambilan" type="date" required>
+                                       @if (session()->has('tanggalpemesanan'))
+                                        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                                            <h6 class="text-danger"> {{ session('tanggalpemesanan') }}</h6>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    @endif
                             </div>
-                            
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
@@ -135,7 +140,6 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <form action="#">
                                             <div class="table-content">
                                                 <table class="table">
                                                     <thead>
@@ -152,9 +156,9 @@
                                                     <tbody>
                                                         @foreach ($cart as $carts )
                                                         <tr>
-                                                            <td class="product-name"><a href="#">{{ $carts['jenispaket'] }}</a>
+                                                            <td class="product-name">{{ $carts['jenispaket'] }}
                                                             </td>
-                                                            <td class="product-price"><span class="amount">$22.00</span></td>
+                                                            <td class="product-price"><span class="amount">{{ $carts['harga'] }}</span></td>
                                                             <td class="product_pro_button quantity">
                                                                 <div class="pro-qty border">
                                                                     <input type="text" value="1">
@@ -164,35 +168,49 @@
                                                             <td class="product-subtotal"><span class="amount">{{ $carts['jenispaket'] }}</span></td>
                                                             <td class="product-subtotal"><span class="amount">{{ $carts['tanggal'] }}</span></td>
                                                             <td class="product_remove">
-                                                                <form action="/hapuscart/{{ $carts['id'] }}" method="POST" >
+                                                                <form action="/hapuscart/{{ $carts['id'] }}" method="POST" id="deletepesanan" >
                                                                     @csrf
                                                                     @method('DELETE')
-                                                                    <button type="submit" title="Remove">
+                                                                    <button type="button" title="Remove" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                                                         <i class="pe-7s-close"></i>
                                                                     </button>
                                                                 </form>
                                                             </td>
-                                                            {{-- @dd($carts); --}}
                                                         </tr>
                                                         @endforeach
                                                     </tbody>
                                                 </table>
-                                                {{-- @dd($carts); --}}
-                                                
                                             </div>
-                                            
-                                            
-                                        </form>
                                     </div>
+                                    {{-- modal delete  --}}
+                                    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah Anda yakin ingin menghapus pesanan ini?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                    <button type="submit" class="btn btn-danger" form="deletepesanan">Hapus</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- modal delete  --}}
                                     <div class="form_input_btn d-flex justify-content-end mt-3">
-                                        <button type="submit" class="btn btn-link"><a href="checkout">Checkout</a></button>
+                                        <form action="/checkout" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-link">Checkout</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-              
             </div>
         </div>
     </div>
@@ -221,16 +239,15 @@
     <script src="assets_frontend/js/main.js"></script>
     <script>
         flatpickr("#tanggalpemesanan", {
-        dateFormat: "Y-m-d", // Format tanggal
-        minDate: new Date().fp_incr(3), // Tiga hari ke depan dari hari ini
+        dateFormat: "Y-m-d",
+        minDate: new Date().fp_incr(3), 
         disable: [
             function(date) {
-                // Menonaktifkan Sabtu (6) dan Minggu (0)
                 return (date.getDay() === 0 || date.getDay() === 6);
             }
         ],
         locale: {
-            firstDayOfWeek: 1 // Atur agar minggu dimulai dari hari Senin
+            firstDayOfWeek: 1 
         }
     }); 
     </script>

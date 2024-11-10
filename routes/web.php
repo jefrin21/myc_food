@@ -8,6 +8,7 @@ use App\Http\Controllers\KonfirmasiOrderController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WeeklyController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 
@@ -97,11 +98,11 @@ Route::get('/home', function () {
 
 Route::get('/account', function () {
     return view('components.frontend.mycaccount');
-})->name('account');
+})->name('login')->middleware('guest');
 
 Route::get('/cart', function () {
     return view('components.frontend.myccart');
-});
+})->middleware('auth');
 
 Route::get('/checkout', function () {
     return view('components.frontend.myccheckout');
@@ -115,9 +116,9 @@ Route::get('/invoice', function () {
     return view('components.frontend.mycinvoice');
 });
 
-Route::get('/login', function () {
-    return view('components.frontend.myclogin');
-})->name('login')->middleware('guest');
+// Route::get('/login', function () {
+//     return view('components.frontend.myclogin');
+// })->name('login')->middleware('guest');
 
 Route::get('/register', function () {
     return view('components.frontend.mycregister');
@@ -137,8 +138,9 @@ Route::resource('/edit',EditController::class);
 // =====================================================================================================================
 
 Route::post('/addToCart',[CartController::class,'addtocart']);
-Route::get('/cart', [CartController::class, 'showcart']);
+Route::get('/cart', [CartController::class, 'showcart'])->middleware('auth');
 Route::delete('/hapuscart/{id}',[CartController::class,'hapuscart']);
+Route::post('/checkout',[CartController::class,'pagecheckout']);
 
 
 
