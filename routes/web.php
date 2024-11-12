@@ -98,7 +98,7 @@ Route::get('/home', function () {
 
 Route::get('/account', function () {
     return view('components.frontend.mycaccount');
-})->name('login')->middleware('guest');
+})->name('login');
 
 Route::get('/cart', function () {
     return view('components.frontend.myccart');
@@ -141,6 +141,7 @@ Route::post('/addToCart',[CartController::class,'addtocart']);
 Route::get('/cart', [CartController::class, 'showcart'])->middleware('auth');
 Route::delete('/hapuscart/{id}',[CartController::class,'hapuscart']);
 Route::post('/checkout',[CartController::class,'pagecheckout']);
+Route::post('/confirmorder',[CartController::class,'confirm']);
 
 
 

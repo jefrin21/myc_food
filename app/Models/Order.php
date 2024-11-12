@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Order extends Model
 {
     use HasFactory;
-    protected $guarded ='id';
+    protected $guarded =[];
     public function details():HasMany{
         return $this->hasMany(DetailOrder::class, 'order_id','id');
     }

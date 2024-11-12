@@ -85,20 +85,27 @@
     <div class="contact_page_section ">
         <div class="container">
             <form action="/addToCart" method="POST">
-                @csrf
-                <div class="row">
-                        <div class="contact_info_content d-flex justify-content-center" >
-                            
-                            <h2 class="pe-4">Pilih tanggal</h2>
-                            
-                            <div class="contact_search" >
-                                    <input id="tanggalpemesanan" name="tanggalpemesanan" placeholder="Pilih tanggal pengambilan" type="date" required>
-                                       @if (session()->has('tanggalpemesanan'))
+                        @csrf
+                        @if (session()->has('tanggalpemesanan'))
                                         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
                                             <h6 class="text-danger"> {{ session('tanggalpemesanan') }}</h6>
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     @endif
+                        @if (session()->has('success'))
+                                        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                                            <h6 class="text-success"> {{ session('success') }}</h6>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    @endif
+                        <div class="row">
+                        <div class="contact_info_content d-flex justify-content-center" >
+                            
+                            <h2 class="pe-4">Pilih tanggal</h2>
+                            {{-- <i class="bi bi-calendar-month fs-2" id="tanggalpemesanan" name="tanggalpemesanan"></i> --}}
+                            <div class="contact_search" >
+                                    <input id="tanggalpemesanan" name="tanggalpemesanan" type="date" required>
+                                      
                             </div>
                         </div>
                     </div>
@@ -109,9 +116,9 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket1" id="jenispaket1" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="paketA">Paket A</option>
-                                        <option value="paketB">Paket B</option>
-                                        <option value="paketC">Paket C</option>
+                                        <option value="paket A">Paket A</option>
+                                        <option value="paket B">Paket B</option>
+                                        <option value="paket C">Paket C</option>
                                     </select>
                                 </div>
                             </div>
@@ -122,9 +129,9 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket2" id="jenispaket2" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="paketA">Paket A</option>
-                                        <option value="paketB">Paket B</option>
-                                        <option value="paketC">Paket C</option>
+                                        <option value="paket A">Paket A</option>
+                                        <option value="paket B">Paket B</option>
+                                        <option value="paket C">Paket C</option>
                                     </select>
                                 </div>
                                 
@@ -146,7 +153,7 @@
                                                         <tr>
                                                             <th class="cart-product-name">Product</th>
                                                             <th class="product-price">Unit Price</th>
-                                                            <th class="product-quantity">Quantity</th>
+                                                            {{-- <th class="product-quantity">Quantity</th> --}}
                                                             <th class="product-quantity">package type</th>
                                                             <th class="product-subtotal">Total</th>
                                                             <th class="product-subtotal">Tanggal Pengambilan</th>
@@ -158,15 +165,15 @@
                                                         <tr>
                                                             <td class="product-name">{{ $carts['jenispaket'] }}
                                                             </td>
-                                                            <td class="product-price"><span class="amount">{{ $carts['harga'] }}</span></td>
-                                                            <td class="product_pro_button quantity">
+                                                            <td class="product-price"><span class="amount">Rp.{{ number_format($carts['harga'], 0, ',', '.') }}</span></td>
+                                                            {{-- <td class="product_pro_button quantity">
                                                                 <div class="pro-qty border">
                                                                     <input type="text" value="1">
                                                                 </div>
-                                                            </td>
+                                                            </td> --}}
                                                             <td class="product-subtotal"><span class="amount">{{ $carts['paket'] }}</span></td>
                                                             <td class="product-subtotal"><span class="amount">{{ $carts['jenispaket'] }}</span></td>
-                                                            <td class="product-subtotal"><span class="amount">{{ $carts['tanggal'] }}</span></td>
+                                                            <td class="product-subtotal"><span class="amount">{{ \Carbon\Carbon::parse($carts['tanggal'])->format('d F Y') }}</span></td>
                                                             <td class="product_remove">
                                                                 <form action="/hapuscart/{{ $carts['id'] }}" method="POST" id="deletepesanan" >
                                                                     @csrf
@@ -201,10 +208,29 @@
                                         </div>
                                     </div>
                                     {{-- modal delete  --}}
+                                    {{-- modal konfirmasi cekout  --}}
+                                    <div class="modal fade" id="confirmcheckout" tabindex="-1" aria-labelledby="confirmcheckoutpesanan" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmcheckoutpesanan">Konfirmasi Pesanan</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah Anda yakin Pesanan Sudah Sesuai?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                    <button type="submit" class="btn btn-success" form="checkoutform">Lanjut</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- modal konfirmasi cekout  --}}
                                     <div class="form_input_btn d-flex justify-content-end mt-3">
-                                        <form action="/checkout" method="POST">
+                                        <form action="/checkout" method="POST" id="checkoutform">
                                         @csrf
-                                        <button type="submit" class="btn btn-link">Checkout</button>
+                                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#confirmcheckout">Checkout</button>
                                         </form>
                                     </div>
                                 </div>

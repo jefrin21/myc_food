@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetailOrder;
 use App\Models\order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class CartController extends Controller
     public function addtocart(Request $request){
         
         if(!$request->filled('tanggalpemesanan')){
-            return redirect()->back()->with(['tanggalpemesanan'=>'Tanggal Pemesanan Harus Dipilih']);
+            return redirect()->back()->with(['tanggalpemesanan'=>'Tanggal Pengambilan Harus Dipilih']);
         }
 
       $cart=Session::get('cart',[]);
@@ -44,6 +45,7 @@ class CartController extends Controller
         }
 
         Session::put('cart',$cart);
+
         return redirect('/cart');
     //  Session::flush();
 
@@ -73,21 +75,65 @@ class CartController extends Controller
 
     public function pagecheckout(){
 
-       if(auth()->user()) {
+        $cart = Session::get('cart', []);
 
-        $statusMahasiswa = auth()->user()->lokasi_dorm_customer;
+        $harga = 0;
 
-        if ($statusMahasiswa === 'MYC-Dorm') {
-            $harga = 10000;
-        } else {
-            $harga = 20000; // Misalnya harga normal 20.000
+        foreach($cart as $item){
+            $harga += $item['harga'];
         }
 
-        return view('components.frontend.myccheckout', compact('harga'));
+
+        return view('components.frontend.myccheckout',['harga'=>$harga,'cart'=>$cart]);
     }
 
-    // return redirect()->route('login');
+    public function confirm(Request $request){
+        $request->validate([
+            'imageUpload' =>'required|image|mimes:jpeg,png,jpg|max:5120'
+        ]);
 
-        return view('components.frontend.myccheckout');
+        if($request->hasFile('imageUpload')){
+            $image = $request->file('imageUpload');
+            $imagename = time(). '.'. $image->getClientOriginalExtension();
+            $image->move(public_path('images'),$imagename);
+        }
+
+         $cart = Session::get('cart', []);
+        
+         $harga = 0;
+         foreach($cart as $item){
+            $harga += $item['harga'];
+        }
+
+        $user = auth()->user();
+
+        $tanggalPemesanan = now()->format('d'); 
+        $bulan = now()->format('m'); 
+        $namaUser = $user->name; 
+        $randomnum =rand(10, 9999);
+        $kupon = $randomnum. '-'. $tanggalPemesanan . '-' . $bulan . '-' . $namaUser;
+
+        $order = Order::create([
+        'user_id' => $user->id, 
+        'jumlah_pesanan' => count($cart),
+        'kupon_pesanan' =>$kupon,
+        'total_harga' => $harga, 
+        'bukti_pembayaran' => $imagename, 
+        'status_pesanan' => 'diproses', 
+    ]);
+     
+        foreach($cart as $carts){
+           $cek = DetailOrder::create([
+                'order_id' =>$order->id,
+                'jenis_paket_pesanan' =>$carts['paket'],
+                'nama_paket_pesanan'=>$carts['jenispaket'],
+                'harga_paket_pesanan'=>$carts['harga'],
+                'tanggal_pengambilan_pesanan'=>$carts['tanggal']
+            ]);
+        }
+
+        Session::forget('cart');
+        return redirect('/cart')->with('success','Pesanan Berhasil, Terima Kasih');
+      
     }
 }
