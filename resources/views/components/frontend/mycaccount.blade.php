@@ -375,7 +375,7 @@
                                                         <BR> LUNCH GOLD B</BR>
                                                     </td>
                                                     <td>$162.00 </td>
-                                                    <td><a href="mycinvoice.html"
+                                                    <td><a href="/invoice"
                                                             class="btn btn-secondary btn-primary-hover"><span>View</span></a>
                                                     </td>
                                                 </tr>
@@ -385,7 +385,7 @@
                                                         <BR> LUNCH GOLD B</BR>
                                                     </td>
                                                     <td>$162.00 </td>
-                                                    <td><a href="mycinvoice.html"
+                                                    <td><a href="/invoice"
                                                             class="btn btn-secondary btn-primary-hover"><span>View</span></a>
                                                     </td>
                                                 </tr>

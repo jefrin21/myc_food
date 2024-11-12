@@ -10,21 +10,24 @@
                             </div>
                             <!--main menu start-->
                             <div class="main_menu d-none d-lg-block">
-                                <nav>
-                                    <ul class="d-flex">
-                                        <li><a class="active" href="home">Home</a>
-                                           
-                                        </li>
-                                        <li>
-                                            <a href="cart">Order</a>
-                                        </li>
-                                        <li><a href="about">FAQ</a>  
-                                        </li>
-                                
-                                        <li><a href="orders">My Order</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                                    <nav>
+                                        <ul class="d-flex">
+                                            <li>
+                                                <a class="{{ Request::is('home') ? 'active' : '' }}" href="home">Home</a>
+                                            </li>
+                                            <li>
+                                                <a class="{{ Request::is('cart') ? 'active' : '' }}" href="cart">Order</a>
+                                            </li>
+                                            <li>
+                                                <a class="{{ Request::is('about') ? 'active' : '' }}" href="about">FAQ</a>
+                                            </li>
+                                            <li>
+                                                <a class="{{ Request::is('orders') ? 'active' : '' }}" href="orders">My Order</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
                             <!--main menu end-->
                             <div>
                                 <div class="header_content d-flex justify-content-between align-items-center">
