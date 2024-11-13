@@ -110,10 +110,10 @@
                             </li>
 
                             <li class="nav-item">
-                                <form action="/logout" method="POST">
+                                <form action="/logout" method="POST" id="logoutform">
                                     @csrf
                                     <div class="form_input_btn mb-3 ">
-                                        <button type="submit" class="btn btn-link">Logout
+                                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#logoutconfrim">Logout
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-box-arrow-right ms-2" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd"
@@ -122,11 +122,28 @@
                                                     d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
                                             </svg>
                                         </button>
-
-
                                     </div>
                                 </form>
                             </li>
+                            {{-- modal konfirmasi logout  --}}
+                                    <div class="modal fade" id="logoutconfrim" tabindex="-1" aria-labelledby="confirmlogout" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmlogout">Log Out</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Anda Yakin Ingin Log Out?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                    <button type="submit" class="btn btn-success" form="logoutform">Lanjut</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{-- modal konfirmasi logout  --}}  
                         @else
                             <li class="nav-item">
                                 <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab"
@@ -476,13 +493,6 @@
                                                                                         </div>
 
                                                                                         </div>
-                
-
-                                                                                        
-
-
-                                                                                        
-
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

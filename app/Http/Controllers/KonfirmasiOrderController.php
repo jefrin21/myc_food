@@ -16,17 +16,16 @@ class KonfirmasiOrderController extends Controller
         $order = Order::with('details')->findOrFail($id);
 
         $data = [
-            'customer_name' => $customer->customer->nama_customer,
+            'customer_name' => $customer->customer->name,
             'total_price' => $order->total_harga,
             'kupon_pesanan'=>$order->kupon_pesanan,
             'harga_total'=>$order->total_harga,
-            'tanggal_pembelian' =>$order->tanggal_order,
+            'tanggal_pembelian' =>$order->created_at,
            'pesanan' => $order->details->map(function ($detail) {
             $formattedDate = \Carbon\Carbon::parse($detail->tanggal_pengambilan_pesanan)->format('d F Y');
             // return  "[Tanggal Pengambilan] : {$formattedDate}  [nama pesanan] : {$detail->jenis_makanan}";
             return [
             'tanggal_pengambilan' => $formattedDate,
-            'nama_pesanan' => $detail->jenis_makanan,
             'jenis_paket' => $detail->jenis_paket_pesanan,
             'kategori' => $detail->nama_paket_pesanan,
             'harga' => $detail->harga_paket_pesanan,
@@ -40,7 +39,7 @@ class KonfirmasiOrderController extends Controller
         $pdfcontent =$pdf->output();
 
         Mail::raw('Berikut adalah invoic anda', function ($message) use ($customer,$pdfcontent){
-            $message->to($customer->customer->email_customer)
+            $message->to($customer->customer->email)
             ->subject('Invoice Pesanan')
             ->attachData($pdfcontent,"invoice_order.pdf",[
                 'mime'=>'application/pdf',

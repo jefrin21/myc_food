@@ -126,7 +126,7 @@ Route::get('/register', function () {
 
 Route::get('/orders', function () {
     return view('components.frontend.mycorders');
-});
+})->middleware('auth');
 // ================================================================== routes frondend ===================================
 
 

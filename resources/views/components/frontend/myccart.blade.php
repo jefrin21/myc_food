@@ -98,6 +98,12 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     @endif
+                        @if (session()->has('gagal'))
+                                        <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                                            <h6 class="text-warning"> {{ session('gagal') }}</h6>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    @endif
                         <div class="row">
                         <div class="contact_info_content d-flex justify-content-center" >
                             

@@ -60,7 +60,6 @@
                                                 <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama Makanan</th>
                                                     <th>Jenis Paket Pesanan</th>
                                                     <th>Nama Paket Pesanan</th>
                                                     <th>Tanggal Pengambilan</th>
@@ -71,7 +70,6 @@
                                                 @foreach ( $orders->details as $order )
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $order->jenis_makanan }}</td>
                                                     <td>{{ $order->jenis_paket_pesanan }}</td>
                                                     <td>{{ $order->nama_paket_pesanan }}</td>
                                                     <td> {{ \Carbon\Carbon::parse($order->tanggal_pengambilan_pesanan)->format('d F Y') }}</td>
