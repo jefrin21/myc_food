@@ -71,11 +71,15 @@
                                                 @foreach ( $orders as $order )
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ Str::words($order->customer->nama_customer,2) }}</td>
+                                                    <td>{{ Str::words($order->customer->name,2) }}</td>
                                                     <td>{{ $order->jumlah_pesanan }}</td>
                                                     <td>{{ $order->total_harga }}</td>
                                                     <td>{{ $order->created_at->format('d F Y') }}</td>
-                                                    <td>{{ $order->status_customer }}</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#buktipembayaran">
+                                                            <i class="bi bi-eye">tes</i> 
+                                                        </button>
+                                                    </td>
                                                     <td>{{ $order->status_pesanan }}</td>
                                                     <td class="text-center">
                                                       <a href="/detail-order/{{ $order->id }}">  <button type="button" class="btn-primary " >
@@ -84,9 +88,25 @@
                                                     </a>
                                                     </td>
                                                 </tr>
+                                                 {{-- modal img pembayaran --}}
+                                                <div class="modal fade" id="buktipembayaran" tabindex="-1" aria-labelledby="cekpembayaran" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="cekpembayaran">Konfirmasi Pembayaran</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="{{ asset('images/' .$order->bukti_pembayaran) }}" alt="Bukti Pembayaran" class="img-fluid">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{-- modal img pembayaran  --}}  
                                                 @endforeach
                                                 </tbody>
                                             </table>
+                                            
                                         </div>
                                     </div>
                                 </div> <!-- end col -->

@@ -60,7 +60,7 @@
                                     <div class="col-6">
                                         <h3 class="mb-3">BILLED TO :</h3>
                                          <h6>{{ $customer_name }}
-                                                <br> {{ $tanggal_pembelian }}
+                                                <br> {{ \Carbon\Carbon::parse($tanggal_pembelian)->format('d F Y') }}
                                                 <br> MYC Dorm, E307
                                             </h6>
                                     </div>
@@ -71,7 +71,6 @@
                                         <thead>
                                             <tr>
                                                <th class="cart-product-name">Tanggal Pengambilan</th>
-                                                <th class="cart-product-name">Nama Makanan</th>
                                                 <th class="cart-product-name">Jenis Paket</th>
                                                 <th class="cart-product-name">Kategori</th>
                                                 <th class="cart-product-total">harga</th>
@@ -82,7 +81,6 @@
                                                             
                                                         <tr>
                                                             <td class="cart-product-name">{{ $detail['tanggal_pengambilan'] }}</td>
-                                                            <td class="cart-product-name">{{ $detail['nama_pesanan'] }}</td>
                                                             <td class="cart-product-name"> {{ $detail['jenis_paket'] }}</td>
                                                             <td class="cart-product-name">{{ $detail['kategori'] }} </td>
                                                             <td class="cart-product-total">{{ $detail['harga'] }}</td>
@@ -94,7 +92,7 @@
                                             
                                             <tr>
                                                 <th>Order Total</th>
-                                                <td colspan="3"></td>
+                                                <td colspan="2"></td>
                                                 <td>{{ $harga_total }}</td>
                                             </tr>
                                         </tfoot>
@@ -110,7 +108,7 @@
                                     <div class="row mt-5">
                                         <div class="col-6">
                                             <h3 class="mb-3">PAYMENT INFORMATION :</h3>
-                                            <h6>TRANSFER BANK<br>Account Name: Catherine Lauren<br>Date: 26 October 2024</h6>
+                                            <h6>TRANSFER BANK<br>Account Name: Catherine Lauren<br>Date: {{ \Carbon\Carbon::parse($tanggal_pembelian)->format('d F Y') }}</h6>
                                         </div>
                                     </div>
                                 </div>

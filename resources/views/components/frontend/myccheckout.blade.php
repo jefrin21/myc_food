@@ -184,7 +184,7 @@
                                                 </a>
                                             </h5>
                                             <div class="mb-3">   
-                                                <form action="/confirmorder" method="POST" enctype="multipart/form-data">       
+                                                <form action="/confirmorder" method="POST" enctype="multipart/form-data" id="confirmform">       
                                                 @csrf     
                                                 <input class="form-control @error('imageUpload') is-invalid @enderror" type="file" id="formFile" name="imageUpload" required>
                                                 @error('imageUpload')
@@ -203,10 +203,29 @@
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                     <a  data-wow-delay="0.3s" data-wow-duration="1.3s"
-                                     ><button type="submit" class="btn btn-link wow fadeInUp ">Confirm Order</button> </a>   
+                                     ><button type="button" class="btn btn-link wow fadeInUp " data-bs-toggle="modal" data-bs-target="#confirmorder">Confirm Order</button> </a>   
                                 </div>
                             </div>
-                            </form>   
+                            </form> 
+                            {{-- modal konfirmasi cekout  --}}
+                                    <div class="modal fade" id="confirmorder" tabindex="-1" aria-labelledby="confirmcheckoutpesanan" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmcheckoutpesanan">Konfirmasi Pembayaran</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah Anda yakin Pembayaran Sudah Sesuai?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                    <button type="submit" class="btn btn-success" form="confirmform">Kirim</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- modal konfirmasi cekout  --}}  
                             </div>
                         </div>
                     </div>

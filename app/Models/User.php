@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $guarded =[];
 
     public function Orders(): HasMany{
-        return $this->hasMany(Order::class, 'customer_id','id');
+        return $this->hasMany(Order::class, 'user_id','id');
     }
 
     /**

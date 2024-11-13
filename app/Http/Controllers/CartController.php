@@ -77,6 +77,8 @@ class CartController extends Controller
 
         $cart = Session::get('cart', []);
 
+        if(Session::has('cart') && !empty(Session::get('cart'))){
+
         $harga = 0;
 
         foreach($cart as $item){
@@ -85,6 +87,10 @@ class CartController extends Controller
 
 
         return view('components.frontend.myccheckout',['harga'=>$harga,'cart'=>$cart]);
+
+         } else{
+            return redirect()->back()->with('kosong','Cart kosong silahkan pilih menu terlebih dahulu');
+         }
     }
 
     public function confirm(Request $request){
