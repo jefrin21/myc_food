@@ -28,22 +28,94 @@
             <!-- Start right Content here -->
             <div class="page-content-wrapper ">
 
-<div class="container-fluid">
+                        <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="page-title-box">
-                <div class="btn-group float-right">
-                    <ol class="breadcrumb hide-phone p-0 m-0">
-                        <li class="breadcrumb-item"><a href="#">Pesanan Harian</a></li>
-                        <li class="breadcrumb-item active">Data Pesanan Harian</li>
-                    </ol>
-                </div>
-                <h4 class="page-title">Datatable</h4>
-            </div>
-        </div>
-    </div>
                             <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="page-title-box">
+                                        <div class="btn-group float-right">
+                                            <ol class="breadcrumb hide-phone p-0 m-0">
+                                                <li class="breadcrumb-item"><a href="#">Pesanan Harian</a></li>
+                                                <li class="breadcrumb-item active">Data Pesanan Harian</li>
+                                            </ol>
+                                        </div>
+                                        <h4 class="page-title">Datatable</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body" >
+            
+                                            <h4 class="mt-0 header-title">Buttons example</h4>
+                                           <div class="table-responsive">
+                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <thead class="text-center">
+                                                <tr>
+                                                        <th rowspan="2"  style="text-align: center; vertical-align: middle;">Tanggal</th>
+                                                        <th colspan="2">Silver A</th>
+                                                        <th colspan="2">Silver B</th>
+                                                        <th colspan="2">Gold A</th>
+                                                        <th colspan="2">Gold B</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                    </tr>
+                                                </thead>
+                                                    {{-- @forelse ($weeklys as $order)
+                                                        <tr>
+                                                            <td>{{ $order->tanggal_pengambilan_pesanan }}</td>
+                                                            <td>{{ $order->silver_a }}</td>
+                                                            <td>{{ $order->silver_b }}</td>
+                                                            <td>{{ $order->gold_a }}</td>
+                                                            <td>{{ $order->gold_b }}</td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="5" class="text-center">Tidak ada data untuk ditampilkan</td>
+                                                        </tr>
+                                                    @endforelse --}}
+                                                    <tr>
+                                                        <td>2024-11-15</td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2024-11-15</td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                        <td><small>1.Gedung-G = 10 ,<br> 2. GBFK = 10 , <br> 3. Grandstand = 10 , <br> 4. Paddcok = 10 , <br> 5. MYC-Dorm = 10</small></td>
+                                                    </tr>
+                                                <tbody>
+                                          
+                                                </tbody>
+                                            </table>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            {{-- <div class="row">
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body">
@@ -52,15 +124,25 @@
                                             <p class="text-muted mb-4 font-13">Tabel "Detail Pesanan Makanan Weekly" mencatat pesanan mingguan, termasuk item menu, jumlah, harga, total, dan tanggal pengiriman untuk memantau penjualan secara rutin.
                                             </p>
             
-                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap text-center" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead>
-                                                <tr>
-                                                    <th>Tanggal</th>
-                                                    <th>Silver A</th>
-                                                    <th>Silver B</th>
-                                                    <th>Gold A</th>
-                                                    <th>Gold B</th>
-                                                </tr>
+                                                    <tr>
+                                                        <th rowspan="2" style="text-align: center; vertical-align: middle;">Tanggal</th>
+                                                        <th colspan="2">Silver A</th>
+                                                        <th colspan="2">Silver B</th>
+                                                        <th colspan="2">Gold A</th>
+                                                        <th colspan="2">Gold B</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                        <th>Lunch</th>
+                                                        <th>Dinner</th>
+                                                    </tr>
                                                 </thead>
             
             
@@ -85,7 +167,7 @@
                                         </div>
                                     </div>
                                 </div> <!-- end col -->
-                            </div> <!-- end row -->
+                            </div> <!-- end row --> --}}
 
                         </div><!-- container -->
 
