@@ -43,6 +43,29 @@
     min-width: 600px; /* Set a minimum width for the table */
 }
 
+.contact_search {
+    position: relative;
+    width: auto;
+    max-width: 200px; /* Adjust width as needed */
+}
+
+.contact_search input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Add space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact_search svg.icon {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust spacing */
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent the icon from blocking input clicks */
+    color: #6c757d; /* Adjust icon color */
+}
 /*  01. Theme default CSS
 /*----------------------------------------*/
 /*-- Google Font --*/

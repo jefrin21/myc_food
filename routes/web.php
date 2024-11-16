@@ -74,6 +74,10 @@ Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
 });
 
+Route::get('/invoiceback', function () {
+    return view('components.backend.invoice');
+});
+
 Route::get('/tables-datatable-pesanan',[OrderController::class,'index'])->name('tables-datatable-pesanan');
 Route::get('/order-details/{id}',[OrderController::class,'detailsOrder']);
 Route::get('/detail-order/{id}',[DetailOrderController::class,'detailOrder']);
