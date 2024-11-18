@@ -355,45 +355,52 @@
                                         </div>
                                 </div>
                             </div>
+                            <form action="{{ route('history') }}" method="GET">
+                                @csrf
+                                
                             <div class="tab-pane fade" id="account-orders" role="tabpanel"
                                 aria-labelledby="account-orders-tab">
                                 <div class="myaccount-orders">
                                     <h4 class="small-title">MY ORDERS</h4>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover">
-                                            <tbody>
-                                                <tr>
+                                            <thead>
+                                            <tr>
 
-                                                    <th>ORDER DATE</th>
-                                                    <th>PACKAGE</th>
-                                                    <th>TOTAL</th>
-                                                    <th>INVOICE</th>
+                                                <th>Tanggal Order</th>
+                                                <th>Nama Pesanan</th>
+                                                <th>Total Harga</th>
+                                                <th>INVOICE</th>
                                                 </tr>
-                                                <tr>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>LUNCH GOLD A
-                                                        <BR> LUNCH GOLD B</BR>
-                                                    </td>
-                                                    <td>$162.00 </td>
-                                                    <td><a href="/invoice"
-                                                            class="btn btn-secondary btn-primary-hover"><span>View</span></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mar 27, 2019</td>
-                                                    <td>LUNCH GOLD A
-                                                        <BR> LUNCH GOLD B</BR>
-                                                    </td>
-                                                    <td>$162.00 </td>
-                                                    <td><a href="/invoice"
-                                                            class="btn btn-secondary btn-primary-hover"><span>View</span></a>
-                                                    </td>
-                                                </tr>
+
+                                            </thead>
+                                                
+                                                <tbody>
+                                                @foreach ($orders as $key => $order)
+                                                    <tr>
+                                                        <td>{{ $order->created_at->format('d F Y') }}</td>
+                                                        <td>
+                                                            @foreach ($order->detailOrders as $detail)
+                                                                {{ $detail->jenis_paket_pesanan }} - {{ $detail->nama_paket_pesanan }}<br>
+                                                            @endforeach
+                                                        </td>
+                                                        <td>{{ number_format($order->total_harga, 0, ',', '.') }}</td>
+                                                        <td>
+                                                            <a href="/invoice/{{ $order->id }}" class="btn btn-secondary btn-primary-hover">
+                                                                <span>View</span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
+
+                            </form>
+                           
 
                         @else
                                         <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"

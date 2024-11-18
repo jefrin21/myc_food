@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\EditController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
 use App\Http\Controllers\LoginController;
@@ -138,6 +139,8 @@ Route::post('/mylogin',[LoginController::class,'authentication']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/myregister',[RegisterController::class,'store']);
 Route::resource('/edit',EditController::class);
+Route::get('/history', [HistoryController::class, 'showhistory'])->middleware('auth')->name('history');
+
 
 // =====================================================================================================================
 

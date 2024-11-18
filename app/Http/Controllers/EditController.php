@@ -41,7 +41,7 @@ class EditController extends Controller
             'password' => $request->filled('password') ? bcrypt($request->input('password')) : $user->password,
         ]);
       session()->flash('success', 'Data berhasil di ubah');
-        return redirect()->route('account');
+        return redirect()->route('home');
     }
     
 
