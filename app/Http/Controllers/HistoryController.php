@@ -8,20 +8,24 @@ use Illuminate\Support\Facades\DB;
 class HistoryController extends Controller
 {
     public function index()
-    {
-        $user = auth()->user();
+{
+    $user = auth()->user();
 
-        $history = DB::table('users')->
-        join('orders','user_id','=','orders.user_id')
-        ->join('detail_orders','=','detail_orders.order_id')
-        ->select('created_at','jenis_paket_pesanan','nama_paket_pesanan','total_harga')
-        ->where('user_id', $user->id)
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        // Kirim data orders ke view
-        return view('components.frontend.mycaccount', ['historys' => $history]);
+    if (!$user) {
+        return redirect()->route('login')->with('error', 'Please log in to access your account.');
     }
+
+    $history = DB::table('users')
+        ->join('orders', 'users.id', '=', 'orders.user_id')
+        ->join('detail_orders', 'orders.id', '=', 'detail_orders.order_id')
+        ->select('orders.created_at', 'detail_orders.jenis_paket_pesanan', 'detail_orders.nama_paket_pesanan', 'orders.total_harga')
+        ->where('users.id', $user->id)
+        ->orderBy('orders.created_at', 'desc')
+        ->get();
+
+    return view('components.frontend.mycaccount', ['historys' => $history]);
+}
+
 }
 
 

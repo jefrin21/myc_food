@@ -373,25 +373,24 @@
 
                                             </thead>
                                                 
-                                                <tbody>
+                                            <tbody>
                                                 @foreach ($historys as $key => $order)
                                                     <tr>
-                                                        <td>{{ $order->created_at->format('d F Y') }}</td>
+                                                        <td>{{ \Carbon\Carbon::parse($order->created_at)->format('d F Y') }}</td>
                                                         <td>
-                                                            @foreach ($order->detailOrders as $detail)
-                                                                {{ $detail->jenis_paket_pesanan }} - {{ $detail->nama_paket_pesanan }}<br>
-                                                            @endforeach
+                                                            {{ $order->jenis_paket_pesanan }} - {{ $order->nama_paket_pesanan }}
                                                         </td>
                                                         <td>{{ number_format($order->total_harga, 0, ',', '.') }}</td>
                                                         <td>
-                                                            <a href="/invoice/{{ $order->id }}" class="btn btn-secondary btn-primary-hover">
+                                                            <a href="/invoice/" class="btn btn-secondary btn-primary-hover">
                                                                 <span>View</span>
                                                             </a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
-                                                
                                             </tbody>
+
+
                                         </table>
                                     </div>
                                 </div>
