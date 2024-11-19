@@ -355,9 +355,7 @@
                                         </div>
                                 </div>
                             </div>
-                            <form action="{{ route('history') }}" method="GET">
-                                @csrf
-                                
+                            
                             <div class="tab-pane fade" id="account-orders" role="tabpanel"
                                 aria-labelledby="account-orders-tab">
                                 <div class="myaccount-orders">
@@ -376,7 +374,7 @@
                                             </thead>
                                                 
                                                 <tbody>
-                                                @foreach ($history as $key => $order)
+                                                @foreach ($historys as $key => $order)
                                                     <tr>
                                                         <td>{{ $order->created_at->format('d F Y') }}</td>
                                                         <td>
@@ -398,9 +396,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            </form>
-                           
 
                         @else
                                         <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"

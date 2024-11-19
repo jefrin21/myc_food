@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class HistoryController extends Controller
 {
-    public function showhistory()
+    public function index()
     {
         $user = auth()->user();
 
@@ -20,7 +20,7 @@ class HistoryController extends Controller
             ->get();
 
         // Kirim data orders ke view
-        return view('components.frontend.mycaccount', ['history' => $history]);
+        return view('components.frontend.mycaccount', ['historys' => $history]);
     }
 }
 
