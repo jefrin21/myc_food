@@ -101,9 +101,12 @@ Route::get('/home', function () {
     return view('components.frontend.mycindex');
 })->name('home');
 
-Route::get('/account', function () {
-    return view('components.frontend.mycaccount');
-})->name('login');
+// Route::get('/account', function () {
+//     return view('components.frontend.mycaccount');
+// })->name('login');
+Route::get('/account',[HistoryController::class,'index'])->name('login');
+
+// Route::get('/accout')
 
 Route::get('/cart', function () {
     return view('components.frontend.myccart');
@@ -139,7 +142,7 @@ Route::post('/mylogin',[LoginController::class,'authentication']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/myregister',[RegisterController::class,'store']);
 Route::resource('/edit',EditController::class);
-Route::get('/history', [HistoryController::class, 'showhistory'])->middleware('auth')->name('history');
+// Route::get('/history', [HistoryController::class, 'showhistory'])->middleware('auth')->name('history');
 
 
 // =====================================================================================================================
