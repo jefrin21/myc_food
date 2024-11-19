@@ -376,7 +376,7 @@
                                             </thead>
                                                 
                                                 <tbody>
-                                                @foreach ($orders as $key => $order)
+                                                @foreach ($history as $key => $order)
                                                     <tr>
                                                         <td>{{ $order->created_at->format('d F Y') }}</td>
                                                         <td>
