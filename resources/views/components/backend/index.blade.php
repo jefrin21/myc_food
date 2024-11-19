@@ -104,7 +104,7 @@
                                                                 class="col-2 align-self-center"
                                                             >
                                                                 <i
-                                                                    class="far fa-gem text-gradient-danger"
+                                                                    class="fas fa-users text-gradient-warning""
                                                                 ></i>
                                                             </div>
                                                             <div
@@ -135,7 +135,7 @@
                                                                 class="col-2 align-self-center"
                                                             >
                                                                 <i
-                                                                    class="fas fa-users text-gradient-warning"
+                                                                    class="far fa-gem text-gradient-danger"
                                                                 ></i>
                                                             </div>
                                                             <div
