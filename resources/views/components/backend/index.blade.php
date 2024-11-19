@@ -80,12 +80,12 @@
                                                                 <h5
                                                                     class="mt-0 mb-1"
                                                                 >
-                                                                    190
+                                                                    122
                                                                 </h5>
                                                                 <p
                                                                     class="mb-0 font-12 text-muted"
                                                                 >
-                                                                    Active Tasks
+                                                                    Orders
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -118,7 +118,7 @@
                                                                 <p
                                                                     class="mb-0 font-12 text-muted"
                                                                 >
-                                                                    Project
+                                                                    Users
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -144,12 +144,12 @@
                                                                 <h5
                                                                     class="mt-0 mb-1"
                                                                 >
-                                                                    14
+                                                                   Rp 1.000.000,00
                                                                 </h5>
                                                                 <p
                                                                     class="mb-0 font-12 text-muted"
                                                                 >
-                                                                    Teams
+                                                                    Income
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -165,7 +165,7 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="header-title pb-3 mt-0">
-                                                Payments
+                                                Details
                                             </h5>
                                             <div class="table-responsive">
                                                 <table
