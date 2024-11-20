@@ -50,6 +50,12 @@
                                         <div class="card-body" >
             
                                             <h4 class="mt-0 header-title">Weekly Order</h4>
+                                           <div>
+                                            <small>keterangan : 
+                                                <br>L = Lunch 
+                                                <br>D =  Dinner
+                                            </small>
+                                            </div> 
                                            <div class="table-responsive">
                                             <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                                 <thead class="text-center">
@@ -59,6 +65,7 @@
                                                         <th colspan="2">Silver B</th>
                                                         <th colspan="2">Gold A</th>
                                                         <th colspan="2">Gold B</th>
+                                                        <th rowspan="2"  style="text-align: center; vertical-align: middle;">Print</th>
                                                     </tr>
                                                     <tr>
                                                         <th>L</th>
@@ -71,32 +78,89 @@
                                                         <th>D</th>
                                                     </tr>
                                                 </thead>
-                                                    {{-- @forelse ($weeklys as $order)
-                                                        <tr>
-                                                            <td>{{ $order->tanggal_pengambilan_pesanan }}</td>
-                                                            <td>{{ $order->silver_a }}</td>
-                                                            <td>{{ $order->silver_b }}</td>
-                                                            <td>{{ $order->gold_a }}</td>
-                                                            <td>{{ $order->gold_b }}</td>
-                                                        </tr>
-                                                    @empty
-                                                        <tr>
-                                                            <td colspan="5" class="text-center">Tidak ada data untuk ditampilkan</td>
-                                                        </tr>
-                                                    @endforelse --}}
-                                                    @forelse ($weeklys as $order)
+                                                @foreach ( $data as $datas )
+                                                    
                                                     <tr>
-                                                        <td>{{ $order->tanggal_pengambilan_pesanan }}</td>
-                                                        <td><small>{{ $order->silver_alg }} ,<br>{{ $order->silver_alfk }} , <br>{{ $order->silver_algs }} , <br>{{ $order->silver_alpd }} , <br>{{ $order->silver_almyc }} </small></td>
-                                                        <td><small>{{ $order->silver_adg }} ,<br>{{ $order->silver_adfk }} , <br>{{ $order->silver_adgs }} , <br>{{ $order->silver_adpd }} , <br>{{ $order->silver_admyc }} </small></td>
-                                                        <td><small>{{ $order->silver_blg }} ,<br>{{ $order->silver_blfk }} , <br>{{ $order->silver_blgs }} , <br>{{ $order->silver_blpd }} , <br>{{ $order->silver_blmyc }} </small></td>
-                                                        <td><small>{{ $order->silver_bdg }} ,<br>{{ $order->silver_bdfk }} , <br>{{ $order->silver_bdgs }} , <br>{{ $order->silver_bdpd }} , <br>{{ $order->silver_bdmyc }} </small></td>
-                                                        <td><small>{{ $order->gold_alg }} ,<br>{{ $order->gold_alfk }} , <br>{{ $order->gold_algs }} , <br>{{ $order->gold_alpd }} , <br>{{ $order->gold_almyc }} </small></td>
-                                                        <td><small>{{ $order->gold_adg }} ,<br>{{ $order->gold_adfk }} , <br>{{ $order->gold_adgs }} , <br>{{ $order->gold_adpd }} , <br>{{ $order->gold_admyc }} </small></td>
-                                                        <td><small>{{ $order->gold_blg }} ,<br>{{ $order->gold_blfk }} , <br>{{ $order->gold_blgs }} , <br>{{ $order->gold_blpd }} , <br>{{ $order->gold_blmyc }} </small></td>
-                                                        <td><small>{{ $order->gold_bdg }} ,<br>{{ $order->gold_bdfk }} , <br>{{ $order->gold_bdgs }} , <br>{{ $order->gold_bdpd }} , <br>{{ $order->gold_bdmyc }} </small></td>
+                                                        <td>{{ \Carbon\Carbon::parse($datas->tanggal)->format('d F Y') }}</td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_silver_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_silver_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_silver_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_silver_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_silver_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_silver_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_silver_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_silver_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_silver_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_silver_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_silver_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_silver_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_silver_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_silver_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_silver_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_silver_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_silver_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_silver_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_silver_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_silver_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_gold_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_gold_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_gold_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_gold_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_gold_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_gold_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_gold_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_gold_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_gold_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_gold_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_gold_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_gold_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_gold_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_gold_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_gold_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_gold_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_gold_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_gold_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_gold_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_gold_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td style="text-align: center; vertical-align: middle;">
+                                                            <i class="dripicons-print" style="cursor: pointer; font-size: 20px; color: blue;" onclick="printRow('{{ $datas->tanggal }}')"></i>
+                                                        </td>
+                                                        
                                                     </tr>
-                                                    @endforelse
+
+                                                @endforeach
                                                 <tbody>
                                           
                                                 </tbody>
@@ -106,59 +170,7 @@
                                     </div>
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
-                            {{-- <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="card-body">
-            
-                                            <h4 class="mt-0 header-title">Weekly Order</h4>
-                                            <p class="text-muted mb-4 font-13">Tabel "Detail Pesanan Makanan Weekly" mencatat pesanan mingguan, termasuk item menu, jumlah, harga, total, dan tanggal pengiriman untuk memantau penjualan secara rutin.
-                                            </p>
-            
-                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap text-center" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th rowspan="2" style="text-align: center; vertical-align: middle;">Tanggal</th>
-                                                        <th colspan="2">Silver A</th>
-                                                        <th colspan="2">Silver B</th>
-                                                        <th colspan="2">Gold A</th>
-                                                        <th colspan="2">Gold B</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Lunch</th>
-                                                        <th>Dinner</th>
-                                                        <th>Lunch</th>
-                                                        <th>Dinner</th>
-                                                        <th>Lunch</th>
-                                                        <th>Dinner</th>
-                                                        <th>Lunch</th>
-                                                        <th>Dinner</th>
-                                                    </tr>
-                                                </thead>
-            
-            
-                                                <tbody>
-                                                    @forelse ($weeklys as $order)
-                                                        <tr>
-                                                            <td>{{ $order->tanggal_pengambilan_pesanan }}</td>
-                                                            <td>{{ $order->silver_a }}</td>
-                                                            <td>{{ $order->silver_b }}</td>
-                                                            <td>{{ $order->gold_a }}</td>
-                                                            <td>{{ $order->gold_b }}</td>
-                                                        </tr>
-                                                    @empty
-                                                        <tr>
-                                                            <td colspan="5" class="text-center">Tidak ada data untuk ditampilkan</td>
-                                                        </tr>
-                                                    @endforelse
-                                                </tbody>
-                                                
-                                            </table>
-            
-                                        </div>
-                                    </div>
-                                </div> <!-- end col -->
-                            </div> <!-- end row --> --}}
+                           
 
                         </div><!-- container -->
 
@@ -170,6 +182,13 @@
             @endsection
 
         @section('js')
+
+        <script>
+            function printRow(tanggal) {
+                // Panggil endpoint Laravel untuk generate PDF
+                window.open(`/print-pdf/${tanggal}`, '_blank');
+            }
+        </script>
         <!-- jQuery  -->
         <script src="assets_backend/js/jquery.min.js"></script>
         <script src="assets_backend/js/popper.min.js"></script>
