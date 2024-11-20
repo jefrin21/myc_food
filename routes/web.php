@@ -89,7 +89,7 @@ Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmas
 Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
 
 
-
+Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf']);
 
 
 // ================================================================== end route backend =================================

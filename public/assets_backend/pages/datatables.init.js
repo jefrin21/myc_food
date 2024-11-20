@@ -15,7 +15,7 @@ $(document).ready(function () {
     //Buttons examples
     var table = $("#datatable-buttons").DataTable({
         lengthChange: false,
-        buttons: ["excel"],
+        buttons: [""],
     });
 
     table
