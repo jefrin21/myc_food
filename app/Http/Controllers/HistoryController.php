@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 class HistoryController extends Controller
 {
     public function index()
-{
+    
+    {
     $user = auth()->user();
 
     if (!$user) {
@@ -19,7 +20,7 @@ class HistoryController extends Controller
         ->join('orders', 'users.id', '=', 'orders.user_id')
         ->join('detail_orders', 'orders.id', '=', 'detail_orders.order_id')
         ->select('orders.created_at', 'detail_orders.jenis_paket_pesanan', 'detail_orders.nama_paket_pesanan', 'orders.total_harga')
-        ->where('users.id', $user->id)
+        ->where('users.id', $user)
         ->orderBy('orders.created_at', 'desc')
         ->get();
 
