@@ -125,9 +125,10 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket1" id="jenispaket1" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="paket A">Paket A</option>
-                                        <option value="paket B">Paket B</option>
-                                        <option value="paket C">Paket C</option>
+                                        <option value="Silver A">Silver A</option>
+                                        <option value="Silver B">Silver B</option>
+                                        <option value="Gold A">Gold A</option>
+                                        <option value="Gold B">Gold B</option>
                                     </select>
                                 </div>
                             </div>
@@ -138,9 +139,10 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket2" id="jenispaket2" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="paket A">Paket A</option>
-                                        <option value="paket B">Paket B</option>
-                                        <option value="paket C">Paket C</option>
+                                        <option value="Silver A">Silver A</option>
+                                        <option value="Silver B">Silver B</option>
+                                        <option value="Gold A">Gold A</option>
+                                        <option value="Gold B">Gold B</option>
                                     </select>
                                 </div>
                                 
