@@ -13,6 +13,12 @@ class CartController extends Controller
 {
     public function addtocart(Request $request){
         
+        $currentDay = date('w'); 
+
+        if ($currentDay == 0 || $currentDay == 6) {
+            return redirect()->back()->with(['error' => 'Tidak dapat memesan pada hari Sabtu dan Minggu!']);
+        }
+
         if(!$request->filled('tanggalpemesanan')){
             return redirect()->back()->with(['tanggalpemesanan'=>'Tanggal Pengambilan Harus Dipilih']);
         }

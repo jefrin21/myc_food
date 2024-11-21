@@ -92,6 +92,12 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                         </div>
                                     @endif
+                        @if (session()->has('error'))
+                                        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                                            <h6 class="text-danger"> {{ session('error') }}</h6>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    @endif
                         @if (session()->has('success'))
                                         <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
                                             <h6 class="text-success"> {{ session('success') }}</h6>
@@ -166,7 +172,6 @@
                                                             <th class="product-price">Unit Price</th>
                                                             {{-- <th class="product-quantity">Quantity</th> --}}
                                                             <th class="product-quantity">package type</th>
-                                                            <th class="product-subtotal">Total</th>
                                                             <th class="product-subtotal">Tanggal Pengambilan</th>
                                                             <th class="product_remove">remove</th>
                                                         </tr>
@@ -183,7 +188,6 @@
                                                                 </div>
                                                             </td> --}}
                                                             <td class="product-subtotal"><span class="amount">{{ $carts['paket'] }}</span></td>
-                                                            <td class="product-subtotal"><span class="amount">{{ $carts['jenispaket'] }}</span></td>
                                                             <td class="product-subtotal"><span class="amount">{{ \Carbon\Carbon::parse($carts['tanggal'])->format('d F Y') }}</span></td>
                                                             <td class="product_remove">
                                                                 <form action="/hapuscart/{{ $carts['id'] }}" method="POST" id="deletepesanan" >
@@ -280,13 +284,6 @@
         minDate: new Date().fp_incr(3), 
         locale: {
             firstDayOfWeek: 1 
-        },
-         onChange: function (selectedDates, dateStr, instance) {
-            const day = new Date(dateStr).getDay(); 
-            if (day === 4) { 
-                alert("Tidak dapat memesan pada hari Sabtu dan Minggu!");
-                instance.clear(); 
-            }
         }
     }); 
     </script>

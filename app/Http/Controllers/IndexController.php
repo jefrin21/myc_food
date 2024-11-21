@@ -22,7 +22,7 @@ class IndexController extends Controller
 
         $locations = ['Gedung G', 'GBFK', 'Grandstand', 'Paddock', 'MYC-Dorm'];
         // Mengambil jumlah users berdasarkan lokasi_dorm yang sudah difilter
-        $usersByLocation = User::select('lokasi_dorm_customer', DB::raw('COUNT(*) as jumlahusers'))
+        $usersByLocation = User::select('lokasi_dorm_customer', DB::raw('COUNT(*) as jumlah_users'))
                                ->whereIn('lokasi_dorm_customer', $locations)
                                ->groupBy('lokasi_dorm_customer')
                                ->get();
