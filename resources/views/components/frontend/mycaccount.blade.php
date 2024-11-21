@@ -374,28 +374,26 @@
                                             </thead>
                                                 
                                             <tbody>
-                                            @foreach ($historys as $key => $history)
-                                                <tr>
-                                                    <td>{{ \Carbon\Carbon::parse($history->created_at)->format('d F Y H:i:s') }}</td>
-                                                    <td>
-                                                        {{ $history->jenis_paket_pesanan }} - {{ $history->nama_paket_pesanan }}
-                                                        @if ($history->orders && $history->orders->count() > 1)
-                                                            <br>
-                                                            @foreach ($history->orders->slice(1) as $order)
-                                                                {{ $order->jenis_paket_pesanan }} - {{ $order->nama_paket_pesanan }}<br>
-                                                            @endforeach
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        {{ number_format($history->total_harga, 0, ',', '.') }}
-                                                    </td>
-                                                    <td>
-                                                        <a href="/invoice/{{ $history->id }}" class="btn btn-secondary btn-primary-hover">
-                                                            <span>View</span>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                            @foreach ($historys as $date => $orders)
+                                            <tr>
+                                                <td>{{ \Carbon\Carbon::parse($date)->format('d F Y H:i:s') }}</td>
+                                                <td>
+                                                    @foreach ($orders as $order)
+                                                        {{ $order->jenis_paket_pesanan }} - {{ $order->nama_paket_pesanan }}<br>
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    {{ number_format($orders->first()->total_harga, 0, ',', '.') }}
+                                                </td>
+                                                <td>
+                                                    <a href="/invoice/{{ $orders->first()->order_id }}" class="btn btn-secondary btn-primary-hover">
+                                                        <span>View</span>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
+
 
                                             </tbody>
 
