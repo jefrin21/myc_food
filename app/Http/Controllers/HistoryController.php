@@ -12,7 +12,7 @@ class HistoryController extends Controller
 
     if(auth()->user()){
         $user = auth()->user()->id;
-        // cek cek 
+        // cek cek cek
         $history = DB::table('users')
         ->join('orders', 'users.id', '=', 'orders.user_id')
         ->join('detail_orders', 'orders.id', '=', 'detail_orders.order_id')
