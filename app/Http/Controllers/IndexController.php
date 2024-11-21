@@ -15,24 +15,41 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $jumlahPesanan = Order::where('status_pesanan', 'Dikirim')->count();
-        $jumlahUsers = User::count(); // Menghitung jumlah id di tabel users
-        $totalHarga = Order::sum('total_harga'); // Menjumlahkan seluruh nilai
+    // Menghitung jumlah pesanan yang statusnya 'Dikirim'
+    $jumlahPesanan = Order::where('status_pesanan', 'Dikirim')->count();
+    
+    // Menghitung jumlah total users
+    $jumlahUsers = User::count();
+    
+    // Menghitung total harga semua order
+    $totalHarga = Order::sum('total_harga');
+    
+    // Daftar lokasi yang ingin dihitung
+    $locations = ['Gedung G', 'GBFK', 'Grandstand', 'Paddock', 'MYC-Dorm'];
 
+    // Mengambil jumlah users berdasarkan lokasi_dorm_customer yang sudah difilter
+    $usersByLocation = User::select('lokasi_dorm_customer', DB::raw('COUNT(*) as jumlah_users'))
+                           ->whereIn('lokasi_dorm_customer', $locations)
+                           ->groupBy('lokasi_dorm_customer')
+                           ->get();
 
-        $locations = ['Gedung G', 'GBFK', 'Grandstand', 'Paddock', 'MYC-Dorm'];
-        // Mengambil jumlah users berdasarkan lokasi_dorm yang sudah difilter
-        $usersByLocation = User::select('lokasi_dorm_customer', DB::raw('COUNT(*) as jumlahusers'))
-                               ->whereIn('lokasi_dorm_customer', $locations)
-                               ->groupBy('lokasi_dorm_customer')
-                               ->get();
+    // Mengambil total pendapatan (sales) berdasarkan lokasi
+    $salesByLocation = Order::select('lokasi_dorm_customer', DB::raw('SUM(total_harga) as total_pendapatan'))
+                            ->join('users', 'users.id', '=', 'orders.user_id') // Pastikan ada relasi dengan users
+                            ->whereIn('users.lokasi_dorm_customer', $locations)
+                            ->groupBy('users.lokasi_dorm_customer')
+                            ->get();
 
-
-        
-
-        return view('components.backend.index', ['jumlahPesanan' => $jumlahPesanan,'jumlahuser'=>$jumlahUsers, 'totalHarga'=>$totalHarga, 'locations'=>$locations, 'usersByLocation'=>$usersByLocation]);
-
+    // Menggabungkan data jumlah_users dan total_pendapatan
+    foreach ($usersByLocation as $location) {
+        $sales = $salesByLocation->firstWhere('lokasi_dorm_customer', $location->lokasi_dorm_customer);
+        $location->total_pendapatan = $sales ? $sales->total_pendapatan : 0; // Menambahkan total pendapatan ke lokasi
     }
+
+    // Mengirimkan data ke view
+    return view('components.backend.index', ['jumlahPesanan' => $jumlahPesanan,'jumlahuser'=>$jumlahUsers, 'totalHarga'=>$totalHarga, 'locations'=>$locations, 'usersByLocation'=>$usersByLocation]);
+
+}
     
 
 

@@ -178,7 +178,7 @@
                                                             <tr>
                                                                 <td>{{ $location->lokasi_dorm_customer }}</td>
                                                                 <td>{{ $location->jumlah_users }}</td>
-                                                                <td>sales</td>
+                                                                <td>{{ number_format($location->total_pendapatan, 0, ',', '.') }}</td> <!-- Format pendapatan -->
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
