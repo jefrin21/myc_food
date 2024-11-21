@@ -162,69 +162,28 @@
                                             <h5 class="header-title pb-3 mt-0">
                                                 Details
                                             </h5>
-                                             {{-- <div class="table-responsive">
+                                             <div class="table-responsive">
                                                 <table
                                                     class="table table-hover mb-0"
                                                 >
                                                     <thead>
                                                         <tr>
-                                                            <th rowspan="2"  style="text-align: center; vertical-align: middle;">Asrama</th>
-                                                            <th rowspan="2"  style="text-align: center; vertical-align: middle;">Sesi</th>
-                                                            <th colspan="3"  style="text-align: center; vertical-align: middle;">SILVER MENU</th>
-                                                            <th colspan="3"  style="text-align: center; vertical-align: middle;">GOLD MENU</th>
-                                                        </tr>
-                                                        <tr style="text-align: center; vertical-align: middle;">
-                                                            <th>Harga Jual Makanan</th>
-                                                            <th>Modal</th>
-                                                            <th>Keuntungan</th>
-                                                            <th>Harga Jual Makanan</th>
-                                                            <th>Modal</th>
-                                                            <th>Keuntungan</th>
+                                                            <th>Lokasi</th>
+                                                            <th>Jumlah Users</th>
+                                                            <th>Sales</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody style="text-align: center; vertical-align: middle;">
-                                                        <tr>
-                                                            <td rowspan="2">
-                                                                Scholarship
-                                                            </td>
-                                                            <td>
-                                                                L
-                                                            </td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                D
-                                                            </td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td rowspan="2">
-                                                                Paying
-                                                            </td>
-                                                            <td>
-                                                                L & D
-                                                            </td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                            <td>100</td>
-                                                        </tr>
+                                                    <tbody>
+                                                        @foreach($usersByLocation as $location)
+                                                            <tr>
+                                                                <td>{{ $location->lokasi_dorm_customer }}</td>
+                                                                <td>{{ $location->jumlah_users }}</td>
+                                                                <td>sales</td>
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
-                                            </div> --}}
+                                            </div>
                                             <!--end table-responsive-->
                                             <div
                                                 class="pt-3 border-top text-right"

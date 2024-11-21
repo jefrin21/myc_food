@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class IndexController extends Controller
@@ -18,7 +19,18 @@ class IndexController extends Controller
         $jumlahUsers = User::count(); // Menghitung jumlah id di tabel users
         $totalHarga = Order::sum('total_harga'); // Menjumlahkan seluruh nilai
 
-        return view('components.backend.index', ['jumlahPesanan' => $jumlahPesanan,'jumlahuser'=>$jumlahUsers, 'totalHarga'=>$totalHarga]);
+
+        $locations = ['Gedung G', 'GBFK', 'Grandstand', 'Paddock', 'MYC-Dorm'];
+        // Mengambil jumlah users berdasarkan lokasi_dorm yang sudah difilter
+        $usersByLocation = User::select('lokasi_dorm_customer', DB::raw('COUNT(*) as jumlahusers'))
+                               ->whereIn('lokasi_dorm_customer', $locations)
+                               ->groupBy('lokasi_dorm_customer')
+                               ->get();
+
+
+        
+
+        return view('components.backend.index', ['jumlahPesanan' => $jumlahPesanan,'jumlahuser'=>$jumlahUsers, 'totalHarga'=>$totalHarga, 'locations'=>$locations, 'usersByLocation'=>$usersByLocation]);
 
     }
     
