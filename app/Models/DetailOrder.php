@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class DetailOrder extends Model
 {
     use HasFactory;
-    protected $guarded ='id';
+    protected $guarded =[];
       public function orderdetail() : BelongsTo{
         return $this->belongsTo(Order::class, 'order_id','id');
     }

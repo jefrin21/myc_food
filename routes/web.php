@@ -1,8 +1,16 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailOrderController;
+use App\Http\Controllers\EditController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\WeeklyController;
+use App\Http\Controllers\IndexController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PemesananController;
 
@@ -69,12 +77,18 @@ Route::get('/tables-responsive', function () {
     return view('components.backend.tables-responsive');
 });
 
+Route::get('/invoiceback', function () {
+    return view('components.backend.invoice');
+});
+
+Route::get('/',[IndexController::class,'index']);
 Route::get('/tables-datatable-pesanan',[OrderController::class,'index'])->name('tables-datatable-pesanan');
 Route::get('/order-details/{id}',[OrderController::class,'detailsOrder']);
 Route::get('/detail-order/{id}',[DetailOrderController::class,'detailOrder']);
 Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
 Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmasi']);
-Route::get('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan.store');
+Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
+Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf']);
 
 
 // ================================================================== end route backend =================================
@@ -84,15 +98,18 @@ Route::get('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan
 
 Route::get('/home', function () {
     return view('components.frontend.mycindex');
-});
+})->name('home');
 
-Route::get('/account', function () {
-    return view('components.frontend.mycaccount');
-});
+// Route::get('/account', function () {
+//     return view('components.frontend.mycaccount');
+// })->name('login');
+Route::get('/account',[HistoryController::class,'index'])->name('login');
+
+// Route::get('/accout')
 
 Route::get('/cart', function () {
     return view('components.frontend.myccart');
-});
+})->middleware('auth');
 
 Route::get('/checkout', function () {
     return view('components.frontend.myccheckout');
@@ -106,9 +123,9 @@ Route::get('/invoice', function () {
     return view('components.frontend.mycinvoice');
 });
 
-Route::get('/login', function () {
-    return view('components.frontend.myclogin');
-});
+// Route::get('/login', function () {
+//     return view('components.frontend.myclogin');
+// })->name('login')->middleware('guest');
 
 Route::get('/register', function () {
     return view('components.frontend.mycregister');
@@ -116,5 +133,27 @@ Route::get('/register', function () {
 
 Route::get('/orders', function () {
     return view('components.frontend.mycorders');
-});
+})->middleware('auth');
 // ================================================================== routes frondend ===================================
+
+
+Route::post('/mylogin',[LoginController::class,'authentication']);
+Route::post('/logout',[LoginController::class,'logout']);
+Route::post('/myregister',[RegisterController::class,'store']);
+Route::resource('/edit',EditController::class);
+// Route::get('/history', [HistoryController::class, 'showhistory'])->middleware('auth')->name('history');
+
+
+// =====================================================================================================================
+
+Route::post('/addToCart',[CartController::class,'addtocart']);
+Route::get('/cart', [CartController::class, 'showcart'])->middleware('auth');
+Route::delete('/hapuscart/{id}',[CartController::class,'hapuscart']);
+Route::post('/checkout',[CartController::class,'pagecheckout']);
+Route::post('/confirmorder',[CartController::class,'confirm']);
+
+
+
+// =================================================================================================================
+
+Route::put('/editprofile/{id}',[EditController::class,'update']);

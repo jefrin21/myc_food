@@ -6,31 +6,36 @@
                     <div class="col-12 sticky-header sticky pt-0">
                         <div class="main_header d-flex justify-content-between align-items-center ">
                             <div class="header_logo">
-                                <a class="sticky_none" href="index.html"><img width="115" src="assets_frontend/img/logo/logomyc.png" alt="" ></a>
+                                <a class="sticky_none" href="home"><img width="115" src="assets_frontend/img/logo/logomyc.png" alt="" ></a>
                             </div>
                             <!--main menu start-->
                             <div class="main_menu d-none d-lg-block">
-                                <nav>
-                                    <ul class="d-flex">
-                                        <li><a class="active" href="mycindex.html">Home</a>
-                                           
-                                        </li>
-                                        <li><a href="myccart.html">Order</a></li>
-                                        <li><a href="mycfaq.html">FAQ</a>  
-                                        </li>
-                                
-                                        <li><a href="contact.html">My Order</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                                    <nav>
+                                        <ul class="d-flex">
+                                            <li>
+                                                <a class="{{ Request::is('home') ? 'active' : '' }}" href="home">Home</a>
+                                            </li>
+                                            <li>
+                                                <a class="{{ Request::is('cart') ? 'active' : '' }}" href="cart">Order</a>
+                                            </li>
+                                            <li>
+                                                <a class="{{ Request::is('about') ? 'active' : '' }}" href="about">FAQ</a>
+                                            </li>
+                                            <li>
+                                                <a class="{{ Request::is('orders') ? 'active' : '' }}" href="orders">My Order</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
                             <!--main menu end-->
                             <div>
                                 <div class="header_content d-flex justify-content-between align-items-center">
                                     
                                     <div class="header_account">
                                         <ul class="d-flex">
-                                            <li class="header_wishlist">
-                                                <a href="mycaccount.html"><i class="pe-7s-user"></i></a>
+                                            <li class="header_wishlist" >
+                                                <a href="account"><i class="pe-7s-user"></i></a>
                                             </li>
                                             <li class="shopping_cart">
                                                 <a href="javascript:void(0)"><i class="pe-7s-shopbag"></i></a>
@@ -69,10 +74,10 @@
                 </div>
                 <div class="cart_item">
                     <div class="cart_img">
-                        <a href="single-product.html"><img src="assets_frontend/img/product/product1.png" alt=""></a>
+                        <a href="single-product"><img src="assets_frontend/img/product/product1.png" alt=""></a>
                     </div>
                     <div class="cart_info">
-                        <a href="single-product.html">Primis In Faucibus</a>
+                        <a href="single-product">Primis In Faucibus</a>
                         <p>1 x <span> $65.00 </span></p>
                     </div>
                     <div class="cart_remove">
@@ -81,10 +86,10 @@
                 </div>
                 <div class="cart_item">
                     <div class="cart_img">
-                        <a href="single-product.html"><img src="assets_frontend/img/product/product2.png" alt=""></a>
+                        <a href="single-product"><img src="assets_frontend/img/product/product2.png" alt=""></a>
                     </div>
                     <div class="cart_info">
-                        <a href="single-product.html">Letraset Sheets</a>
+                        <a href="single-product">Letraset Sheets</a>
                         <p>1 x <span> $60.00 </span></p>
                     </div>
                     <div class="cart_remove">
@@ -106,12 +111,14 @@
             </div>
             <div class="mini_cart_footer">
                 <div class="cart_button">
-                    <a href="cart.html">View cart</a>
+                    <a href="cart">View cart</a>
                 </div>
                 <div class="cart_button">
-                    <a href="checkout.html"><i class="fa fa-sign-in"></i> Checkout</a>
+                    <a href="checkout"><i class="fa fa-sign-in"></i> Checkout</a>
                 </div>
             </div>
         </div>
 
     </section>
+
+  

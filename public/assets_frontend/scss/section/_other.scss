@@ -105,7 +105,7 @@
         font-size: 30px;
         line-height: 31px;
         font-weight: 600;
-        color: #2b4174;
+        color: #eec44f;
         font-family: $roboto;
         margin-bottom: 20px;
         & span {
@@ -519,13 +519,13 @@
     & h3 {
         font-size: 22px;
         line-height: 1.4;
-        color: #e0e0e0;
+        color: #030202;
         margin-bottom: 5px;
     }
     & P {
         font-size: 15px;
         line-height: 31px;
-        color: #e0e0e0;
+        color: #030202;
         font-weight: 500;
         @media #{$tablet-device} {
             font-size: 14px;

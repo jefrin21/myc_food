@@ -13,7 +13,7 @@ class OrderController extends Controller
     public function index()
     {
         return view('components.backend.tables-datatable-pesanan',[
-            'orders' => Order::where('status_pesanan','diproses')->get()
+            'orders' => Order::where('status_pesanan','diproses')->with('customer')->get()
         ]);
     }
 

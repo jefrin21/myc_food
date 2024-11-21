@@ -28,59 +28,149 @@
             <!-- Start right Content here -->
             <div class="page-content-wrapper ">
 
-<div class="container-fluid">
+                        <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="page-title-box">
-                <div class="btn-group float-right">
-                    <ol class="breadcrumb hide-phone p-0 m-0">
-                        <li class="breadcrumb-item"><a href="#">Pesanan Harian</a></li>
-                        <li class="breadcrumb-item active">Data Pesanan Harian</li>
-                    </ol>
-                </div>
-                <h4 class="page-title">Datatable</h4>
-            </div>
-        </div>
-    </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="page-title-box">
+                                        <div class="btn-group float-right">
+                                            <ol class="breadcrumb hide-phone p-0 m-0">
+                                                <li class="breadcrumb-item"><a href="#">Pesanan Harian</a></li>
+                                                <li class="breadcrumb-item active">Data Pesanan Harian</li>
+                                            </ol>
+                                        </div>
+                                        <h4 class="page-title">Datatable</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
-                                        <div class="card-body">
+                                        <div class="card-body" >
             
                                             <h4 class="mt-0 header-title">Weekly Order</h4>
-                                            <p class="text-muted mb-4 font-13">Tabel "Detail Pesanan Makanan Weekly" mencatat pesanan mingguan, termasuk item menu, jumlah, harga, total, dan tanggal pengiriman untuk memantau penjualan secara rutin.
-                                            </p>
-            
-                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                <thead>
+                                           <div>
+                                            <small>keterangan : 
+                                                <br>L = Lunch 
+                                                <br>D =  Dinner
+                                            </small>
+                                            </div> 
+                                           <div class="table-responsive">
+                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <thead class="text-center">
                                                 <tr>
-                                                    <th>Tanggal</th>
-                                                    <th>Silver A</th>
-                                                    <th>Silver B</th>
-                                                    <th>Gold A</th>
-                                                    <th>Gold B</th>
-                                                </tr>
+                                                        <th rowspan="2"  style="text-align: center; vertical-align: middle;">Tanggal</th>
+                                                        <th colspan="2">Silver A</th>
+                                                        <th colspan="2">Silver B</th>
+                                                        <th colspan="2">Gold A</th>
+                                                        <th colspan="2">Gold B</th>
+                                                        <th rowspan="2"  style="text-align: center; vertical-align: middle;">Print</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>L</th>
+                                                        <th>D</th>
+                                                        <th>L</th>
+                                                        <th>D</th>
+                                                        <th>L</th>
+                                                        <th>D</th>
+                                                        <th>L</th>
+                                                        <th>D</th>
+                                                    </tr>
                                                 </thead>
-            
-            
-                                                <tbody>
-                                                <tbody>
-                                                @foreach ($weeklys as $order)
-                                                <tr>
-                                                    <td>{{ $order->jumlah_pesanan }}</td> 
-                                                    <td>{{ $order->total_harga }}</td>
-                                                    <td>{{ $order->tanggal_order }}</td>
-                                                    <td>{{ $order->tanggal_order }}</td>  
-                                                    <td>{{ $order->tanggal_order }}</td> 
-                                                </tr>
+                                                @foreach ( $data as $datas )
+                                                    
+                                                    <tr>
+                                                        <td>{{ \Carbon\Carbon::parse($datas->tanggal)->format('d F Y') }}</td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_silver_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_silver_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_silver_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_silver_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_silver_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_silver_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_silver_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_silver_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_silver_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_silver_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_silver_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_silver_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_silver_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_silver_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_silver_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_silver_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_silver_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_silver_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_silver_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_silver_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_gold_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_gold_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_gold_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_gold_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_gold_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_gold_a_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_gold_a_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_gold_a_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_gold_a_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_gold_a_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->lunch_gold_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_gold_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_gold_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_gold_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_gold_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <small>
+                                                                Gedung G: {{ $datas->dinner_gold_b_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_gold_b_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_gold_b_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_gold_b_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_gold_b_myc_dorm }}
+                                                            </small>
+                                                        </td>
+                                                        <td style="text-align: center; vertical-align: middle;">
+                                                            <i class="dripicons-print" style="cursor: pointer; font-size: 20px; color: blue;" onclick="printRow('{{ $datas->tanggal }}')"></i>
+                                                        </td>
+                                                        
+                                                    </tr>
+
                                                 @endforeach
+                                                <tbody>
+                                          
+                                                </tbody>
                                             </table>
-            
+                                            </div>  
                                         </div>
                                     </div>
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
+                           
 
                         </div><!-- container -->
 
@@ -92,6 +182,13 @@
             @endsection
 
         @section('js')
+
+        <script>
+            function printRow(tanggal) {
+                // Panggil endpoint Laravel untuk generate PDF
+                window.open(`/print-pdf/${tanggal}`, '_blank');
+            }
+        </script>
         <!-- jQuery  -->
         <script src="assets_backend/js/jquery.min.js"></script>
         <script src="assets_backend/js/popper.min.js"></script>

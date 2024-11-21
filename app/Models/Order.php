@@ -10,12 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Order extends Model
 {
     use HasFactory;
-    protected $guarded ='id';
+    protected $guarded =[];
     public function details():HasMany{
         return $this->hasMany(DetailOrder::class, 'order_id','id');
     }
 
       public function customer():BelongsTo{
-        return $this->belongsTo(Customer::class, 'customer_id','id');
+        return $this->belongsTo(User::class, 'user_id','id');
     }
 }

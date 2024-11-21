@@ -57,7 +57,6 @@
                                                     <th>Jumlah Pesanan</th>
                                                     <th>Total Harga</th>
                                                     <th>Tanggal Order</th>
-                                                    <th>Status Mahasiswa</th>
                                                     <th>Status Pesanan</th>
                                                 </tr>
                                                 </thead>
@@ -65,11 +64,10 @@
                                                 @foreach ( $orders as $order )
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ Str::words($order->customer->nama_customer,2) }}</td>
+                                                    <td>{{ Str::words($order->customer->name,2) }}</td>
                                                     <td>{{ $order->jumlah_pesanan }}</td>
                                                     <td>{{ $order->total_harga }}</td>
                                                     <td>{{ $order->created_at->format('d F Y') }}</td>
-                                                    <td>{{ $order->status_customer }}</td>
                                                     <td>{{ $order->status_pesanan }}</td>
                                                 </tr>
                                                 @endforeach

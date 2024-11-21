@@ -155,25 +155,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($cart as $carts )
                                     <tr>
-                                        <td class="cart-product-name">25 October 2024</td>
-                                        <td class="cart-product-name">Vestibulum suscipit<strong class="product-quantity"> × 1</strong></td>
-                                        <td class="cart-product-total">$165.00</td>
+                                        <td class="cart-product-name">{{ \Carbon\Carbon::parse($carts['tanggal'])->format('d F Y') }}</td>
+                                        <td class="cart-product-name">{{ $carts['jenispaket'] }}</td>
+                                        <td class="cart-product-total">{{ $carts['harga']}}</td>
                                     </tr>
-                                   
-                                    
-                                    
+                                    @endforeach    
                                 </tbody>
                                 <tfoot>
-                                    <tr class="cart-subtotal">
-                                        <th>Discount</th>
-                                        <td></td>
-                                        <td><span class="amount">-$65.00</span></td>
-                                    </tr>
                                     <tr class="order-total">
                                         <th>Order Total</th>
                                         <td></td>
-                                        <td><strong><span class="amount">$100.00</span></strong></td>
+                                        <td><strong><span class="amount">Rp.{{ number_format($harga, 0, ',', '.') }}</span></strong></td>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -189,28 +183,49 @@
                                                     Upload Bukti Pembayaran<span class="required">*</span>
                                                 </a>
                                             </h5>
-                                            <div class="mb-3">                  
-                                                <input class="form-control" type="file" id="formFile">
+                                            <div class="mb-3">   
+                                                <form action="/confirmorder" method="POST" enctype="multipart/form-data" id="confirmform">       
+                                                @csrf     
+                                                <input class="form-control @error('imageUpload') is-invalid @enderror" type="file" id="formFile" name="imageUpload" required>
+                                                @error('imageUpload')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                               </div>
                                         </div>
-                                        
                                     </div>
-                                    
                                 </div>
                             <div class="row">
                                 <div class="col">
                                     <a class="btn btn-link wow fadeInUp " data-wow-delay="0.3s" data-wow-duration="1.3s"
-                                href="mycorders.html">Place Order</a>     
-                                   
+                                href="cart">Back</a>     
                                 </div>
                                 <div class="col d-flex justify-content-end">
-                                    <a class="btn btn-link wow fadeInUp " data-wow-delay="0.3s" data-wow-duration="1.3s"
-                                href="mycindex.html">Cancel Order</a>   
+                                    <a  data-wow-delay="0.3s" data-wow-duration="1.3s"
+                                     ><button type="button" class="btn btn-link wow fadeInUp " data-bs-toggle="modal" data-bs-target="#confirmorder">Confirm Order</button> </a>   
                                 </div>
-                                      
                             </div>
-                                
-                                
+                            </form> 
+                            {{-- modal konfirmasi cekout  --}}
+                                    <div class="modal fade" id="confirmorder" tabindex="-1" aria-labelledby="confirmcheckoutpesanan" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmcheckoutpesanan">Konfirmasi Pembayaran</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Apakah Anda yakin Pembayaran Sudah Sesuai?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                    <button type="submit" class="btn btn-success" form="confirmform">Kirim</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- modal konfirmasi cekout  --}}  
                             </div>
                         </div>
                     </div>

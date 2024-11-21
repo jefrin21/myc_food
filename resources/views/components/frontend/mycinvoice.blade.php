@@ -77,63 +77,59 @@
                                         </div>
                                         <div class="col d-flex justify-content-end me-5">
                                             <h1>INVOICE</h1>
+                                            <h1>Kupon No. {{ $kupon_pesanan }}</h1>
                                         </div>
                                     </div>
                                     <div class="row mt-5 ms-5">
                                         <div class="col-6">
                                             <h3 class="mb-3">BILLED TO :</h3>
                                             
-                                            <h6>Catherine Lauren
-                                                <br> +62 087726446118
+                                            <h6>{{ $customer_name }}
+                                                <br> {{ \Carbon\Carbon::parse($tanggal_pembelian)->format('d F Y') }}
                                                 <br> MYC Dorm, E307
                                             </h6>
                                         </div>
                                         <div class="col-6">
-                                            <h6 class="text-end me-5"> Invoice No. 0001</h6>
                                             <h6 class="text-end me-5"> 26 October 2024</h6>
 
                                         </div>
                                     </div>
                                     
                                     <div class="col ms-5 me-5 mt-5">
-                                            <div class="your-order-table table-responsive">
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="cart-product-name">Pick-Up Date</th>
-                                                            <th class="cart-product-name">Product</th>
-                                                            <th class="cart-product-name">Quantity</th>
-                                                            <th class="cart-product-name">Unit Price</th>
+                                                            <th class="cart-product-name">Tanggal Pengambilan</th>
+                                                            <th class="cart-product-name">Kategori</th>
+                                                            <th class="cart-product-name">Jenis Paket</th>
+                                                            <th class="cart-product-name">Harga</th>
                                                             <th class="cart-product-total">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td class="cart-product-name">25 October 2024</td>
-                                                            <td class="cart-product-name">Vestibulum suscipit</td>
-                                                            <td class="cart-product-name"> 2</td>
-                                                            <td class="cart-product-name">$100.00 </td>
-                                                            <td class="cart-product-total">$200.00</td>
-                                                        </tr>
+                                                    @foreach ( $pesanan as $detail )
+                                                            
+                                                            <tr>
+                                                                <td class="cart-product-name">{{ $detail['tanggal_pengambilan'] }}</td>
+                                                                <td class="cart-product-name"> {{ $detail['jenis_paket'] }}</td>
+                                                                <td class="cart-product-name">{{ $detail['kategori'] }} </td>
+                                                                <td class="cart-product-total">{{ $detail['harga'] }}</td>
+                                                            </tr>
+                                                            
+                                                            @endforeach
                                                        
                                                         
                                                         
                                                     </tbody>
                                                     <tfoot>
-                                                        <tr class="cart-subtotal">
-                                                            <th>Discount</th>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td><span class="amount">-$65.00</span></td>
-                                                        </tr>
+                                                        
                                                         <tr class="order-total">
                                                             <th>Order Total</th>
                                                             <td></td>
                                                             <td></td>
                                                             <td></td>
                                                             
-                                                            <td>$100.00</td>
+                                                            <td>{{ $harga_total }}</td>
                                                         </tr>
                                                     </tfoot>
                                                 </table>
@@ -147,9 +143,8 @@
                                                 <div class="col-6">
                                                     <h3 class="mb-3">PAYMENT INFORMATION :</h3>
                                                     
-                                                    <h6> TRANSFER BANK
-                                                        <br> Account Name : Catherine Lauren
-                                                        <br> Date : 26 October 2024
+                                                    <h6> Paid
+                                                        
                                                     </h6>
                                                 </div>
                                                 

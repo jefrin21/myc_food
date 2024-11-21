@@ -177,15 +177,31 @@
                     <div class="col-lg-4  ">
                         <div class="single_blog wow fadeInUp" style="text-align: center;" data-wow-delay="0.1s" data-wow-duration="1.1s">
                             <div class="blog_thumb">
-                                <a href="cart"><img src="assets_frontend/img/blog/blog9.png" alt=""></a>
+                                <a 
+                                    @if (auth()->user())
+                                    href="cart"
+                                    @else
+                                    data-bs-toggle="modal" data-bs-target="#createCustomer"
+                                    @endif ><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_arrow_btn">
-                                    <a href="cart"><i class="ion-arrow-right-c"></i></a>
+                                    <a 
+                                    @if (auth()->user())
+                                    href="cart"
+                                    @else
+                                    data-bs-toggle="modal" data-bs-target="#createCustomer"
+                                    @endif ><i class="ion-arrow-right-c"></i></a>
                                 </div>
                                
-                                <h3><a href="cart">Order Now !</a></h3>
-                                <div class="blog__meta ">
+                                <h3>
+                                    <a 
+                                    @if (auth()->user())
+                                    href="cart"
+                                    @else
+                                    data-bs-toggle="modal" data-bs-target="#createCustomer"
+                                    @endif >Order Now !</a></h3>
+                                    <div class="blog__meta ">
                                     
                                     <div class="blog__meta__text">
                                         
@@ -200,7 +216,286 @@
             </div>
         </div>
      </section>
-    
+     
+       {{-- start modal  login--}}
+                                   
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="createCustomer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{-- content login --}}
+                                            <form action="/mylogin" method="POST" class="myaccount-form">
+                                                    @csrf
+                                                    <div class="row d-flex justify-content-center">
+                                                        <div class="">
+                                                            <form action="#">
+                                                                <div class="login-form">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <label>Email Address*</label>
+                                                                            <input type="email" placeholder="Email Address" name="email" id="email">
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <label>Password*</label>
+                                                                            <input type="password" placeholder="Password" name="password" id="password">
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-sm-4 align-self-center">
+                                                                            <div class="check-box">
+                                                                                <input type="checkbox" id="remember_me">
+                                                                                <label for="remember_me">Remember me</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                            <div class="forgotton-password_info">
+                                                                                <a href="#"> Forgot pasword?</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 pt-1 mt-md-0">
+                                                                            <div class="forgotton-password_info">
+                                                                                <a data-bs-target="#register"
+                                                                                data-bs-toggle="modal"> Don't have account?</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-12 pt-5 d-flex justify-content-end">
+                                                                            <button class="btn custom-btn md-size">Login</button>
+                                                                        </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                            {{-- end content --}}
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                {{-- end modal login  --}}
+                                <form action="/myregister" method="POST">
+                                                    @csrf
+                                                        <div class="modal fade" id="register" data-bs-backdrop="static"
+                                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticBackdropLabel"> Register
+                                                                        </h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="login-form">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6 col-12">
+                                                                                    <label>First Name</label>
+                                                                                    <input
+                                                                                        class="@error('name') is-invalid @enderror"
+                                                                                        name="name" id="name"
+                                                                                        type="text" placeholder="First Name" required>
+                                                                                    @error('name')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-6 col-12">
+                                                                                    <label>Last Name</label>
+                                                                                    <input type="text" placeholder="Last Name "
+                                                                                        name="last_name_customer"
+                                                                                        id="last_name_customer" required>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                <label>Major</label>
+                                                                                    <select name="fakultas_customer" id="fakultas_customer" required>
+                                                                                        <option disabled value="1" >
+                                                                                            Select Major
+                                                                                        </option>
+                                                                                        <option value="Management"  >
+                                                                                            Management
+                                                                                        </option>
+                                                                                        <option value="Accounting" >
+                                                                                            Accounting
+                                                                                        </option>
+                                                                                        <option value="Music" >
+                                                                                            Music
+                                                                                        </option>
+                                                                                        <option value="Technology-Laboratorium-Medic" >
+                                                                                            Technology Laboratorium Medic
+                                                                                        </option>
+                                                                                        <option value="Applied-Mathematics" >
+                                                                                            Applied Mathematics
+                                                                                        </option>
+                                                                                        <option value="Electrical-Engineering" >
+                                                                                            Electrical Engineering
+                                                                                        </option>
+                                                                                        <option value="Industrial-Engineering" >
+                                                                                            Industrial Engineering
+                                                                                        </option>
+                                                                                        <option value="Food-Technology" >
+                                                                                            Food Technology
+                                                                                        </option>
+                                                                                        <option value="Civil-Engineering" >
+                                                                                            Civil Engineering
+                                                                                        </option>
+                                                                                        <option value="Law" >
+                                                                                            Law
+                                                                                        </option>
+                                                                                        <option value="Pharmacy" >
+                                                                                            Pharmacy
+                                                                                        </option>
+                                                                                        <option value="Medical-Laboratory-Technology" >
+                                                                                            Medical Laboratory Technology
+                                                                                        </option>
+                                                                                        <option value="International-Relations" >
+                                                                                            International Relations
+                                                                                        </option>
+                                                                                        <option value="Biotechnology" >
+                                                                                            Biotechnology
+                                                                                        </option>
+                                                                                        <option value="Applied-Communication-Sciences" >
+                                                                                            Applied Communication Sciences
+                                                                                        </option>
+                                                                                        <option value="Medicine" >
+                                                                                            Medicine
+                                                                                        </option>
+                                                                                        <option value="Nursing" >
+                                                                                            Nursing
+                                                                                        </option>
+                                                                                        <option value="Psychology" >
+                                                                                            Psychology
+                                                                                        </option>
+                                                                                        <option value="Information-System" >
+                                                                                            Information System
+                                                                                        </option>
+                                                                                        <option value="Informatics" >
+                                                                                            Informatics
+                                                                                        </option>
+                                                                                        <option value="Architecture" >
+                                                                                            Architecture
+                                                                                        </option>
+                                                                                        <option value="Interior-Design" >
+                                                                                            Interior Design
+                                                                                        </option>
+                                                                                        <option value="Visual-Communication-Design" >
+                                                                                            Visual Communication Design
+                                                                                        </option>
+                                                                                        <option value="Product-Design" >
+                                                                                            Product Design
+                                                                                        </option>
+                                                                                        <option value="Hospitality-Management" >
+                                                                                            Hospitality Management
+                                                                                        </option>
+                                                                                        <option value="Tourism-Management" >
+                                                                                            Tourism Management
+                                                                                        </option>
+                                                                                        <option value="Teachers-College" >
+                                                                                            Teachers College
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                <label>Dorm Location</label>
+                                                                                    <select name="lokasi_dorm_customer" id="lokasi_dorm_customer" required>
+                                                                                        <option selected value="1">Select Dorm
+                                                                                            Location</option>
+                                                                                        <option value="MYC-Dorm">MYC Dormitory</option>
+                                                                                        <option value="Paddock-Dorm">Paddock Dorm
+                                                                                        </option>
+                                                                                        <option value="G-Building-Dorm">G Building Dorm
+                                                                                        </option>
+                                                                                        <option value="GBFK">GBFK
+                                                                                            Dorm</option>
+                                                                                        <option value="Grandstand">
+                                                                                            Grandstand
+                                                                                            Dorm</option>
+
+                                                                                </div>
+
+                                                                                <div class="col-md-6">
+                                                                                    <label>Room Number</label>
+                                                                                    <input type="text" placeholder="No Kamar"
+                                                                                        name="no_kamar" id="no_kamar"
+                                                                                        class="@error('no_kamar') is-invalid @enderror">
+                                                                                    @error('no_kamar')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <label>Phone Number</label>
+                                                                                    <input type="text" placeholder="No HP"
+                                                                                        name="no_hp_customer" id="no_hp_customer"
+                                                                                        class="@error('no_hp_customer') is-invalid @enderror">
+                                                                                    @error('no_hp_customer')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-md-12">
+                                                                                    <label>Email</label>
+                                                                                    <input type="email" placeholder="Email"
+                                                                                        name="email" id="email"
+                                                                                        class="@error('email') is-invalid @enderror"
+                                                                                        required>
+                                                                                    @error('email')
+                                                                                        <div class="invalid-feedback">
+                                                                                            {{ $message }}
+                                                                                        </div>
+                                                                                    @enderror
+                                                                                </div>
+                                                                                <div class="col-lg-12">
+                                                                                    <label>Password*</label>
+                                                                                    <div class="newsletter_subscribe">
+                                                                                        <input type="password"
+                                                                                            placeholder="Password"
+                                                                                            id="passwordInput"
+                                                                                            name="password">
+                                                                                        {{-- <form id="mc-form">
+                                                                                            <button type="button"
+                                                                                                onclick="togglePasswordVisibility()"><i class="pe-7s-look"></i></button>
+                                                                                        </form> --}}
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-lg-12">
+                                                                                    <label>Confirm Password*</label>
+                                                                                    <div class="newsletter_subscribe">
+                                                                                        <input type="confirmpassword"
+                                                                                            placeholder="Confirm Password"
+                                                                                            id="confirmpasswordInput" 
+                                                                                            name="confirmpassword">
+                                                                                        {{-- <form id="mc-form">
+                                                                                            <button type="button"
+                                                                                                onclick="togglePasswordVisibility2()"><i
+                                                                                                    class="pe-7s-look"></i></button>
+                                                                                        </form> --}}
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn custom-btn md-size"
+                                                                            data-bs-dismiss="modal" data-bs-target="#login"
+                                                                            data-bs-toggle="modal">Back to Login</button>
+                                                                        <button type="submit"
+                                                                            class="btn custom-btn md-size">Register</button>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
   
 
 
