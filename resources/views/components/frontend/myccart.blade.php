@@ -276,13 +276,15 @@
         flatpickr("#tanggalpemesanan", {
         dateFormat: "Y-m-d",
         minDate: new Date().fp_incr(3), 
-        disable: [
-            function(date) {
-                return (date.getDay() === 0 || date.getDay() === 6);
-            }
-        ],
         locale: {
             firstDayOfWeek: 1 
+        },
+         onChange: function (selectedDates, dateStr, instance) {
+            const day = new Date(dateStr).getDay(); 
+            if (day === 4) { 
+                alert("Tidak dapat memesan pada hari Sabtu dan Minggu!");
+                instance.clear(); 
+            }
         }
     }); 
     </script>
