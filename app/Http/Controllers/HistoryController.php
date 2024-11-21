@@ -8,13 +8,8 @@ use Illuminate\Support\Facades\DB;
 class HistoryController extends Controller
 {
     public function index()
-    
-    {
-    $user = auth()->user();
-
-    if (!$user) {
-        return redirect()->route('login')->with('error', 'Please log in to access your account.');
-    }
+{
+    $user = auth()->user()->id;
 
     $history = DB::table('users')
         ->join('orders', 'users.id', '=', 'orders.user_id')
