@@ -15,6 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
+
     // Menghitung jumlah pesanan yang statusnya 'Dikirim'
     $jumlahPesanan = Order::where('status_pesanan', 'Dikirim')->count();
     
@@ -45,6 +46,7 @@ class IndexController extends Controller
         $sales = $salesByLocation->firstWhere('lokasi_dorm_customer', $location->lokasi_dorm_customer);
         $location->total_pendapatan = $sales ? $sales->total_pendapatan : 0; // Menambahkan total pendapatan ke lokasi
     }
+
 
     // Mengirimkan data ke view
     return view('components.backend.index', ['jumlahPesanan' => $jumlahPesanan,'jumlahuser'=>$jumlahUsers, 'totalHarga'=>$totalHarga, 'locations'=>$locations, 'usersByLocation'=>$usersByLocation]);
