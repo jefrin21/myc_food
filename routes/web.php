@@ -4,6 +4,7 @@ use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PemesananController;
 
 
 // ================================================================route backend =======================================
@@ -73,8 +74,7 @@ Route::get('/order-details/{id}',[OrderController::class,'detailsOrder']);
 Route::get('/detail-order/{id}',[DetailOrderController::class,'detailOrder']);
 Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
 Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmasi']);
-
-
+Route::get('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan.store');
 
 
 // ================================================================== end route backend =================================

@@ -1,34 +1,33 @@
 <x-layout_frontend>
 @section('head')
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Bucker – FAQ</title>
-    <meta name="description"
-        content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world." />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="canonical" href="Replace_with_your_PAGE_URL" />
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Bucker – About Us</title>
+        <meta name="description" 
+            content="Informasi mengenai layanan dan ketentuan pemesanan MYC." />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="profile" href="https://gmpg.org/xfn/11">
+        <link rel="canonical" href="Replace_with_your_PAGE_URL" />
 
-    <!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Bucker – About Us" />
-    <meta property="og:url" content="PAGE_URL" />
-    <meta property="og:site_name" content="Bucker – About Us" />
-    <!-- For the og:image content, replace the # with a link of an image -->
-    <meta property="og:image" content="#" />
-    <meta property="og:description" content="Bucker – About Us" />
+        <!-- OG meta tags -->
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Bucker – About Us" />
+        <meta property="og:url" content="PAGE_URL" />
+        <meta property="og:site_name" content="Bucker – About Us" />
+        <meta property="og:image" content="#" />
+        <meta property="og:description" content="Ketahui lebih lanjut tentang MYC." />
 
-    <!-- Add site Favicon -->
-    <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-192x192.png"
-        sizes="192x192" />
-    <link rel="apple-touch-icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-180x180.png" />
-    <meta name="msapplication-TileImage"
-        content="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-270x270.png" />
+        <!-- Add site Favicon -->
+            <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png" sizes="32x32" />
+            <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-192x192.png"
+                sizes="192x192" />
+            <link rel="apple-touch-icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-180x180.png" />
+            <meta name="msapplication-TileImage"
+                content="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-270x270.png" />
 
-    <!-- CSS 
+                 <!-- CSS 
     ========================= -->
     <link rel="stylesheet" href="assets_frontend/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets_frontend/css/slick.css">
@@ -55,405 +54,179 @@
         "url": "Replace_with_your_site_URL"
         }
     </script>
-</head>
+    
+    </head>
+    @endsection
 
-@endsection
-
-@section('app-content')
-
-
-    <!-- breadcrumbs area start -->
-    <div class="breadcrumbs_aree breadcrumbs_bg mb-110" data-bgimg="assets_frontend/img/others/breadcrumbs-bg.png">
+    @section('app-content')
+    <!-- Breadcrumb Area -->
+    <div class="breadcrumbs_aree breadcrumbs_bg mb-5" data-bgimg="assets_frontend/img/others/breadcrumbs-bg.png">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumbs_text">
-                        <h1>FAQ</h1>
+                        <h1>About Us</h1>
                         <ul>
-                            <li><a href="mycindex.html">Home </a></li>
-                            <li> // FAQ</li>
+                            <li><a href="/">Home</a></li>
+                            <li> // About Us</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- breadcrumbs area end -->
-    <div class="faq-main-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 mb-5">
-                    <div class="frequently-area">
-                        <h2 class="heading mb-0">General Question</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="frequently-item">
-                                            <ul>
-                                                <li class="has-sub active">
-                                                    <a href="javascript:void(0)">Before you get started
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Compatibility with premium plugins
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Install theme demo contents
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Translation and localization
-                                                        services
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Live chat support
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 pt-5 pt-md-0">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="frequently-item">
-                                            <ul>
-                                                <li class="has-sub active">
-                                                    <a href="javascript:void(0)">Before you get started
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Compatibility with premium plugins
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Install theme demo contents
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Translation and localization
-                                                        services
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Live chat support
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+    <!-- About Section -->
+    <div class="about_us_section pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 d-flex align-items-start">
+                
+                <!-- Konten Kiri: Gambar -->
+                <div class="col-lg-4 text-start">
+                    <img src="assets_frontend/img/icon/logo1.png" alt="Logo" class="img-fluid" width="1000">
+                </div>
+                
+                <!-- Konten Kanan: Judul dan Informasi Ketentuan Pemesanan -->
+                <div class="col-lg-7">
+                    <h2 class="text-left mb-5">Ketentuan Pemesanan</h2>
+                    <div class="about_info_content">
+                        <ul class="list-unstyled">
+                            <li>1. Pemesanan dapat dilakukan untuk harian, mingguan, 2 mingguan atau bulanan. Pemesanan maksimal H-2 di hari & jam kerja (Senin-Jumat jam 07.00-16.00).</li>
+                            <li>2. Pembayaran tagihan secara transfer ke rekening yang tertera di email tagihan.</li>
+                            <li>3. Pembayaran dan info bukti transfer ke email tagihan wajib dilakukan 1x24 jam setelah email tagihan diterima.</li>
+                            <li>4. MYC memberikan kupon makan yang dapat ditukarkan ke staff vendor.</li>
+                            <li>5. Menu yang sudah dipilih dan uang yang sudah dibayarkan tidak dapat ditukar, dikembalikan, atau diganti tanggal.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row d-flex justify-content-center mt-5">
+    <div class="col-12 text-center mb-4">
+        <h2 class="d-flex align-items-center justify-content-center">
+            <img src="assets_frontend/img/logo/waktu.png" alt="Jam Pengambilan Makanan Icon" width="200" class="me-3"> 
+            Jam Pengambilan Makanan
+        </h2>
+    </div>
+
+        <!-- Jam Pemesanan Sections -->
+        <div class="row d-flex justify-content-center">
+            <!-- Breakfast Section -->
+            <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="contact_form time-section text-center p-4" onclick="toggleInfo('breakfast-info')">
+                        <div class="icon-wrapper">
+                            <img src="assets_frontend/img/logo/breakfast.png" alt="Breakfast Icon" width="100" class="mb-2">
+                        </div>
+                        <h2 class="section-title"></h2>
+                        <div id="breakfast-info" class="time-info mt-3" style="display: none;">
+                            <p><strong>06.00 - 06.30</strong></p>
+                            <p>Jangan lewatkan sarapan pagi! Ambil makanan sehat Anda antara pukul 06.00 hingga 06.30 untuk memulai hari dengan energi yang cukup.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="frequently-area section-space-top-95">
-                        <h2 class="heading mb-0">Payment & Gift card</h2>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="frequently-item">
-                                            <ul>
-                                                <li class="has-sub active">
-                                                    <a href="javascript:void(0)">Changing the timezone
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Developer documentation
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Connnection social media channels
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Optimize theme speed & perfomance
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 pt-6 pt-md-0">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="frequently-item">
-                                            <ul>
-                                                <li class="has-sub active">
-                                                    <a href="javascript:void(0)">Fully responsive
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Translation and localization
-                                                        services
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">Live chat support
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-sub">
-                                                    <a href="javascript:void(0)">RTL Support now
-                                                        <i class="pe-7s-angle-down"></i>
-                                                    </a>
-                                                    <ul class="frequently-body">
-                                                        <li>
-                                                            Nulla imperdiet odio tempor nisl vulputate scelerisque.
-                                                            Fusce
-                                                            interdum ultricies convallis. Vivamus efficitur purus eu
-                                                            elit
-                                                            scelerisque blandit. Nullam viverra est quis erat
-                                                            fringilla,
-                                                            at
-                                                            rutrum sem lacinia.
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                <!-- Lunch Section -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="contact_form time-section text-center p-4" onclick="toggleInfo('lunch-info')">
+                        <div class="icon-wrapper">
+                            <img src="assets_frontend/img/logo/lunch.png" alt="Lunch Icon" width="100" class="mb-2">
+                        </div>
+                        <h2 class="section-title"></h2>
+                        <div id="lunch-info" class="time-info mt-3" style="display: none;">
+                            <p><strong>11.30 - 12.00</strong></p>
+                            <p>Waktunya makan siang! Pastikan untuk mengambil hidangan Anda dari pukul 11.30 hingga 12.00 agar tetap bertenaga di siang hari.</p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Dinner Section -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="contact_form time-section text-center p-4" onclick="toggleInfo('dinner-info')">
+                        <div class="icon-wrapper">
+                            <img src="assets_frontend/img/logo/dinner.png" alt="Dinner Icon" width="100" class="mb-2">
+                        </div>
+                        <h2 class="section-title"></h2>
+                        <div id="dinner-info" class="time-info mt-3" style="display: none;">
+                            <p><strong>18.00 - 18.30</strong></p>
+                            <p>Saatnya makan malam! Ambil hidangan Anda antara pukul 18.00 hingga 18.30 untuk menutup hari dengan makanan bergizi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<style>
+    /* Set the background color to blue */
+    .time-section {
+        background-color: #d9d9d9; /* Blue background */
+        color:#000000; /* White text for contrast */
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-image: url('assets_frontend/img/others/contact-form-bg-shape.png');
+        background-blend-mode: overlay;
+    }
+
+    /* Title styling */
+    .section-title {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    /* Time info styling */
+    .time-info {
+        display: none;
+    }
+
+    /* Show time-info on click */
+    .time-section.active .time-info {
+        display: block;
+    }
+
+    /* Hide title on click */
+    .time-section.active .section-title {
+        display: none;
+    }
+</style>
+
+<script>
+    function toggleInfo(infoId) {
+        // Reset all sections
+        document.querySelectorAll('.time-section').forEach(section => {
+            section.classList.remove('active');
+            section.querySelector('.time-info').style.display = 'none';
+            section.querySelector('.section-title').style.display = 'block';
+        });
+
+        // Activate the clicked section
+        const selectedSection = document.getElementById(infoId).closest('.time-section');
+        selectedSection.classList.add('active');
+        selectedSection.querySelector('.time-info').style.display = 'block';
+        selectedSection.querySelector('.section-title').style.display = 'none';
+    }
+</script>
+
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="text-center mb-4">Contact Person</h3>
+                    <p>Hubungi kami melalui WhatsApp di nomor berikut:
+                    <a href="https://wa.me/6281223366741" class="btn-whatsapp" target="_blank">
+                        <img src="assets_frontend/img/logo/wa-logo.png" alt="WhatsApp Logo" width="35" class="me-2">
+                        0812.2336.6741</p>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!--footer area end-->
     @endsection
-    <!-- JS
-============================================ -->
+
     @section('js')
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
@@ -467,7 +240,9 @@
     <script src="assets_frontend/js/mailchimp-ajax.js"></script>
     <script src="assets_frontend/js/jquery-ui.min.js"></script>
     <script src="assets_frontend/js/jquery.zoom.min.js"></script>
+    <script src="assets_frontend/js/ajax-mail.js"></script>
+
     <!-- Main JS -->
     <script src="assets_frontend/js/main.js"></script>
     @endsection
-    </x-layout_frontend>  
+</x-layout_frontend>

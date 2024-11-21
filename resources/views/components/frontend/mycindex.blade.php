@@ -177,7 +177,7 @@
                     <div class="col-lg-4  ">
                         <div class="single_blog wow fadeInUp" style="text-align: center;" data-wow-delay="0.1s" data-wow-duration="1.1s">
                             <div class="blog_thumb">
-                                <a href="cart"><img src="assets_frontend/img/blog/blog1.png" alt=""></a>
+                                <a href="cart"><img src="assets_frontend/img/blog/blog9.png" alt=""></a>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_arrow_btn">
