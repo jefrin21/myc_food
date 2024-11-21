@@ -312,42 +312,109 @@
                                                                                         id="last_name_customer" required>
                                                                                 </div>
                                                                                 <div class="col-12">
-                                                                                    <label>Faculty</label>
-                                                                                    <select name="fakultas_customer"
-                                                                                        id="fakultas_customer">
-                                                                                        <option disabled selected value="1">Select
-                                                                                            Faculty</option>
-                                                                                        <option
-                                                                                            value="Faculty-of-Information-Technology">
-                                                                                            Faculty of Information Technology</option>
-                                                                                        <option value="Faculty-of-Business">Faculty of
-                                                                                            Business</option>
-                                                                                        <option
-                                                                                            value="Faculty-of-Science-and-Technology">
-                                                                                            Faculty of Science and Technology</option>
-                                                                                        <option value="Faculty-of-Nursing"> Faculty of
-                                                                                            Nursing</option>
-                                                                                        <option value="Faculty-of-Medicine">Faculty of
-                                                                                            Medicine</option>
+                                                                                <label>Major</label>
+                                                                                    <select name="fakultas_customer" id="fakultas_customer" required>
+                                                                                        <option disabled value="1" >
+                                                                                            Select Major
+                                                                                        </option>
+                                                                                        <option value="Management"  >
+                                                                                            Management
+                                                                                        </option>
+                                                                                        <option value="Accounting" >
+                                                                                            Accounting
+                                                                                        </option>
+                                                                                        <option value="Music" >
+                                                                                            Music
+                                                                                        </option>
+                                                                                        <option value="Technology-Laboratorium-Medic" >
+                                                                                            Technology Laboratorium Medic
+                                                                                        </option>
+                                                                                        <option value="Applied-Mathematics" >
+                                                                                            Applied Mathematics
+                                                                                        </option>
+                                                                                        <option value="Electrical-Engineering" >
+                                                                                            Electrical Engineering
+                                                                                        </option>
+                                                                                        <option value="Industrial-Engineering" >
+                                                                                            Industrial Engineering
+                                                                                        </option>
+                                                                                        <option value="Food-Technology" >
+                                                                                            Food Technology
+                                                                                        </option>
+                                                                                        <option value="Civil-Engineering" >
+                                                                                            Civil Engineering
+                                                                                        </option>
+                                                                                        <option value="Law" >
+                                                                                            Law
+                                                                                        </option>
+                                                                                        <option value="Pharmacy" >
+                                                                                            Pharmacy
+                                                                                        </option>
+                                                                                        <option value="Medical-Laboratory-Technology" >
+                                                                                            Medical Laboratory Technology
+                                                                                        </option>
+                                                                                        <option value="International-Relations" >
+                                                                                            International Relations
+                                                                                        </option>
+                                                                                        <option value="Biotechnology" >
+                                                                                            Biotechnology
+                                                                                        </option>
+                                                                                        <option value="Applied-Communication-Sciences" >
+                                                                                            Applied Communication Sciences
+                                                                                        </option>
+                                                                                        <option value="Medicine" >
+                                                                                            Medicine
+                                                                                        </option>
+                                                                                        <option value="Nursing" >
+                                                                                            Nursing
+                                                                                        </option>
+                                                                                        <option value="Psychology" >
+                                                                                            Psychology
+                                                                                        </option>
+                                                                                        <option value="Information-System" >
+                                                                                            Information System
+                                                                                        </option>
+                                                                                        <option value="Informatics" >
+                                                                                            Informatics
+                                                                                        </option>
+                                                                                        <option value="Architecture" >
+                                                                                            Architecture
+                                                                                        </option>
+                                                                                        <option value="Interior-Design" >
+                                                                                            Interior Design
+                                                                                        </option>
+                                                                                        <option value="Visual-Communication-Design" >
+                                                                                            Visual Communication Design
+                                                                                        </option>
+                                                                                        <option value="Product-Design" >
+                                                                                            Product Design
+                                                                                        </option>
+                                                                                        <option value="Hospitality-Management" >
+                                                                                            Hospitality Management
+                                                                                        </option>
+                                                                                        <option value="Tourism-Management" >
+                                                                                            Tourism Management
+                                                                                        </option>
+                                                                                        <option value="Teachers-College" >
+                                                                                            Teachers College
+                                                                                        </option>
                                                                                     </select>
                                                                                 </div>
                                                                                 <div class="col-12">
-                                                                                    <label>Dorm Location</label>
-                                                                                    <select name="lokasi_dorm_customer"
-                                                                                        id="lokasi_dorm_customer" required>
-                                                                                        <option disabled selected value="1">Select Dorm
+                                                                                <label>Dorm Location</label>
+                                                                                    <select name="lokasi_dorm_customer" id="lokasi_dorm_customer" required>
+                                                                                        <option selected value="1">Select Dorm
                                                                                             Location</option>
-                                                                                        <option value="MYC-Dorm">MYC Dorm</option>
+                                                                                        <option value="MYC-Dorm">MYC Dormitory</option>
                                                                                         <option value="Paddock-Dorm">Paddock Dorm
                                                                                         </option>
                                                                                         <option value="G-Building-Dorm">G Building Dorm
                                                                                         </option>
-                                                                                        <option value="Swimming-Pool-Dorm">Swimming Pool
+                                                                                        <option value="GBFK">GBFK
                                                                                             Dorm</option>
-                                                                                        <option value="Soccer-Field-Dorm">Soccer Field
+                                                                                        <option value="Grandstand">
+                                                                                            Grandstand
                                                                                             Dorm</option>
-                                                                                    </select>
-
 
                                                                                 </div>
 

@@ -157,7 +157,7 @@
                                                 <input type="text" value="{{ auth()->user()->last_name_customer }}">
                                             </div>
                                             <div class="single-input">
-                                                <label>Faculty</label>
+                                                <label>Major</label>
                                                 <input type="text" value="{{ auth()->user()->fakultas_customer }}">
                                             </div>
                                             <div class="single-input single-input-half">
@@ -222,30 +222,118 @@
                                                                                         required>
                                                                                 </div>
                                                                                 <div class="col-12">
-                                                                                    <label>Faculty</label>
+                                                                                    <label>Major</label>
                                                                                     <select name="fakultas_customer" id="fakultas_customer" required>
                                                                                         <option disabled value="1" {{ auth()->user()->fakultas_customer == null ? 'selected' : '' }}>
-                                                                                            Select Faculty
+                                                                                            Select Major
                                                                                         </option>
-                                                                                        <option value="Faculty of Information Technology" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Information-Technology' ? 'selected' : '' }}>
-                                                                                            Faculty of Information Technology
+                                                                                        <option value="Management" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Management' ? 'selected' : '' }}>
+                                                                                            Management
                                                                                         </option>
-                                                                                        <option value="Faculty of Business" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Business' ? 'selected' : '' }}>
-                                                                                            Faculty of Business
+                                                                                        <option value="Accounting" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Accounting' ? 'selected' : '' }}>
+                                                                                            Accounting
                                                                                         </option>
-                                                                                        <option value="Faculty of Science and Technology" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Science-and-Technology' ? 'selected' : '' }}>
-                                                                                            Faculty of Science and Technology
+                                                                                        <option value="Music" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Music' ? 'selected' : '' }}>
+                                                                                            Music
                                                                                         </option>
-                                                                                        <option value="Faculty of Nursing" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Nursing' ? 'selected' : '' }}>
-                                                                                            Faculty of Nursing
+                                                                                        <option value="Technology-Laboratorium-Medic" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Technology-Laboratorium-Medic' ? 'selected' : '' }}>
+                                                                                            Technology Laboratorium Medic
                                                                                         </option>
-                                                                                        <option value="Faculty of Medicine" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Faculty-of-Medicine' ? 'selected' : '' }}>
-                                                                                            Faculty of Medicine
+                                                                                        <option value="Applied-Mathematics" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Applied-Mathematics' ? 'selected' : '' }}>
+                                                                                            Applied Mathematics
+                                                                                        </option>
+                                                                                        <option value="Electrical-Engineering" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Electrical-Engineering' ? 'selected' : '' }}>
+                                                                                            Electrical Engineering
+                                                                                        </option>
+                                                                                        <option value="Industrial-Engineering" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Industrial-Engineering' ? 'selected' : '' }}>
+                                                                                            Industrial Engineering
+                                                                                        </option>
+                                                                                        <option value="Food-Technology" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Food-Technology' ? 'selected' : '' }}>
+                                                                                            Food Technology
+                                                                                        </option>
+                                                                                        <option value="Civil-Engineering" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Civil-Engineering' ? 'selected' : '' }}>
+                                                                                            Civil Engineering
+                                                                                        </option>
+                                                                                        <option value="Law" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Law' ? 'selected' : '' }}>
+                                                                                            Law
+                                                                                        </option>
+                                                                                        <option value="Pharmacy" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Pharmacy' ? 'selected' : '' }}>
+                                                                                            Pharmacy
+                                                                                        </option>
+                                                                                        <option value="Medical-Laboratory-Technology" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Medical-Laboratory-Technology' ? 'selected' : '' }}>
+                                                                                            Medical Laboratory Technology
+                                                                                        </option>
+                                                                                        <option value="International-Relations" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'International-Relations' ? 'selected' : '' }}>
+                                                                                            International Relations
+                                                                                        </option>
+                                                                                        <option value="Biotechnology" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Biotechnology' ? 'selected' : '' }}>
+                                                                                            Biotechnology
+                                                                                        </option>
+                                                                                        <option value="Applied-Communication-Sciences" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Applied-Communication-Sciences' ? 'selected' : '' }}>
+                                                                                            Applied Communication Sciences
+                                                                                        </option>
+                                                                                        <option value="Medicine" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Medicine' ? 'selected' : '' }}>
+                                                                                            Medicine
+                                                                                        </option>
+                                                                                        <option value="Nursing" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Nursing' ? 'selected' : '' }}>
+                                                                                            Nursing
+                                                                                        </option>
+                                                                                        <option value="Psychology" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Psychology' ? 'selected' : '' }}>
+                                                                                            Psychology
+                                                                                        </option>
+                                                                                        <option value="Information-System" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Information-System' ? 'selected' : '' }}>
+                                                                                            Information System
+                                                                                        </option>
+                                                                                        <option value="Informatics" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Informatics' ? 'selected' : '' }}>
+                                                                                            Informatics
+                                                                                        </option>
+                                                                                        <option value="Architecture" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Architecture' ? 'selected' : '' }}>
+                                                                                            Architecture
+                                                                                        </option>
+                                                                                        <option value="Interior-Design" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Interior-Design' ? 'selected' : '' }}>
+                                                                                            Interior Design
+                                                                                        </option>
+                                                                                        <option value="Visual-Communication-Design" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Visual-Communication-Design' ? 'selected' : '' }}>
+                                                                                            Visual Communication Design
+                                                                                        </option>
+                                                                                        <option value="Product-Design" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Product-Design' ? 'selected' : '' }}>
+                                                                                            Product Design
+                                                                                        </option>
+                                                                                        <option value="Hospitality-Management" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Hospitality-Management' ? 'selected' : '' }}>
+                                                                                            Hospitality Management
+                                                                                        </option>
+                                                                                        <option value="Tourism-Management" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Tourism-Management' ? 'selected' : '' }}>
+                                                                                            Tourism Management
+                                                                                        </option>
+                                                                                        <option value="Teachers-College" 
+                                                                                            {{ auth()->user()->fakultas_customer == 'Teachers-College' ? 'selected' : '' }}>
+                                                                                            Teachers College
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
@@ -257,18 +345,18 @@
                                                                                         <option disabled selected value="1" {{ auth()->user()->lokasi_dorm_customer == null ? 'selected' : '' }}>Select Dorm
                                                                                             Location</option>
                                                                                         <option value="MYC-Dorm"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'MYC-Dorm' ? 'selected' : '' }}>MYC Dorm</option>
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'MYC-Dorm' ? 'selected' : '' }}>MYC Dormitory</option>
                                                                                         <option value="Paddock-Dorm"
                                                                                         {{ auth()->user()->lokasi_dorm_customer == 'Paddock-Dorm' ? 'selected' : '' }}>Paddock Dorm
                                                                                         </option>
                                                                                         <option value="G-Building-Dorm"
                                                                                         {{ auth()->user()->lokasi_dorm_customer == 'G-Building-Dorm' ? 'selected' : '' }}>G Building Dorm
                                                                                         </option>
-                                                                                        <option value="Swimming-Pool-Dorm"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Swimming-Pool-Dorm' ? 'selected' : '' }}>Swimming Pool
+                                                                                        <option value="GBFK"
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'GBFK' ? 'selected' : '' }}>GBFK
                                                                                             Dorm</option>
-                                                                                        <option value="Soccer-Field-Dorm"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Soccer-Field-Dorm' ? 'selected' : '' }}>Soccer Field
+                                                                                        <option value="Grandstand"
+                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Grandstand' ? 'selected' : '' }}>Grandstand
                                                                                             Dorm</option>
                                                                                     </select>
 
@@ -533,41 +621,109 @@
                                                                                         id="last_name_customer" required>
                                                                                 </div>
                                                                                 <div class="col-12">
-                                                                                    <label>Faculty</label>
-                                                                                    <select name="fakultas_customer"
-                                                                                        id="fakultas_customer">
-                                                                                        <option disabled selected value="1">Select
-                                                                                            Faculty</option>
-                                                                                        <option
-                                                                                            value="Faculty-of-Information-Technology">
-                                                                                            Faculty of Information Technology</option>
-                                                                                        <option value="Faculty-of-Business">Faculty of
-                                                                                            Business</option>
-                                                                                        <option
-                                                                                            value="Faculty-of-Science-and-Technology">
-                                                                                            Faculty of Science and Technology</option>
-                                                                                        <option value="Faculty-of-Nursing"> Faculty of
-                                                                                            Nursing</option>
-                                                                                        <option value="Faculty-of-Medicine">Faculty of
-                                                                                            Medicine</option>
+                                                                                <label>Major</label>
+                                                                                    <select name="fakultas_customer" id="fakultas_customer" required>
+                                                                                        <option disabled value="1" >
+                                                                                            Select Major
+                                                                                        </option>
+                                                                                        <option value="Management"  >
+                                                                                            Management
+                                                                                        </option>
+                                                                                        <option value="Accounting" >
+                                                                                            Accounting
+                                                                                        </option>
+                                                                                        <option value="Music" >
+                                                                                            Music
+                                                                                        </option>
+                                                                                        <option value="Technology-Laboratorium-Medic" >
+                                                                                            Technology Laboratorium Medic
+                                                                                        </option>
+                                                                                        <option value="Applied-Mathematics" >
+                                                                                            Applied Mathematics
+                                                                                        </option>
+                                                                                        <option value="Electrical-Engineering" >
+                                                                                            Electrical Engineering
+                                                                                        </option>
+                                                                                        <option value="Industrial-Engineering" >
+                                                                                            Industrial Engineering
+                                                                                        </option>
+                                                                                        <option value="Food-Technology" >
+                                                                                            Food Technology
+                                                                                        </option>
+                                                                                        <option value="Civil-Engineering" >
+                                                                                            Civil Engineering
+                                                                                        </option>
+                                                                                        <option value="Law" >
+                                                                                            Law
+                                                                                        </option>
+                                                                                        <option value="Pharmacy" >
+                                                                                            Pharmacy
+                                                                                        </option>
+                                                                                        <option value="Medical-Laboratory-Technology" >
+                                                                                            Medical Laboratory Technology
+                                                                                        </option>
+                                                                                        <option value="International-Relations" >
+                                                                                            International Relations
+                                                                                        </option>
+                                                                                        <option value="Biotechnology" >
+                                                                                            Biotechnology
+                                                                                        </option>
+                                                                                        <option value="Applied-Communication-Sciences" >
+                                                                                            Applied Communication Sciences
+                                                                                        </option>
+                                                                                        <option value="Medicine" >
+                                                                                            Medicine
+                                                                                        </option>
+                                                                                        <option value="Nursing" >
+                                                                                            Nursing
+                                                                                        </option>
+                                                                                        <option value="Psychology" >
+                                                                                            Psychology
+                                                                                        </option>
+                                                                                        <option value="Information-System" >
+                                                                                            Information System
+                                                                                        </option>
+                                                                                        <option value="Informatics" >
+                                                                                            Informatics
+                                                                                        </option>
+                                                                                        <option value="Architecture" >
+                                                                                            Architecture
+                                                                                        </option>
+                                                                                        <option value="Interior-Design" >
+                                                                                            Interior Design
+                                                                                        </option>
+                                                                                        <option value="Visual-Communication-Design" >
+                                                                                            Visual Communication Design
+                                                                                        </option>
+                                                                                        <option value="Product-Design" >
+                                                                                            Product Design
+                                                                                        </option>
+                                                                                        <option value="Hospitality-Management" >
+                                                                                            Hospitality Management
+                                                                                        </option>
+                                                                                        <option value="Tourism-Management" >
+                                                                                            Tourism Management
+                                                                                        </option>
+                                                                                        <option value="Teachers-College" >
+                                                                                            Teachers College
+                                                                                        </option>
                                                                                     </select>
                                                                                 </div>
                                                                                 <div class="col-12">
-                                                                                    <label>Dorm Location</label>
-                                                                                    <select name="lokasi_dorm_customer"
-                                                                                        id="lokasi_dorm_customer" required>
-                                                                                        <option disabled selected value="1">Select Dorm
-                                                                                            Location</option>
-                                                                                        <option value="MYC-Dorm">MYC Dorm</option>
-                                                                                        <option value="Paddock-Dorm">Paddock Dorm
-                                                                                        </option>
-                                                                                        <option value="G-Building-Dorm">G Building Dorm
-                                                                                        </option>
-                                                                                        <option value="Swimming-Pool-Dorm">Swimming Pool
-                                                                                            Dorm</option>
-                                                                                        <option value="Soccer-Field-Dorm">Soccer Field
-                                                                                            Dorm</option>
-                                                                                    </select>
+                                                                                <label>Dorm Location</label>
+                                                                                <select name="lokasi_dorm_customer" id="lokasi_dorm_customer" required>
+                                                                                    <option selected value="1">Select Dorm
+                                                                                        Location</option>
+                                                                                    <option value="MYC-Dorm">MYC Dormitory</option>
+                                                                                    <option value="Paddock-Dorm">Paddock Dorm
+                                                                                    </option>
+                                                                                    <option value="G-Building-Dorm">G Building Dorm
+                                                                                    </option>
+                                                                                    <option value="GBFK">GBFK
+                                                                                        Dorm</option>
+                                                                                    <option value="Grandstand">
+                                                                                        Grandstand
+                                                                                        Dorm</option>
 
 
                                                                                 </div>
