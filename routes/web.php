@@ -9,6 +9,7 @@ use App\Http\Controllers\KonfirmasiOrderController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\WeeklyController;
+use App\Http\Controllers\IndexController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -79,16 +80,13 @@ Route::get('/invoiceback', function () {
     return view('components.backend.invoice');
 });
 
+Route::get('/',[IndexController::class,'index']);
 Route::get('/tables-datatable-pesanan',[OrderController::class,'index'])->name('tables-datatable-pesanan');
 Route::get('/order-details/{id}',[OrderController::class,'detailsOrder']);
 Route::get('/detail-order/{id}',[DetailOrderController::class,'detailOrder']);
 Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
 Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmasi']);
-
-
 Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
-
-
 Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf']);
 
 

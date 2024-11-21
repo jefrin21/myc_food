@@ -77,11 +77,9 @@
                                                             <div
                                                                 class="col-10 text-right"
                                                             >
-                                                                <h5
-                                                                    class="mt-0 mb-1"
-                                                                >
-                                                                    122
-                                                                </h5>
+                                                            <h5 class="mt-0 mb-1">
+                                                                {{ $jumlahPesanan }}
+                                                            </h5>
                                                                 <p
                                                                     class="mb-0 font-12 text-muted"
                                                                 >
@@ -110,11 +108,10 @@
                                                             <div
                                                                 class="col-10 text-right"
                                                             >
-                                                                <h5
-                                                                    class="mt-0 mb-1"
-                                                                >
-                                                                    62
-                                                                </h5>
+                                                            <h5 class="mt-0 mb-1">
+                                                                {{ $jumlahuser }}
+                                                            </h5>
+                                                            
                                                                 <p
                                                                     class="mb-0 font-12 text-muted"
                                                                 >
@@ -141,11 +138,9 @@
                                                             <div
                                                                 class="col-10 text-right"
                                                             >
-                                                                <h5
-                                                                    class="mt-0 mb-1"
-                                                                >
-                                                                   Rp 1.000.000,00
-                                                                </h5>
+                                                            <h5 class="mt-0 mb-1">
+                                                                Rp {{ number_format($totalHarga, 2, ',', '.') }}
+                                                            </h5>
                                                                 <p
                                                                     class="mb-0 font-12 text-muted"
                                                                 >
@@ -167,7 +162,7 @@
                                             <h5 class="header-title pb-3 mt-0">
                                                 Details
                                             </h5>
-                                            <div class="table-responsive">
+                                             {{-- <div class="table-responsive">
                                                 <table
                                                     class="table table-hover mb-0"
                                                 >
@@ -229,7 +224,7 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                            </div>
+                                            </div> --}}
                                             <!--end table-responsive-->
                                             <div
                                                 class="pt-3 border-top text-right"
