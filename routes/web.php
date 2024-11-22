@@ -13,9 +13,13 @@ use App\Http\Controllers\IndexController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PemesananController;
-
+use App\Http\Middleware\isAdmin;
 
 // ================================================================route backend =======================================
+Route::get('/pages-login', function () {
+    return view('components.backend.pages-login');
+});
+Route::middleware([isAdmin::class])->group(function(){
 Route::get('/', function () {
     return view('components.backend.index');
 });
@@ -51,9 +55,7 @@ Route::get('/form-xeditable', function () {
 Route::get('/pages-lock-screen', function () {
     return view('components.backend.pages-lock-screen');
 });
-Route::get('/pages-login', function () {
-    return view('components.backend.pages-login');
-});
+
 Route::get('/pages-recoverpw', function () {
     return view('components.backend.pages-recoverpw');
 });
@@ -90,6 +92,10 @@ Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmas
 Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
 Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf']);
 
+});
+
+
+
 
 // ================================================================== end route backend =================================
 
@@ -123,9 +129,9 @@ Route::get('/invoice', function () {
     return view('components.frontend.mycinvoice');
 });
 
-// Route::get('/login', function () {
-//     return view('components.frontend.myclogin');
-// })->name('login')->middleware('guest');
+Route::get('/login', function () {
+    return view('components.frontend.myclogin');
+});
 
 Route::get('/register', function () {
     return view('components.frontend.mycregister');

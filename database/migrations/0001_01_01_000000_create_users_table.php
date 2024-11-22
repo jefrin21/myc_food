@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('lokasi_dorm_customer')->nullable();
             $table->char('no_kamar')->nullable();
             $table->string('email')->unique();
-            $table->string('is_admin')->nullable();
+            $table->boolean('is_admin')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

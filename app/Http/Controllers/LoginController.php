@@ -25,14 +25,21 @@ class LoginController extends Controller
 
 
         if(Auth::attempt($credentials)){
+
+            $user = Auth::user();
+            if($user->is_admin){
+
+                 $request->session()->regenerate();
+
+                 return redirect()->intended('/');
+            }
             $request->session()->regenerate();
 
-            return redirect()->intended('/cart');
+            return redirect()->intended('/home');
         }
 
         return back()->with('loginError','Email Atau Password salah. Login Gagal');
 
-        // @dd('berhasil login');
     }
     
 

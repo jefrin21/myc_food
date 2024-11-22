@@ -25,28 +25,42 @@ class CartController extends Controller
 
       $cart=Session::get('cart',[]);
       $user = auth()->user();
-      $harga = 25000;
 
-      if($user && $user->lokasi_dorm_customer === 'MYC-Dorm'){
-        $harga = 10000;
-      }
+      
+
+    //   if($user && $user->lokasi_dorm_customer === 'MYC-Dorm'){
+    //     $harga = 10000;
+    //   }
+
+        if ($user && in_array($user->lokasi_dorm_customer, ['Paddock-Dorm', 'G-Building-Dorm','GBFK','Grandstand'])) {
+            $harga_silver = 15000;
+            $harga_gold = 20000;
+        } else {
+            $harga_silver = 20000;
+            $harga_gold = 25000;
+        }
+
 
         if($request->filled('jenispaket1')){
+            $jenispaket1 = $request->input('jenispaket1');
+            $harga1 = $jenispaket1 === 'Silver' ? $harga_silver : $harga_gold;
             $cart[]=[
             'id' =>uniqid(),
             'tanggal' =>$request->input('tanggalpemesanan'),
             'paket'=>'Lunch',
             'jenispaket' => $request->input('jenispaket1'),
-            'harga'=>$harga
+            'harga'=>$harga1
             ];
         }
         if($request->filled('jenispaket2')){
+            $jenispaket2 = $request->input('jenispaket2');
+            $harga2 = $jenispaket2 === 'Silver' ? $harga_silver : $harga_gold;
             $cart[]=[
             'id'=>uniqid(),
             'tanggal' =>$request->input('tanggalpemesanan'),
             'paket'=>'Dinner',
             'jenispaket' => $request->input('jenispaket2'),
-            'harga' => $harga
+            'harga' => $harga2
             ];
         }
 
