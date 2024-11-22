@@ -131,10 +131,10 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket1" id="jenispaket1" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="Silver A">Silver A</option>
-                                        <option value="Silver B">Silver B</option>
-                                        <option value="Gold A">Gold A</option>
-                                        <option value="Gold B">Gold B</option>
+                                        <option value="Silver">Silver A</option>
+                                        <option value="Silver">Silver B</option>
+                                        <option value="Gold">Gold A</option>
+                                        <option value="Gold">Gold B</option>
                                     </select>
                                 </div>
                             </div>
@@ -145,10 +145,10 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket2" id="jenispaket2" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="Silver A">Silver A</option>
-                                        <option value="Silver B">Silver B</option>
-                                        <option value="Gold A">Gold A</option>
-                                        <option value="Gold B">Gold B</option>
+                                        <option value="Silver">Silver A</option>
+                                        <option value="Silver">Silver B</option>
+                                        <option value="Gold">Gold A</option>
+                                        <option value="Gold">Gold B</option>
                                     </select>
                                 </div>
                                 
@@ -181,12 +181,7 @@
                                                         <tr>
                                                             <td class="product-name">{{ $carts['jenispaket'] }}
                                                             </td>
-                                                            <td class="product-price"><span class="amount">Rp.{{ number_format($carts['harga'], 0, ',', '.') }}</span></td>
-                                                            {{-- <td class="product_pro_button quantity">
-                                                                <div class="pro-qty border">
-                                                                    <input type="text" value="1">
-                                                                </div>
-                                                            </td> --}}
+                                                            <td class="product-price"><span class="amount">Rp {{ number_format($carts['harga'], 0, ',', '.') }}</span></td>
                                                             <td class="product-subtotal"><span class="amount">{{ $carts['paket'] }}</span></td>
                                                             <td class="product-subtotal"><span class="amount">{{ \Carbon\Carbon::parse($carts['tanggal'])->format('d F Y') }}</span></td>
                                                             <td class="product_remove">

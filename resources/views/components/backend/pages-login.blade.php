@@ -1,6 +1,6 @@
-<x-layout_backend>
-    @section('head')
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -16,40 +16,39 @@
         <link href="assets_backend/css/style.css" rel="stylesheet" type="text/css">
 
     </head>
-    @endsection
-
-        @section('app-content')
-        <div class="accountbg"></div>
+<body>
+    <div class="accountbg"></div>
         <div class="wrapper-page">
 
             <div class="card">
                 <div class="card-body">
 
                     <div class="text-center m-b-15">
-                        <a href="index.html" class="logo logo-admin"><img src="assets_backend/images/logo.png" height="24" alt="logo"></a>
+                        <a href="#" class="logo logo-admin"><img src="assets_frontend/img/logo/logomyc.png" height="100" alt="logo"></a>
                     </div>
 
                     <div class="p-3">
-                        <form class="form-horizontal m-t-20" action="index.html">
-
+                        <form class="form-horizontal m-t-20" action="/mylogin" method="POST">
+                            @csrf
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="text" required="" placeholder="Username">
+                                    <input class="form-control @error('email') is-invalid @enderror" type="Email" required name="email" id="email" placeholder="Email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="password" required="" placeholder="Password">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                    </div>
+                                    <input class="form-control @error('password') is-invalid @enderror" type="password" required name="password" id="password" placeholder="Password">
+                                    @error('password')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -73,10 +72,8 @@
                 </div>
             </div>
         </div>
-        @endsection
 
-        @section('js')
-        <!-- jQuery  -->
+     <!-- jQuery  -->
         <script src="assets_backend/js/jquery.min.js"></script>
         <script src="assets_backend/js/popper.min.js"></script>
         <script src="assets_backend/js/bootstrap.min.js"></script>
@@ -91,5 +88,8 @@
 
         <!-- App js -->
         <script src="assets_backend/js/app.js"></script>
-        @endsection
-</x-layout_backend>
+</body>
+</html>
+  
+        
+      

@@ -151,7 +151,7 @@
                                     <tr>
                                         <th class="cart-product-name">Pick-Up Date</th>
                                         <th class="cart-product-name">Product</th>
-                                        <th class="cart-product-total">Total</th>
+                                        <th class="cart-product-total">Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -167,7 +167,7 @@
                                     <tr class="order-total">
                                         <th>Order Total</th>
                                         <td></td>
-                                        <td><strong><span class="amount">Rp.{{ number_format($harga, 0, ',', '.') }}</span></strong></td>
+                                        <td><strong><span class="amount">Rp {{ number_format($harga, 0, ',', '.') }}</span></strong></td>
                                     </tr>
                                 </tfoot>
                             </table>

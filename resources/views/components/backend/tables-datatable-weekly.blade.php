@@ -61,17 +61,11 @@
                                                 <thead class="text-center">
                                                 <tr>
                                                         <th rowspan="2"  style="text-align: center; vertical-align: middle;">Tanggal</th>
-                                                        <th colspan="2">Silver A</th>
-                                                        <th colspan="2">Silver B</th>
-                                                        <th colspan="2">Gold A</th>
-                                                        <th colspan="2">Gold B</th>
+                                                        <th colspan="2">Silver</th>
+                                                        <th colspan="2">Gold</th>
                                                         <th rowspan="2"  style="text-align: center; vertical-align: middle;">Print</th>
                                                     </tr>
                                                     <tr>
-                                                        <th>L</th>
-                                                        <th>D</th>
-                                                        <th>L</th>
-                                                        <th>D</th>
                                                         <th>L</th>
                                                         <th>D</th>
                                                         <th>L</th>
@@ -84,74 +78,38 @@
                                                         <td>{{ \Carbon\Carbon::parse($datas->tanggal)->format('d F Y') }}</td>
                                                         <td>
                                                             <small>
-                                                                Gedung G: {{ $datas->lunch_silver_a_gedung_g}},<br>
-                                                                GBFK: {{ $datas->lunch_silver_a_gbfk }},<br>
-                                                                Grandstand: {{ $datas->lunch_silver_a_grandstand}},<br>
-                                                                Paddock: {{ $datas->lunch_silver_a_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->lunch_silver_a_myc_dorm }}
+                                                                Gedung G: {{ $datas->lunch_silver_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_silver_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_silver_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_silver_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_silver_myc_dorm }}
                                                             </small>
                                                         </td>
                                                         <td>
                                                             <small>
-                                                                Gedung G: {{ $datas->dinner_silver_a_gedung_g}},<br>
-                                                                GBFK: {{ $datas->dinner_silver_a_gbfk }},<br>
-                                                                Grandstand: {{ $datas->dinner_silver_a_grandstand}},<br>
-                                                                Paddock: {{ $datas->dinner_silver_a_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->dinner_silver_a_myc_dorm }}
+                                                                Gedung G: {{ $datas->dinner_silver_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_silver_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_silver_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_silver_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_silver_myc_dorm }}
                                                             </small>
                                                         </td>
                                                         <td>
                                                             <small>
-                                                                Gedung G: {{ $datas->lunch_silver_b_gedung_g}},<br>
-                                                                GBFK: {{ $datas->lunch_silver_b_gbfk }},<br>
-                                                                Grandstand: {{ $datas->lunch_silver_b_grandstand}},<br>
-                                                                Paddock: {{ $datas->lunch_silver_b_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->lunch_silver_b_myc_dorm }}
+                                                                Gedung G: {{ $datas->lunch_gold_gedung_g}},<br>
+                                                                GBFK: {{ $datas->lunch_gold_gbfk }},<br>
+                                                                Grandstand: {{ $datas->lunch_gold_grandstand}},<br>
+                                                                Paddock: {{ $datas->lunch_gold_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->lunch_gold_myc_dorm }}
                                                             </small>
                                                         </td>
                                                         <td>
                                                             <small>
-                                                                Gedung G: {{ $datas->dinner_silver_b_gedung_g}},<br>
-                                                                GBFK: {{ $datas->dinner_silver_b_gbfk }},<br>
-                                                                Grandstand: {{ $datas->dinner_silver_b_grandstand}},<br>
-                                                                Paddock: {{ $datas->dinner_silver_b_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->dinner_silver_b_myc_dorm }}
-                                                            </small>
-                                                        </td>
-                                                        <td>
-                                                            <small>
-                                                                Gedung G: {{ $datas->lunch_gold_a_gedung_g}},<br>
-                                                                GBFK: {{ $datas->lunch_gold_a_gbfk }},<br>
-                                                                Grandstand: {{ $datas->lunch_gold_a_grandstand}},<br>
-                                                                Paddock: {{ $datas->lunch_gold_a_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->lunch_gold_a_myc_dorm }}
-                                                            </small>
-                                                        </td>
-                                                        <td>
-                                                            <small>
-                                                                Gedung G: {{ $datas->dinner_gold_a_gedung_g}},<br>
-                                                                GBFK: {{ $datas->dinner_gold_a_gbfk }},<br>
-                                                                Grandstand: {{ $datas->dinner_gold_a_grandstand}},<br>
-                                                                Paddock: {{ $datas->dinner_gold_a_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->dinner_gold_a_myc_dorm }}
-                                                            </small>
-                                                        </td>
-                                                        <td>
-                                                            <small>
-                                                                Gedung G: {{ $datas->lunch_gold_b_gedung_g}},<br>
-                                                                GBFK: {{ $datas->lunch_gold_b_gbfk }},<br>
-                                                                Grandstand: {{ $datas->lunch_gold_b_grandstand}},<br>
-                                                                Paddock: {{ $datas->lunch_gold_b_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->lunch_gold_b_myc_dorm }}
-                                                            </small>
-                                                        </td>
-                                                        <td>
-                                                            <small>
-                                                                Gedung G: {{ $datas->dinner_gold_b_gedung_g}},<br>
-                                                                GBFK: {{ $datas->dinner_gold_b_gbfk }},<br>
-                                                                Grandstand: {{ $datas->dinner_gold_b_grandstand}},<br>
-                                                                Paddock: {{ $datas->dinner_gold_b_paddcok }},<br>
-                                                                MYC-Dorm: {{ $datas->dinner_gold_b_myc_dorm }}
+                                                                Gedung G: {{ $datas->dinner_gold_gedung_g}},<br>
+                                                                GBFK: {{ $datas->dinner_gold_gbfk }},<br>
+                                                                Grandstand: {{ $datas->dinner_gold_grandstand}},<br>
+                                                                Paddock: {{ $datas->dinner_gold_paddcok }},<br>
+                                                                MYC-Dorm: {{ $datas->dinner_gold_myc_dorm }}
                                                             </small>
                                                         </td>
                                                         <td style="text-align: center; vertical-align: middle;">

@@ -26,7 +26,7 @@ class IndexController extends Controller
     $totalHarga = Order::sum('total_harga');
     
     // Daftar lokasi yang ingin dihitung
-    $locations = ['Gedung G', 'GBFK', 'Grandstand', 'Paddock', 'MYC-Dorm'];
+    $locations = ['G-Building-Dorm', 'GBFK', 'Grandstand', 'Paddock-Dorm', 'MYC-Dorm'];
 
     // Mengambil jumlah users berdasarkan lokasi_dorm_customer yang sudah difilter
     $usersByLocation = User::select('lokasi_dorm_customer', DB::raw('COUNT(*) as jumlah_users'))
