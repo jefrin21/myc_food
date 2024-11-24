@@ -13,15 +13,15 @@
                         <div id="menu" class="text-left ">
                             <ul class="offcanvas_main_menu">
                                 <li class="menu-item-has-children active">
-                                    <a href="#">Home</a>
+                                    <a href="home">Home</a>
                                     
                                 </li>
-                                <li><a href="about.html">Order</a></li>
-                                <li class="menu-item-has-children"><a href="#">FAQ</a>
+                                <li><a href="cart">Order</a></li>
+                                <li class="menu-item-has-children"><a href="about">About</a>
                                     
                                 </li>
                                 
-                                <li class="menu-item-has-children"><a href="contact.html">My Order</a></li>
+                                <li class="menu-item-has-children"><a href="orders">My Order</a></li>
                             </ul>
                         </div>
                     </div>

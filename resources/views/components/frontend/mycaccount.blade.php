@@ -143,343 +143,310 @@
                 <div class="col-lg-9">
                     <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                         @if (auth()->user())
-                            <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
-                                aria-labelledby="account-dashboard-tab">
-                                <div class="myaccount-details">
-                                    <form action="#" class="myaccount-form">
-                                        <div class="myaccount-form-inner">
-                                            <div class="single-input single-input-half">
-                                                <label>First Name</label>
-                                                <input type="text" value="{{ auth()->user()->name }}">
-                                            </div>
-                                            <div class="single-input single-input-half">
-                                                <label>Last Name</label>
-                                                <input type="text" value="{{ auth()->user()->last_name_customer }}">
-                                            </div>
-                                            <div class="single-input">
-                                                <label>Major</label>
-                                                <input type="text" value="{{ auth()->user()->fakultas_customer }}">
-                                            </div>
-                                            <div class="single-input single-input-half">
-                                                <label>Dorm Location</label>
-                                                <input type="text" value="{{ auth()->user()->lokasi_dorm_customer }}">
-                                            </div>
-                                            <div class="single-input single-input-half">
-                                                <label>Room Number</label>
-                                                <input type="text" value="{{ auth()->user()->no_kamar }}">
-                                            </div>
-                                            <div class="single-input single-input-half">
-                                                <label>Phone Number</label>
-                                                <input type="text" value="{{ auth()->user()->no_hp_customer }}">
-                                            </div>
-                                            <div class="single-input single-input-half">
-                                                <label>Email</label>
-                                                <input type="text" value="{{ auth()->user()->email }}">
-                                            </div>
+                                    <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel"
+                                        aria-labelledby="account-dashboard-tab">
+                                        <div class="myaccount-details">
+                                            <form action="#" class="myaccount-form">
+                                                <div class="myaccount-form-inner">
+                                                    <div class="single-input single-input-half">
+                                                        <label>First Name</label>
+                                                        <input type="text" value="{{ auth()->user()->name }}">
+                                                    </div>
+                                                    <div class="single-input single-input-half">
+                                                        <label>Last Name</label>
+                                                        <input type="text" value="{{ auth()->user()->last_name_customer }}">
+                                                    </div>
+                                                    <div class="single-input">
+                                                        <label>Major</label>
+                                                        <input type="text" value="{{ auth()->user()->fakultas_customer }}">
+                                                    </div>
+                                                    <div class="single-input single-input-half">
+                                                        <label>Dorm Location</label>
+                                                        <input type="text" value="{{ auth()->user()->lokasi_dorm_customer }}">
+                                                    </div>
+                                                    <div class="single-input single-input-half">
+                                                        <label>Room Number</label>
+                                                        <input type="text" value="{{ auth()->user()->no_kamar }}">
+                                                    </div>
+                                                    <div class="single-input single-input-half">
+                                                        <label>Phone Number</label>
+                                                        <input type="text" value="{{ auth()->user()->no_hp_customer }}">
+                                                    </div>
+                                                    <div class="single-input single-input-half">
+                                                        <label>Email</label>
+                                                        <input type="text" value="{{ auth()->user()->email }}">
+                                                    </div>
 
-                                            <div class="single-input single-input-half">
-                                                <button class="btn custom-btn" data-bs-toggle="modal"
-                                                data-bs-target="#edit">
-                                                    <span>EDIT INFORMATION</span>
-                                                </button>
-                                    </form>
-                                            
-                                                <!-- Modal Edit -->
-                                                 <form action="/editprofile/{{ auth()->user()->id }}" method="POST">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <div class="modal fade" id="edit" data-bs-backdrop="static"
-                                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title" id="staticBackdropLabel"> Edit Information
-                                                                        </h5>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                            aria-label="Close"></button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <div class="login-form">
-                                                                            <div class="row">
-                                                                                <div class="col-md-6 col-12">
-                                                                                    <label>First Name</label>
-                                                                                    <input class="@error('name') is-invalid @enderror"
-                                                                                        name="name" id="name" type="text"
-                                                                                        value="{{ auth()->user()->name }}"required>
-                                                                                    @error('name')
-                                                                                        <div class="invalid-feedback">
-                                                                                            {{ $message }}
-                                                                                        </div>
-                                                                                    @enderror
-                                                                                </div>
-                                                                                <div class="col-md-6 col-12">
-                                                                                    <label>Last Name</label>
-                                                                                    <input type="text" placeholder="Last Name "
-                                                                                        name="last_name_customer"
-                                                                                        id="last_name_customer" 
-                                                                                        value="{{ auth()->user()->last_name_customer }}"
-                                                                                        required>
-                                                                                </div>
-                                                                                <div class="col-12">
-                                                                                    <label>Major</label>
-                                                                                    <select name="fakultas_customer" id="fakultas_customer" required>
-                                                                                        <option disabled value="1" {{ auth()->user()->fakultas_customer == null ? 'selected' : '' }}>
-                                                                                            Select Major
-                                                                                        </option>
-                                                                                        <option value="Management" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Management' ? 'selected' : '' }}>
-                                                                                            Management
-                                                                                        </option>
-                                                                                        <option value="Accounting" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Accounting' ? 'selected' : '' }}>
-                                                                                            Accounting
-                                                                                        </option>
-                                                                                        <option value="Music" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Music' ? 'selected' : '' }}>
-                                                                                            Music
-                                                                                        </option>
-                                                                                        <option value="Technology-Laboratorium-Medic" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Technology-Laboratorium-Medic' ? 'selected' : '' }}>
-                                                                                            Technology Laboratorium Medic
-                                                                                        </option>
-                                                                                        <option value="Applied-Mathematics" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Applied-Mathematics' ? 'selected' : '' }}>
-                                                                                            Applied Mathematics
-                                                                                        </option>
-                                                                                        <option value="Electrical-Engineering" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Electrical-Engineering' ? 'selected' : '' }}>
-                                                                                            Electrical Engineering
-                                                                                        </option>
-                                                                                        <option value="Industrial-Engineering" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Industrial-Engineering' ? 'selected' : '' }}>
-                                                                                            Industrial Engineering
-                                                                                        </option>
-                                                                                        <option value="Food-Technology" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Food-Technology' ? 'selected' : '' }}>
-                                                                                            Food Technology
-                                                                                        </option>
-                                                                                        <option value="Civil-Engineering" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Civil-Engineering' ? 'selected' : '' }}>
-                                                                                            Civil Engineering
-                                                                                        </option>
-                                                                                        <option value="Law" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Law' ? 'selected' : '' }}>
-                                                                                            Law
-                                                                                        </option>
-                                                                                        <option value="Pharmacy" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Pharmacy' ? 'selected' : '' }}>
-                                                                                            Pharmacy
-                                                                                        </option>
-                                                                                        <option value="Medical-Laboratory-Technology" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Medical-Laboratory-Technology' ? 'selected' : '' }}>
-                                                                                            Medical Laboratory Technology
-                                                                                        </option>
-                                                                                        <option value="International-Relations" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'International-Relations' ? 'selected' : '' }}>
-                                                                                            International Relations
-                                                                                        </option>
-                                                                                        <option value="Biotechnology" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Biotechnology' ? 'selected' : '' }}>
-                                                                                            Biotechnology
-                                                                                        </option>
-                                                                                        <option value="Applied-Communication-Sciences" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Applied-Communication-Sciences' ? 'selected' : '' }}>
-                                                                                            Applied Communication Sciences
-                                                                                        </option>
-                                                                                        <option value="Medicine" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Medicine' ? 'selected' : '' }}>
-                                                                                            Medicine
-                                                                                        </option>
-                                                                                        <option value="Nursing" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Nursing' ? 'selected' : '' }}>
-                                                                                            Nursing
-                                                                                        </option>
-                                                                                        <option value="Psychology" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Psychology' ? 'selected' : '' }}>
-                                                                                            Psychology
-                                                                                        </option>
-                                                                                        <option value="Information-System" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Information-System' ? 'selected' : '' }}>
-                                                                                            Information System
-                                                                                        </option>
-                                                                                        <option value="Informatics" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Informatics' ? 'selected' : '' }}>
-                                                                                            Informatics
-                                                                                        </option>
-                                                                                        <option value="Architecture" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Architecture' ? 'selected' : '' }}>
-                                                                                            Architecture
-                                                                                        </option>
-                                                                                        <option value="Interior-Design" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Interior-Design' ? 'selected' : '' }}>
-                                                                                            Interior Design
-                                                                                        </option>
-                                                                                        <option value="Visual-Communication-Design" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Visual-Communication-Design' ? 'selected' : '' }}>
-                                                                                            Visual Communication Design
-                                                                                        </option>
-                                                                                        <option value="Product-Design" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Product-Design' ? 'selected' : '' }}>
-                                                                                            Product Design
-                                                                                        </option>
-                                                                                        <option value="Hospitality-Management" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Hospitality-Management' ? 'selected' : '' }}>
-                                                                                            Hospitality Management
-                                                                                        </option>
-                                                                                        <option value="Tourism-Management" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Tourism-Management' ? 'selected' : '' }}>
-                                                                                            Tourism Management
-                                                                                        </option>
-                                                                                        <option value="Teachers-College" 
-                                                                                            {{ auth()->user()->fakultas_customer == 'Teachers-College' ? 'selected' : '' }}>
-                                                                                            Teachers College
-                                                                                        </option>
-                                                                                    </select>
-                                                                                </div>
+                                                    <div class="single-input single-input-half">
+                                                        <button class="btn custom-btn" data-bs-toggle="modal"
+                                                            data-bs-target="#edit">
+                                                            <span>EDIT INFORMATION</span>
+                                                        </button>
+                                            </form>
 
-                                                                                <div class="col-12">
-                                                                                    <label>Dorm Location</label>
-                                                                                    <select name="lokasi_dorm_customer"
-                                                                                        id="lokasi_dorm_customer" required>
-                                                                                        <option disabled selected value="1" {{ auth()->user()->lokasi_dorm_customer == null ? 'selected' : '' }}>Select Dorm
-                                                                                            Location</option>
-                                                                                        <option value="MYC-Dorm"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'MYC-Dorm' ? 'selected' : '' }}>MYC Dormitory</option>
-                                                                                        <option value="Paddock-Dorm"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Paddock-Dorm' ? 'selected' : '' }}>Paddock Dorm
-                                                                                        </option>
-                                                                                        <option value="G-Building-Dorm"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'G-Building-Dorm' ? 'selected' : '' }}>G Building Dorm
-                                                                                        </option>
-                                                                                        <option value="GBFK"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'GBFK' ? 'selected' : '' }}>GBFK
-                                                                                            Dorm</option>
-                                                                                        <option value="Grandstand"
-                                                                                        {{ auth()->user()->lokasi_dorm_customer == 'Grandstand' ? 'selected' : '' }}>Grandstand
-                                                                                            Dorm</option>
-                                                                                    </select>
+                                            <!-- Modal Edit -->
+                                            <form action="/editprofile/{{ auth()->user()->id }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="modal fade" id="edit" data-bs-backdrop="static" data-bs-keyboard="false"
+                                                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="staticBackdropLabel"> Edit Information
+                                                                </h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="login-form">
+                                                                    <div class="row">
+                                                                        <div class="col-md-6 col-12">
+                                                                            <label>First Name</label>
+                                                                            <input class="@error('name') is-invalid @enderror"
+                                                                                name="name" id="name" type="text"
+                                                                                value="{{ auth()->user()->name }}" required>
+                                                                            @error('name')
+                                                                                <div class="invalid-feedback">
+                                                                                    {{ $message }}
+                                                                                </div>
+                                                                            @enderror
+                                                                        </div>
+                                                                        <div class="col-md-6 col-12">
+                                                                            <label>Last Name</label>
+                                                                            <input type="text" placeholder="Last Name "
+                                                                                name="last_name_customer" id="last_name_customer"
+                                                                                value="{{ auth()->user()->last_name_customer }}"
+                                                                                required>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <label>Major</label>
+                                                                            <select name="fakultas_customer" id="fakultas_customer"
+                                                                                required>
+                                                                                <option disabled value="1" {{ auth()->user()->fakultas_customer == null ? 'selected' : '' }}>
+                                                                                    Select Major
+                                                                                </option>
+                                                                                <option value="Management" {{ auth()->user()->fakultas_customer == 'Management' ? 'selected' : '' }}>
+                                                                                    Management
+                                                                                </option>
+                                                                                <option value="Accounting" {{ auth()->user()->fakultas_customer == 'Accounting' ? 'selected' : '' }}>
+                                                                                    Accounting
+                                                                                </option>
+                                                                                <option value="Music" {{ auth()->user()->fakultas_customer == 'Music' ? 'selected' : '' }}>
+                                                                                    Music
+                                                                                </option>
+                                                                                <option value="Technology-Laboratorium-Medic" {{ auth()->user()->fakultas_customer == 'Technology-Laboratorium-Medic' ? 'selected' : '' }}>
+                                                                                    Technology Laboratorium Medic
+                                                                                </option>
+                                                                                <option value="Applied-Mathematics" {{ auth()->user()->fakultas_customer == 'Applied-Mathematics' ? 'selected' : '' }}>
+                                                                                    Applied Mathematics
+                                                                                </option>
+                                                                                <option value="Electrical-Engineering" {{ auth()->user()->fakultas_customer == 'Electrical-Engineering' ? 'selected' : '' }}>
+                                                                                    Electrical Engineering
+                                                                                </option>
+                                                                                <option value="Industrial-Engineering" {{ auth()->user()->fakultas_customer == 'Industrial-Engineering' ? 'selected' : '' }}>
+                                                                                    Industrial Engineering
+                                                                                </option>
+                                                                                <option value="Food-Technology" {{ auth()->user()->fakultas_customer == 'Food-Technology' ? 'selected' : '' }}>
+                                                                                    Food Technology
+                                                                                </option>
+                                                                                <option value="Civil-Engineering" {{ auth()->user()->fakultas_customer == 'Civil-Engineering' ? 'selected' : '' }}>
+                                                                                    Civil Engineering
+                                                                                </option>
+                                                                                <option value="Law" {{ auth()->user()->fakultas_customer == 'Law' ? 'selected' : '' }}>
+                                                                                    Law
+                                                                                </option>
+                                                                                <option value="Pharmacy" {{ auth()->user()->fakultas_customer == 'Pharmacy' ? 'selected' : '' }}>
+                                                                                    Pharmacy
+                                                                                </option>
+                                                                                <option value="Medical-Laboratory-Technology" {{ auth()->user()->fakultas_customer == 'Medical-Laboratory-Technology' ? 'selected' : '' }}>
+                                                                                    Medical Laboratory Technology
+                                                                                </option>
+                                                                                <option value="International-Relations" {{ auth()->user()->fakultas_customer == 'International-Relations' ? 'selected' : '' }}>
+                                                                                    International Relations
+                                                                                </option>
+                                                                                <option value="Biotechnology" {{ auth()->user()->fakultas_customer == 'Biotechnology' ? 'selected' : '' }}>
+                                                                                    Biotechnology
+                                                                                </option>
+                                                                                <option value="Applied-Communication-Sciences" {{ auth()->user()->fakultas_customer == 'Applied-Communication-Sciences' ? 'selected' : '' }}>
+                                                                                    Applied Communication Sciences
+                                                                                </option>
+                                                                                <option value="Medicine" {{ auth()->user()->fakultas_customer == 'Medicine' ? 'selected' : '' }}>
+                                                                                    Medicine
+                                                                                </option>
+                                                                                <option value="Nursing" {{ auth()->user()->fakultas_customer == 'Nursing' ? 'selected' : '' }}>
+                                                                                    Nursing
+                                                                                </option>
+                                                                                <option value="Psychology" {{ auth()->user()->fakultas_customer == 'Psychology' ? 'selected' : '' }}>
+                                                                                    Psychology
+                                                                                </option>
+                                                                                <option value="Information-System" {{ auth()->user()->fakultas_customer == 'Information-System' ? 'selected' : '' }}>
+                                                                                    Information System
+                                                                                </option>
+                                                                                <option value="Informatics" {{ auth()->user()->fakultas_customer == 'Informatics' ? 'selected' : '' }}>
+                                                                                    Informatics
+                                                                                </option>
+                                                                                <option value="Architecture" {{ auth()->user()->fakultas_customer == 'Architecture' ? 'selected' : '' }}>
+                                                                                    Architecture
+                                                                                </option>
+                                                                                <option value="Interior-Design" {{ auth()->user()->fakultas_customer == 'Interior-Design' ? 'selected' : '' }}>
+                                                                                    Interior Design
+                                                                                </option>
+                                                                                <option value="Visual-Communication-Design" {{ auth()->user()->fakultas_customer == 'Visual-Communication-Design' ? 'selected' : '' }}>
+                                                                                    Visual Communication Design
+                                                                                </option>
+                                                                                <option value="Product-Design" {{ auth()->user()->fakultas_customer == 'Product-Design' ? 'selected' : '' }}>
+                                                                                    Product Design
+                                                                                </option>
+                                                                                <option value="Hospitality-Management" {{ auth()->user()->fakultas_customer == 'Hospitality-Management' ? 'selected' : '' }}>
+                                                                                    Hospitality Management
+                                                                                </option>
+                                                                                <option value="Tourism-Management" {{ auth()->user()->fakultas_customer == 'Tourism-Management' ? 'selected' : '' }}>
+                                                                                    Tourism Management
+                                                                                </option>
+                                                                                <option value="Teachers-College" {{ auth()->user()->fakultas_customer == 'Teachers-College' ? 'selected' : '' }}>
+                                                                                    Teachers College
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <div class="col-12">
+                                                                            <label>Dorm Location</label>
+                                                                            <select name="lokasi_dorm_customer"
+                                                                                id="lokasi_dorm_customer" required>
+                                                                                <option disabled selected value="1" {{ auth()->user()->lokasi_dorm_customer == null ? 'selected' : '' }}>Select Dorm
+                                                                                    Location</option>
+                                                                                <option value="MYC-Dorm" {{ auth()->user()->lokasi_dorm_customer == 'MYC-Dorm' ? 'selected' : '' }}>MYC Dormitory</option>
+                                                                                <option value="Paddock-Dorm" {{ auth()->user()->lokasi_dorm_customer == 'Paddock-Dorm' ? 'selected' : '' }}>Paddock Dorm
+                                                                                </option>
+                                                                                <option value="G-Building-Dorm" {{ auth()->user()->lokasi_dorm_customer == 'G-Building-Dorm' ? 'selected' : '' }}>G Building Dorm
+                                                                                </option>
+                                                                                <option value="GBFK" {{ auth()->user()->lokasi_dorm_customer == 'GBFK' ? 'selected' : '' }}>GBFK
+                                                                                    Dorm</option>
+                                                                                <option value="Grandstand" {{ auth()->user()->lokasi_dorm_customer == 'Grandstand' ? 'selected' : '' }}>Grandstand
+                                                                                    Dorm</option>
+                                                                            </select>
 
 
-                                                                                </div>
+                                                                        </div>
 
-                                                                                <div class="col-md-6">
-                                                                                    <label>Room Number</label>
-                                                                                    <input type="text" placeholder="No Kamar"
-                                                                                        name="no_kamar" id="no_kamar"
-                                                                                        value="{{ auth()->user()->no_kamar }}"
-                                                                                        class="@error('no_kamar') is-invalid @enderror">
-                                                                                    @error('no_kamar')
-                                                                                        <div class="invalid-feedback">
-                                                                                            {{ $message }}
-                                                                                        </div>
-                                                                                    @enderror
+                                                                        <div class="col-md-6">
+                                                                            <label>Room Number</label>
+                                                                            <input type="text" placeholder="No Kamar"
+                                                                                name="no_kamar" id="no_kamar"
+                                                                                value="{{ auth()->user()->no_kamar }}"
+                                                                                class="@error('no_kamar') is-invalid @enderror">
+                                                                            @error('no_kamar')
+                                                                                <div class="invalid-feedback">
+                                                                                    {{ $message }}
                                                                                 </div>
-                                                                                <div class="col-md-6">
-                                                                                    <label>Phone Number</label>
-                                                                                    <input type="text" placeholder="No HP"
-                                                                                        name="no_hp_customer" id="no_hp_customer"
-                                                                                        value="{{ auth()->user()->no_hp_customer }}"
-                                                                                        class="@error('no_hp_customer') is-invalid @enderror">
-                                                                                    @error('no_hp_customer')
-                                                                                        <div class="invalid-feedback">
-                                                                                            {{ $message }}
-                                                                                        </div>
-                                                                                    @enderror
+                                                                            @enderror
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <label>Phone Number</label>
+                                                                            <input type="text" placeholder="No HP"
+                                                                                name="no_hp_customer" id="no_hp_customer"
+                                                                                value="{{ auth()->user()->no_hp_customer }}"
+                                                                                class="@error('no_hp_customer') is-invalid @enderror">
+                                                                            @error('no_hp_customer')
+                                                                                <div class="invalid-feedback">
+                                                                                    {{ $message }}
                                                                                 </div>
-                                                                                <div class="col-md-12">
-                                                                                    <label>Email</label>
-                                                                                    <input type="email" placeholder="Email" name="email"
-                                                                                        id="email"
-                                                                                        value="{{ auth()->user()->email }}"
-                                                                                        class="@error('email') is-invalid @enderror"
-                                                                                        required>
-                                                                                    @error('email')
-                                                                                        <div class="invalid-feedback">
-                                                                                            {{ $message }}
-                                                                                        </div>
-                                                                                    @enderror
+                                                                            @enderror
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <label>Email</label>
+                                                                            <input type="email" placeholder="Email" name="email"
+                                                                                id="email" value="{{ auth()->user()->email }}"
+                                                                                class="@error('email') is-invalid @enderror"
+                                                                                required>
+                                                                            @error('email')
+                                                                                <div class="invalid-feedback">
+                                                                                    {{ $message }}
                                                                                 </div>
-                                                                                <div class="col-lg-12">
-                                                                                    <label>Password*</label>
-                                                                                    <div class="newsletter_subscribe">
-                                                                                        <input type="password" placeholder="Password"
-                                                                                            id="passwordInput" name="password">
-                                                                                        {{-- <form id="mc-form">
-                                                                                            <button type="button"
-                                                                                                onclick="togglePasswordVisibility()"><i
-                                                                                                    class="pe-7s-look"></i></button>
-                                                                                        </form> --}}
-                                                                                    </div>
-                                                                                </div>
-                                                                                
-
-                                                                                <div class="col-lg-12">
-                                                                                    <label>Confirm Password*</label>
-                                                                                    <div class="newsletter_subscribe">
-                                                                                        <input type="confirmpassword"
-                                                                                            placeholder="Confirm Password"
-                                                                                            id="confirmpasswordInput"
-                                                                                            name="confirmpassword">
-                                                                                        {{-- <form id="mc-form">
-                                                                                            <button type="button"
-                                                                                                onclick="togglePasswordVisibility2()"><i
-                                                                                                    class="pe-7s-look"></i></button>
-                                                                                        </form> --}}
-                                                                                    </div>
-                                                                                </div>
-
+                                                                            @enderror
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <label>Password*</label>
+                                                                            <div class="newsletter_subscribe">
+                                                                                <input type="password" placeholder="Password"
+                                                                                    id="passwordInput" name="password">
+                                                                                {{-- <form id="mc-form">
+                                                                                    <button type="button"
+                                                                                        onclick="togglePasswordVisibility()"><i
+                                                                                            class="pe-7s-look"></i></button>
+                                                                                </form> --}}
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="submit" class="btn custom-btn md-size">Update Information</button>
+
+
+                                                                        <div class="col-lg-12">
+                                                                            <label>Confirm Password*</label>
+                                                                            <div class="newsletter_subscribe">
+                                                                                <input type="confirmpassword"
+                                                                                    placeholder="Confirm Password"
+                                                                                    id="confirmpasswordInput"
+                                                                                    name="confirmpassword">
+                                                                                {{-- <form id="mc-form">
+                                                                                    <button type="button"
+                                                                                        onclick="togglePasswordVisibility2()"><i
+                                                                                            class="pe-7s-look"></i></button>
+                                                                                </form> --}}
+                                                                            </div>
+                                                                        </div>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn custom-btn md-size">Update
+                                                                    Information</button>
+                                                            </div>
                                                         </div>
-                                                 </form>
-                                            </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div class="tab-pane fade" id="account-orders" role="tabpanel"
-                                aria-labelledby="account-orders-tab">
+
+                            <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
                                 <div class="myaccount-orders">
                                     <h4 class="small-title">MY ORDERS</h4>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover">
                                             <thead>
-                                            <tr>
+                                                <tr>
 
-                                                <th>Tanggal Order</th>
-                                                <th>Nama Pesanan</th>
-                                                <th>Total Harga</th>
-                                                <th>INVOICE</th>
+                                                    <th>Tanggal Order</th>
+                                                    <th>Nama Pesanan</th>
+                                                    <th>Total Harga</th>
+                                                    <th>INVOICE</th>
                                                 </tr>
 
                                             </thead>
-                                                
+
                                             <tbody>
-                                            @foreach ($historys as $date => $orders)
-                                            <tr>
-                                                <td>{{ \Carbon\Carbon::parse($date)->format('d F Y H:i:s') }}</td>
-                                                <td>
-                                                    @foreach ($orders as $order)
-                                                        {{ $order->jenis_paket_pesanan }} - {{ $order->nama_paket_pesanan }}<br>
-                                                    @endforeach
-                                                </td>
-                                                <td>
-                                                    {{ number_format($orders->first()->total_harga, 0, ',', '.') }}
-                                                </td>
-                                                <td>
-                                                    <a href="/invoice/{{ $orders->first()->order_id }}" class="btn btn-secondary btn-primary-hover">
-                                                        <span>View</span>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                @foreach ($historys as $date => $orders)
+                                                    <tr>
+                                                        <td>{{ \Carbon\Carbon::parse($date)->format('d F Y H:i:s') }}</td>
+                                                        <td>
+                                                            @foreach ($orders as $order)
+                                                                {{ $order->jenis_paket_pesanan }} - {{ $order->nama_paket_pesanan }}<br>
+                                                            @endforeach
+                                                        </td>
+                                                        <td>
+                                                            {{ number_format($orders->first()->total_harga, 0, ',', '.') }}
+                                                        </td>
+                                                        <td>
+                                                            <a href="/invoice/{{ $orders->first()->order_id }}"
+                                                                class="btn btn-secondary btn-primary-hover">
+                                                                <span>View</span>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
 
 
 
@@ -510,23 +477,22 @@
                                                                 </button>
                                                                 <!-- Modal Login -->
                                                                 <div class="modal fade" id="login" data-bs-backdrop="static"
-                                                                    data-bs-keyboard="false" tabindex="-1"
-                                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                                                    aria-hidden="true">
                                                                     <div class="modal-dialog">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
                                                                                 <h5 class="modal-title" id="staticBackdropLabel"> Login
                                                                                 </h5>
-                                                                                <button type="button" class="btn-close"
-                                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                                    aria-label="Close"></button>
                                                                             </div>
                                                                             <div class="modal-body">
                                                                                 <div class="login-form">
                                                                                     <div class="row d-flex justify-content-center">
                                                                                         <div class="col-lg-12">
                                                                                             <label>Email Address*</label>
-                                                                                            <input
-                                                                                                class="@error('email') is-invalid @enderror"
+                                                                                            <input class="@error('email') is-invalid @enderror"
                                                                                                 type="email" placeholder="Email Address"
                                                                                                 name="email" id="email"
                                                                                                 value="{{ old('email') }}" required>
@@ -536,40 +502,70 @@
                                                                                                 </div>
                                                                                             @enderror
                                                                                         </div>
+
+                                                                                        <div class="newsletter_subscribe mb-0">
+                                                                                            <form id="mc-form">
+
+                                                                                            </form>
+
+                                                                                        </div>
                                                                                         <div class="col-lg-12">
+
                                                                                             <label>Password*</label>
-                                                                                            <input
-                                                                                                class="@error('password') is-invalid @enderror"
-                                                                                                type="password" placeholder="Password"
-                                                                                                name="password" id="password" required>
-                                                                                            @error('password')
-                                                                                                <div class="invalid-feedback">
-                                                                                                    {{ $message }}
+
+                                                                                            <div class="newsletter_subscribe">
+
+                                                                                                <div class="row">
+                                                                                                    <div class="col-10">
+                                                                                                        <input
+                                                                                                            class="mt-0 mb-0 @error('password') is-invalid @enderror"
+                                                                                                            type="password"
+                                                                                                            placeholder="Password"
+                                                                                                            name="password"
+                                                                                                            id="loginpasswordInput" required>
+                                                                                                        @error('password')
+                                                                                                            <div class="invalid-feedback">
+                                                                                                                {{ $message }}
+                                                                                                            </div>
+                                                                                                        @enderror
+                                                                                                    </div>
+
+                                                                                                    <div class="col-2">
+                                                                                                        <form id="mc-form">
+                                                                                                            <button type="button"
+                                                                                                                onclick="togglePasswordVisibility3()"><i
+                                                                                                                    class="pe-7s-look"></i></button>
+                                                                                                        </form>
+
+                                                                                                    </div>
                                                                                                 </div>
-                                                                                            @enderror
+
+                                                                                            </div>
                                                                                         </div>
                                                                                         <div class="row">
                                                                                             <div class="col"></div>
                                                                                             <div class="col-sm-4 d-flex align-items-center">
-                                                                                                <input type="checkbox" id="remember_me" style="transform: scale(0.8); width: 16px; height: 16px; margin-right: 5px;">
-                                                                                                <label for="remember_me" style="margin: 0;">Remember me</label>
+                                                                                                <input type="checkbox" id="remember_me"
+                                                                                                    style="transform: scale(0.8); width: 16px; height: 16px; margin-right: 5px;">
+                                                                                                <label for="remember_me"
+                                                                                                    style="margin: 0;">Remember me</label>
                                                                                             </div>
                                                                                             <div class="col"></div>
                                                                                         </div>
                                                                                         <div class="row">
-                                                                                        <div class="col-sm-4 pt-1 mt-md-0">
-                                                                                            <div class="forgotton-password_info">
-                                                                                                <a href="#"> Forgot pasword?</a>
+                                                                                            <div class="col-sm-4 pt-1 mt-md-0">
+                                                                                                <div class="forgotton-password_info">
+                                                                                                    <a href="#"> Forgot pasword?</a>
+                                                                                                </div>
                                                                                             </div>
-                                                                                        </div>
-                                                                                        <div class="col"></div>
-                                                                                        <div class="col-sm-4 pt-1 mt-md-0">
-                                                                                            <div class="forgotton-password_info">
-                                                                                                <a data-bs-target="#register"
-                                                                                                    data-bs-toggle="modal"> Don't have
-                                                                                                    account?</a>
+                                                                                            <div class="col"></div>
+                                                                                            <div class="col-sm-4 pt-1 mt-md-0">
+                                                                                                <div class="forgotton-password_info">
+                                                                                                    <a data-bs-target="#register"
+                                                                                                        data-bs-toggle="modal"> Don't have
+                                                                                                        account?</a>
+                                                                                                </div>
                                                                                             </div>
-                                                                                        </div>
 
                                                                                         </div>
                                                                                     </div>
@@ -589,9 +585,8 @@
 
                                                     <form action="/myregister" method="POST">
                                                         @csrf
-                                                        <div class="modal fade" id="register" data-bs-backdrop="static"
-                                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                                                            aria-hidden="true">
+                                                        <div class="modal fade" id="register" data-bs-backdrop="static" data-bs-keyboard="false"
+                                                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
@@ -617,121 +612,125 @@
                                                                                 <div class="col-md-6 col-12">
                                                                                     <label>Last Name</label>
                                                                                     <input type="text" placeholder="Last Name "
-                                                                                        name="last_name_customer"
-                                                                                        id="last_name_customer" required>
+                                                                                        name="last_name_customer" id="last_name_customer"
+                                                                                        required>
                                                                                 </div>
                                                                                 <div class="col-12">
-                                                                                <label>Major</label>
-                                                                                    <select name="fakultas_customer" id="fakultas_customer" required>
-                                                                                        <option disabled value="1" >
+                                                                                    <label>Major</label>
+                                                                                    <select name="fakultas_customer" id="fakultas_customer"
+                                                                                        required>
+                                                                                        <option selected value="1">
                                                                                             Select Major
                                                                                         </option>
-                                                                                        <option value="Management"  >
+                                                                                        <option value="Management">
                                                                                             Management
                                                                                         </option>
-                                                                                        <option value="Accounting" >
+                                                                                        <option value="Accounting">
                                                                                             Accounting
                                                                                         </option>
-                                                                                        <option value="Music" >
+                                                                                        <option value="Music">
                                                                                             Music
                                                                                         </option>
-                                                                                        <option value="Technology-Laboratorium-Medic" >
+                                                                                        <option value="Technology-Laboratorium-Medic">
                                                                                             Technology Laboratorium Medic
                                                                                         </option>
-                                                                                        <option value="Applied-Mathematics" >
+                                                                                        <option value="Applied-Mathematics">
                                                                                             Applied Mathematics
                                                                                         </option>
-                                                                                        <option value="Electrical-Engineering" >
+                                                                                        <option value="Electrical-Engineering">
                                                                                             Electrical Engineering
                                                                                         </option>
-                                                                                        <option value="Industrial-Engineering" >
+                                                                                        <option value="Industrial-Engineering">
                                                                                             Industrial Engineering
                                                                                         </option>
-                                                                                        <option value="Food-Technology" >
+                                                                                        <option value="Food-Technology">
                                                                                             Food Technology
                                                                                         </option>
-                                                                                        <option value="Civil-Engineering" >
+                                                                                        <option value="Civil-Engineering">
                                                                                             Civil Engineering
                                                                                         </option>
-                                                                                        <option value="Law" >
+                                                                                        <option value="Law">
                                                                                             Law
                                                                                         </option>
-                                                                                        <option value="Pharmacy" >
+                                                                                        <option value="Pharmacy">
                                                                                             Pharmacy
                                                                                         </option>
-                                                                                        <option value="Medical-Laboratory-Technology" >
+                                                                                        <option value="Medical-Laboratory-Technology">
                                                                                             Medical Laboratory Technology
                                                                                         </option>
-                                                                                        <option value="International-Relations" >
+                                                                                        <option value="International-Relations">
                                                                                             International Relations
                                                                                         </option>
-                                                                                        <option value="Biotechnology" >
+                                                                                        <option value="Biotechnology">
                                                                                             Biotechnology
                                                                                         </option>
-                                                                                        <option value="Applied-Communication-Sciences" >
+                                                                                        <option value="Applied-Communication-Sciences">
                                                                                             Applied Communication Sciences
                                                                                         </option>
-                                                                                        <option value="Medicine" >
+                                                                                        <option value="Medicine">
                                                                                             Medicine
                                                                                         </option>
-                                                                                        <option value="Nursing" >
+                                                                                        <option value="Nursing">
                                                                                             Nursing
                                                                                         </option>
-                                                                                        <option value="Psychology" >
+                                                                                        <option value="Psychology">
                                                                                             Psychology
                                                                                         </option>
-                                                                                        <option value="Information-System" >
+                                                                                        <option value="Information-System">
                                                                                             Information System
                                                                                         </option>
-                                                                                        <option value="Informatics" >
+                                                                                        <option value="Informatics">
                                                                                             Informatics
                                                                                         </option>
-                                                                                        <option value="Architecture" >
+                                                                                        <option value="Architecture">
                                                                                             Architecture
                                                                                         </option>
-                                                                                        <option value="Interior-Design" >
+                                                                                        <option value="Interior-Design">
                                                                                             Interior Design
                                                                                         </option>
-                                                                                        <option value="Visual-Communication-Design" >
+                                                                                        <option value="Visual-Communication-Design">
                                                                                             Visual Communication Design
                                                                                         </option>
-                                                                                        <option value="Product-Design" >
+                                                                                        <option value="Product-Design">
                                                                                             Product Design
                                                                                         </option>
-                                                                                        <option value="Hospitality-Management" >
+                                                                                        <option value="Hospitality-Management">
                                                                                             Hospitality Management
                                                                                         </option>
-                                                                                        <option value="Tourism-Management" >
+                                                                                        <option value="Tourism-Management">
                                                                                             Tourism Management
                                                                                         </option>
-                                                                                        <option value="Teachers-College" >
+                                                                                        <option value="Teachers-College">
                                                                                             Teachers College
                                                                                         </option>
                                                                                     </select>
                                                                                 </div>
-                                                                                <div class="col-12">
-                                                                                <label>Dorm Location</label>
-                                                                                <select name="lokasi_dorm_customer" id="lokasi_dorm_customer" required>
-                                                                                    <option selected value="1">Select Dorm
-                                                                                        Location</option>
-                                                                                    <option value="MYC-Dorm">MYC Dormitory</option>
-                                                                                    <option value="Paddock-Dorm">Paddock Dorm
-                                                                                    </option>
-                                                                                    <option value="G-Building-Dorm">G Building Dorm
-                                                                                    </option>
-                                                                                    <option value="GBFK">GBFK
-                                                                                        Dorm</option>
-                                                                                    <option value="Grandstand">
-                                                                                        Grandstand
-                                                                                        Dorm</option>
+                                                                                <div class="col-12 mt-4">
+                                                                                    <label>Dorm Location</label>
+                                                                                    <select name="lokasi_dorm_customer"
+                                                                                        id="lokasi_dorm_customer" required>
+                                                                                        <option selected value="1">Select Dorm
+                                                                                            Location</option>
+                                                                                        <option value="MYC-Dorm">MYC Dormitory</option>
+                                                                                        <option value="Paddock-Dorm">Paddock Dorm
+                                                                                        </option>
+                                                                                        <option value="G-Building-Dorm">G Building Dorm
+                                                                                        </option>
+                                                                                        <option value="GBFK">GBFK
+                                                                                            Dorm</option>
+                                                                                        <option value="Grandstand">
+                                                                                            Grandstand
+                                                                                            Dorm</option>
+                                                                                    </select>
 
 
                                                                                 </div>
 
-                                                                                <div class="col-md-6">
+
+                                                                                <div class="col-md-6 mt-4">
                                                                                     <label>Room Number</label>
-                                                                                    <input type="text" placeholder="No Kamar"
-                                                                                        name="no_kamar" id="no_kamar"
+                                                                                    <input type="text" placeholder="Room Number" name="no_kamar"
+                                                                                        id="no_kamar"
                                                                                         class="@error('no_kamar') is-invalid @enderror">
                                                                                     @error('no_kamar')
                                                                                         <div class="invalid-feedback">
@@ -739,9 +738,9 @@
                                                                                         </div>
                                                                                     @enderror
                                                                                 </div>
-                                                                                <div class="col-md-6">
+                                                                                <div class="col-md-6 mt-4">
                                                                                     <label>Phone Number</label>
-                                                                                    <input type="text" placeholder="No HP"
+                                                                                    <input type="text" placeholder="Phone Number"
                                                                                         name="no_hp_customer" id="no_hp_customer"
                                                                                         class="@error('no_hp_customer') is-invalid @enderror">
                                                                                     @error('no_hp_customer')
@@ -750,11 +749,11 @@
                                                                                         </div>
                                                                                     @enderror
                                                                                 </div>
+
                                                                                 <div class="col-md-12">
                                                                                     <label>Email</label>
                                                                                     <input type="email" placeholder="Email" name="email"
-                                                                                        id="email"
-                                                                                        class="@error('email') is-invalid @enderror"
+                                                                                        id="email" class="@error('email') is-invalid @enderror"
                                                                                         required>
                                                                                     @error('email')
                                                                                         <div class="invalid-feedback">
@@ -762,31 +761,53 @@
                                                                                         </div>
                                                                                     @enderror
                                                                                 </div>
-                                                                                <div class="col-lg-12">
-                                                                                    <label>Password*</label>
-                                                                                    <div class="newsletter_subscribe">
-                                                                                        <input type="password" placeholder="Password"
-                                                                                            id="passwordInput" name="password">
-                                                                                        {{-- <form id="mc-form">
-                                                                                            <button type="button"
-                                                                                                onclick="togglePasswordVisibility()"><i
-                                                                                                    class="pe-7s-look"></i></button>
-                                                                                        </form> --}}
-                                                                                    </div>
+
+                                                                                <div class="newsletter_subscribe mb-0">
+                                                                                    <form id="mc-form">
+
+                                                                                    </form>
+
                                                                                 </div>
 
                                                                                 <div class="col-lg-12">
-                                                                                    <label>Confirm Password*</label>
+                                                                                    <label>Password</label>
                                                                                     <div class="newsletter_subscribe">
-                                                                                        <input type="confirmpassword"
-                                                                                            placeholder="Confirm Password"
-                                                                                            id="confirmpasswordInput"
-                                                                                            name="confirmpassword">
-                                                                                        {{-- <form id="mc-form">
-                                                                                            <button type="button"
-                                                                                                onclick="togglePasswordVisibility2()"><i
-                                                                                                    class="pe-7s-look"></i></button>
-                                                                                        </form> --}}
+                                                                                        <div class="row">
+                                                                                            <div class="col-10">
+                                                                                                <input class="mt-0 mb-0" type="password"
+                                                                                                    placeholder="Password" id="passwordInput"
+                                                                                                    name="setpassword">
+                                                                                            </div>
+                                                                                            <div class="col-2">
+                                                                                                <form id="mc-form">
+                                                                                                    <button type="button"
+                                                                                                        onclick="togglePasswordVisibility()"><i
+                                                                                                            class="pe-7s-look"></i></button>
+                                                                                                </form>
+
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-12">
+                                                                                    <label>Confirm Password</label>
+                                                                                    <div class="newsletter_subscribe">
+                                                                                        <div class="row">
+                                                                                            <div class="col-10">
+                                                                                                <input class="mt-0 mb-0" type="password"
+                                                                                                    placeholder="Confirm Password"
+                                                                                                    id="confirmpasswordInput"
+                                                                                                    name="confirmpassword">
+                                                                                            </div>
+                                                                                            <div class="col-2">
+                                                                                                <form id="mc-form">
+                                                                                                    <button type="button"
+                                                                                                        onclick="togglePasswordVisibility2()"><i
+                                                                                                            class="pe-7s-look"></i></button>
+                                                                                                </form>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
 
@@ -797,8 +818,7 @@
                                                                         <button type="button" class="btn custom-btn md-size"
                                                                             data-bs-dismiss="modal" data-bs-target="#login"
                                                                             data-bs-toggle="modal">Back to Login</button>
-                                                                        <button type="submit"
-                                                                            class="btn custom-btn md-size">Register</button>
+                                                                        <button type="submit" class="btn custom-btn md-size">Register</button>
                                                                     </div>
 
                                                                 </div>
@@ -815,7 +835,7 @@
 
 
 
-        </div>
+    </div>
     </div>
     </div>
     </div>
@@ -848,6 +868,18 @@
 
             } else {
                 confirmpasswordInput.type = "password";
+
+            }
+        }
+        function togglePasswordVisibility3() {
+            const loginpasswordInput = document.getElementById("loginpasswordInput");
+
+            // Mengubah tipe input antara password dan text
+            if (loginpasswordInput.type === "password") {
+                loginpasswordInput.type = "text";
+
+            } else {
+                loginpasswordInput.type = "password";
 
             }
         }

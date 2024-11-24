@@ -9,6 +9,7 @@ class RegisterController extends Controller
 {
         public function index(){
         return view('components.frontend.mycindex');
+        
     }
 
     public function store(Request $request){
