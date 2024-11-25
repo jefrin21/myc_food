@@ -92,6 +92,10 @@ body {
     color: #282828;
     letter-spacing: 0.02em;
 }
+label{
+    font-family: "Ionicons"
+
+}
 
 h1,
 h2,
