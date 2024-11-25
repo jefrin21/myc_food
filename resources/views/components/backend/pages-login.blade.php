@@ -17,12 +17,18 @@
 
     </head>
 <body>
+   
     <div class="accountbg"></div>
         <div class="wrapper-page">
 
             <div class="card">
                 <div class="card-body">
-
+                     @if (session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                            <h6 class="text-danger"> {{ session('loginError') }}</h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
                     <div class="text-center m-b-15">
                         <a href="#" class="logo logo-admin"><img src="assets_frontend/img/logo/logomyc.png" height="100" alt="logo"></a>
                     </div>
