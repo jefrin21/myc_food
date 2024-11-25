@@ -9,7 +9,8 @@ class WeeklyController extends Controller
 {
     public function index()
     {
-       $data = DB::table('detail_orders as d')
+
+    $data = DB::table('detail_orders as d')
     ->join('orders as o', 'd.order_id', '=', 'o.id')
     ->join('users as u', 'o.user_id', '=', 'u.id')
     ->select(

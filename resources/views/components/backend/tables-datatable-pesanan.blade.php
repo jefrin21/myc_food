@@ -75,9 +75,9 @@
                                                     <td>{{ $order->jumlah_pesanan }}</td>
                                                     <td>{{ $order->total_harga }}</td>
                                                     <td>{{ $order->created_at->format('d F Y') }}</td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#buktipembayaran">
-                                                            <i class="bi bi-eye">tes</i> 
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-link-primary" data-bs-toggle="modal" data-bs-target="#buktipembayaran">
+                                                            <i class="far fa-eye"></i> 
                                                         </button>
                                                     </td>
                                                     <td>{{ $order->status_pesanan }}</td>
@@ -94,7 +94,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="cekpembayaran">Konfirmasi Pembayaran</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                <button type="button" class="far fa-window-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <img src="{{ asset('images/' .$order->bukti_pembayaran) }}" alt="Bukti Pembayaran" class="img-fluid">

@@ -143,7 +143,6 @@
 
         <script>
             function printRow(tanggal) {
-                // Panggil endpoint Laravel untuk generate PDF
                 window.open(`/print-pdf/${tanggal}`, '_blank');
             }
         </script>

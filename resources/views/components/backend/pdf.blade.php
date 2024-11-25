@@ -93,35 +93,35 @@
                                                 </tbody>
                                             </table>
                                             @endforeach
-                <br>
-                <br>
-            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap mt-4 " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                <thead class="text-center">
-                    <tr>
-                        <th>No Kupon</th>
-                        <th>Nama Paket </th>
-                        <th>Lokasi Dorm</th>
-                    </tr>
-                </thead>
-                 @foreach ($kupon as $mykupon )
-                <tbody>
-                    <tr>
-                        <td>
-                            {{ $mykupon->kupon_pesanan }}
-                        </td>
-                        <td>
-                            {{ $mykupon->nama_paket_pesanan }}
-                        </td>
-                        <td>
-                            {{ $mykupon->lokasi_dorm_customer }}
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-
-
-
-
-</body>
+                                            <br>
+                                            <br>
+                                        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap mt-4 " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th>No Kupon</th>
+                                                    <th>Nama Paket </th>
+                                                    <th>Jenis Paket</th>
+                                                    <th>Lokasi Dorm</th>
+                                                </tr>
+                                            </thead>
+                                            @foreach ($kupon as $mykupon )
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        {{ $mykupon->kupon_pesanan }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $mykupon->nama_paket_pesanan }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $mykupon->jenis_paket_pesanan }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $mykupon->lokasi_dorm_customer }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+     </body>
 </html>
