@@ -73,6 +73,7 @@ class KonfirmasiOrderController extends Controller
         ->select(
         'd.tanggal_pengambilan_pesanan as tanggal',
         
+        //silver
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Silver' THEN 1 ELSE 0 END) as lunch_silver_gedung_g"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Silver' THEN 1 ELSE 0 END) as dinner_silver_gedung_g"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'GBFK' AND d.nama_paket_pesanan = 'Silver' THEN 1 ELSE 0 END) as lunch_silver_gbfk"),
@@ -83,18 +84,7 @@ class KonfirmasiOrderController extends Controller
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'Paddock-Dorm' AND d.nama_paket_pesanan = 'Silver' THEN 1 ELSE 0 END) as dinner_silver_paddcok"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Silver' THEN 1 ELSE 0 END) as lunch_silver_myc_dorm"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Silver' THEN 1 ELSE 0 END) as dinner_silver_myc_dorm"),
-        // // silver b
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as lunch_silver_b_gedung_g"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as dinner_silver_b_gedung_g"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'GBFK' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as lunch_silver_b_gbfk"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'GBFK' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as dinner_silver_b_gbfk"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'Grandstand' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as lunch_silver_b_grandstand"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'Grandstand' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as dinner_silver_b_grandstand"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'Paddock-Dorm' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as lunch_silver_b_paddcok"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'Paddock-Dorm' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as dinner_silver_b_paddcok"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as lunch_silver_b_myc_dorm"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Silver B' THEN 1 ELSE 0 END) as dinner_silver_b_myc_dorm"),
-        // Gold
+       //gold
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Gold' THEN 1 ELSE 0 END) as lunch_gold_gedung_g"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Gold' THEN 1 ELSE 0 END) as dinner_gold_gedung_g"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'GBFK' AND d.nama_paket_pesanan = 'Gold' THEN 1 ELSE 0 END) as lunch_gold_gbfk"),
@@ -105,19 +95,10 @@ class KonfirmasiOrderController extends Controller
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'Paddock-Dorm' AND d.nama_paket_pesanan = 'Gold' THEN 1 ELSE 0 END) as dinner_gold_paddcok"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Gold' THEN 1 ELSE 0 END) as lunch_gold_myc_dorm"),
         DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Gold' THEN 1 ELSE 0 END) as dinner_gold_myc_dorm"),
-        // // gold b
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as lunch_gold_b_gedung_g"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'G-Building-Dorm' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as dinner_gold_b_gedung_g"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'GBFK' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as lunch_gold_b_gbfk"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'GBFK' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as dinner_gold_b_gbfk"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'Grandstand' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as lunch_gold_b_grandstand"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'Grandstand' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as dinner_gold_b_grandstand"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'Paddock-Dorm' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as lunch_gold_b_paddcok"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'Paddock-Dorm' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as dinner_gold_b_paddcok"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Lunch' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as lunch_gold_b_myc_dorm"),
-        // DB::raw("SUM(CASE WHEN d.jenis_paket_pesanan = 'Dinner' AND u.lokasi_dorm_customer = 'MYC-Dorm' AND d.nama_paket_pesanan = 'Gold B' THEN 1 ELSE 0 END) as dinner_gold_b_myc_dorm"),
+       
     )
     ->where('o.status_pesanan', '=', 'Dikirim')
+    ->whereDate('d.tanggal_pengambilan_pesanan','=',$tanggal)
     ->groupBy('d.tanggal_pengambilan_pesanan')
     ->orderBy('d.tanggal_pengambilan_pesanan', 'asc')
     ->get();
@@ -127,10 +108,11 @@ class KonfirmasiOrderController extends Controller
         ->join('users as u', 'o.user_id', '=', 'u.id') 
         ->select(
         'd.tanggal_pengambilan_pesanan as tanggal',
-        'o.kupon_pesanan', 'd.nama_paket_pesanan','u.lokasi_dorm_customer'
+        'o.kupon_pesanan', 'd.nama_paket_pesanan','u.lokasi_dorm_customer','d.jenis_paket_pesanan'
     )
     ->where('o.status_pesanan', '=', 'Dikirim')
-    ->groupBy('d.tanggal_pengambilan_pesanan','o.kupon_pesanan', 'd.nama_paket_pesanan','u.lokasi_dorm_customer')
+    ->whereDate('d.tanggal_pengambilan_pesanan','=',$tanggal)
+    ->groupBy('d.tanggal_pengambilan_pesanan','o.kupon_pesanan', 'd.nama_paket_pesanan','u.lokasi_dorm_customer','d.jenis_paket_pesanan')
     ->orderBy('d.tanggal_pengambilan_pesanan', 'asc')
     ->get();
 

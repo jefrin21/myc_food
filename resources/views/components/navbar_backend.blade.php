@@ -21,16 +21,15 @@
                                         aria-haspopup="false"
                                         aria-expanded="false"
                                     >
-                                        <form action="/logout" method="POST">
+                                        <form action="/logout" method="POST" id="logoutconfirm">
                                             @csrf
-                                            <button style="border: none" type="submit" class="d-flex"><i class="ti ti-logout fs-18 me-2 op-7"></i>Log Out</button>
+                                            <button style="border: none; background:none" type="submit" onclick="alert('Anda yakin ingin keluar??')" class="fas fa-sign-out-alt  text-dark">Log Out</button>
                                         </form>
 
                                     </a>
                                     
                                 </li>
                             </ul>
-
                             <ul class="list-inline menu-left mb-0">
                                 <li class="float-left">
                                     <button
@@ -56,4 +55,5 @@
                             <div class="clearfix"></div>
                         </nav>
                     </div>
+                    
                     <!-- Top Bar End -->

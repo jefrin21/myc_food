@@ -27,38 +27,6 @@
                     <p class="online-icon text-dark">
                         <i class="mdi mdi-record text-success"></i>online
                     </p>
-                    <ul class="list-unstyled list-inline mb-0 mt-2">
-                        <li class="list-inline-item">
-                            <a
-                                href="#"
-                                class=""
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Profile"
-                                ><i class="dripicons-user text-purple"></i
-                            ></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a
-                                href="#"
-                                class=""
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Settings"
-                                ><i class="dripicons-gear text-dark"></i
-                            ></a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a
-                                href="#"
-                                class=""
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="Log out"
-                                ><i class="dripicons-power text-danger"></i
-                            ></a>
-                        </li>
-                    </ul>
                 </div>
 
                 <div class="sidebar-inner slimscrollleft">
@@ -71,11 +39,6 @@
                                     <i class="dripicons-device-desktop"></i>
                                     <span>
                                         Dashboard
-                                        <span
-                                            class="badge badge-pill badge-primary float-right"
-                                            >7</span
-                                        ></span
-                                    >
                                 </a>
                             </li>
                             {{-- <li>
