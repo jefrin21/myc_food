@@ -51,7 +51,6 @@ class RegisterController extends Controller
             'name'=> 'required|max:255',
             'email'=>'required|email:dns',
             'password'=>'required|max:255',
-            'is_admin'=>true
         ]);
 @dd($validateData);
         User::create($validateData);
