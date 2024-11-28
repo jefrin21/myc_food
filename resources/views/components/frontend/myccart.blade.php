@@ -136,10 +136,10 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket1" id="jenispaket1" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="Silver">Silver A</option>
-                                        <option value="Silver">Silver B</option>
-                                        <option value="Gold">Gold A</option>
-                                        <option value="Gold">Gold B</option>
+                                        <option value="Silver A">Silver A</option>
+                                        <option value="Silver B">Silver B</option>
+                                        <option value="Gold A">Gold A</option>
+                                        <option value="Gold B">Gold B</option>
                                     </select>
                                 </div>
                             </div>
@@ -150,10 +150,10 @@
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket2" id="jenispaket2" >
                                         <option value="" disabled selected hidden>Pilih paket</option> <!-- Placeholder option -->
-                                        <option value="Silver">Silver A</option>
-                                        <option value="Silver">Silver B</option>
-                                        <option value="Gold">Gold A</option>
-                                        <option value="Gold">Gold B</option>
+                                        <option value="Silver A">Silver A</option>
+                                        <option value="Silver B">Silver B</option>
+                                        <option value="Gold A">Gold A</option>
+                                        <option value="Gold B">Gold B</option>
                                     </select>
                                 </div>
                                 

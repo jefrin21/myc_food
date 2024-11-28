@@ -83,7 +83,7 @@
                                                             <td class="cart-product-name">{{ $detail['tanggal_pengambilan'] }}</td>
                                                             <td class="cart-product-name"> {{ $detail['jenis_paket'] }}</td>
                                                             <td class="cart-product-name">{{ $detail['kategori'] }} </td>
-                                                            <td class="cart-product-total">{{ $detail['harga'] }}</td>
+                                                            <td class="cart-product-total">Rp. {{ number_format($detail['harga'], 0, ',', '.') }}</td>
                                                         </tr>
                                                         
                                                         @endforeach
@@ -93,7 +93,7 @@
                                             <tr>
                                                 <th>Order Total</th>
                                                 <td colspan="2"></td>
-                                                <td>{{ $harga_total }}</td>
+                                                <td>Rp. {{ number_format($harga_total,0,',','.') }}</td>
                                             </tr>
                                         </tfoot>
                                     </table>

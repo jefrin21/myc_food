@@ -43,7 +43,7 @@ class CartController extends Controller
 
         if($request->filled('jenispaket1')){
             $jenispaket1 = $request->input('jenispaket1');
-            $harga1 = $jenispaket1 === 'Silver' ? $harga_silver : $harga_gold;
+            $harga1 = ($jenispaket1 === 'Silver A' || $jenispaket1 === 'Silver B') ? $harga_silver : $harga_gold;
             $cart[]=[
             'id' =>uniqid(),
             'tanggal' =>$request->input('tanggalpemesanan'),
@@ -54,7 +54,7 @@ class CartController extends Controller
         }
         if($request->filled('jenispaket2')){
             $jenispaket2 = $request->input('jenispaket2');
-            $harga2 = $jenispaket2 === 'Silver' ? $harga_silver : $harga_gold;
+            $harga2 = ($jenispaket2 === 'Silver A'  || $jenispaket2 === 'Silver B') ? $harga_silver : $harga_gold;
             $cart[]=[
             'id'=>uniqid(),
             'tanggal' =>$request->input('tanggalpemesanan'),
