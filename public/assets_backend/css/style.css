@@ -3859,7 +3859,7 @@ body.fixed-left .side-menu.left {
 }
 
 #sidebar-menu ul ul li.active a {
-    color: #605daf;
+    color: #E9390A;
 }
 
 #sidebar-menu ul ul a {
@@ -3890,12 +3890,12 @@ body.fixed-left .side-menu.left {
 }
 
 #sidebar-menu > ul > li > a:hover {
-    color: #605daf;
+    color: #E9390A;
     text-decoration: none;
 }
 
 #sidebar-menu > ul > li > a:hover i {
-    color: #605daf;
+    color: #E9390A;
 }
 
 #sidebar-menu > ul > li > a span i {
@@ -3929,12 +3929,12 @@ body.fixed-left .side-menu.left {
 }
 
 #sidebar-menu > ul > li > a.active {
-    color: #605daf;
-    background-color: rgba(96, 93, 175, 0.15);
+    color: #ffffff;
+    background-color: #E9390A;
 }
 
 #sidebar-menu > ul > li > a.active i {
-    color: #605daf;
+    color: #ffffff;
 }
 
 #sidebar-menu > ul > li.nav-active > ul {

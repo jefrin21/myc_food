@@ -19,7 +19,7 @@ use App\Http\Middleware\isAdmin;
 Route::get('/pages-login', function () {
     return view('components.backend.pages-login');
 });
-// Route::middleware([isAdmin::class])->group(function(){
+Route::middleware([isAdmin::class])->group(function(){
 Route::get('/', function () {
     return view('components.backend.index');
 });
@@ -95,7 +95,7 @@ Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf'
 Route::get('/addUsers',[RegisterController::class,'addAdmin']);
 Route::post('/addAdmin',[RegisterController::class,'add']);
 
-// });
+});
 
 
 

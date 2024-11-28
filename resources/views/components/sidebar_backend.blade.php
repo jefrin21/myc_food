@@ -36,7 +36,7 @@
                             <li class="menu-title">Main</li>
 
                             <li>
-                                <a href="/" class="waves-effect">
+                                <a href="/" class="">
                                     <i class="dripicons-device-desktop"></i>
                                     <span>
                                         Dashboard
