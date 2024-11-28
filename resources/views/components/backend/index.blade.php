@@ -51,7 +51,7 @@
                                                 class="breadcrumb hide-phone p-0 m-0"
                                             >
                                                 <li class="breadcrumb-item">
-                                                    <a href="#">Zoogler</a>
+                                                    <a href="#">Main</a>
                                                 </li>
                                                 <li
                                                     class="breadcrumb-item active"

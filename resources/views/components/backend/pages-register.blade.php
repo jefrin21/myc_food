@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Zoogler - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>MYC Food | Register</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -33,8 +33,16 @@
                 <div class="card-body">
 
                     <div class="text-center m-b-15">
-                        <a href="index.html" class="logo logo-admin"><img src="assets_backend/images/logo.png" height="24" alt="logo"></a>
+                    <div class="topbar-left">
+                    <div class="text-center bg-logo">
+                        <a href="index" class="logo"
+                            >
+                            MYC-Food
+                            <i class="mdi mdi-food text-white"></i></a
+                        >
+                        <!-- <a href="index" class="logo"><img src="assets_backend/images/logo.png" height="24" alt="logo"></a> -->
                     </div>
+                </div>
 
                     <div class="p-3">
                         <form class="form-horizontal" action="/addAdmin" method="POST">
