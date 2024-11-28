@@ -35,13 +35,23 @@
                             @csrf
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="text" required name="name" id="name" placeholder="Username">
+                                    <input class="form-control @error('name') is-invalid @enderror" type="text" required name="name" id="name" placeholder="Username" value="{{ old('name') }}">
+                                    @error('name')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="email" required name="email" id="email" placeholder="Email">
+                                    <input class="form-control @error('email') is-invalid @enderror" type="email" required name="email" id="email" placeholder="Email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
 

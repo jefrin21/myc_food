@@ -62,7 +62,7 @@
                                                     <th>Jumlah Pesanan</th>
                                                     <th>Total Harga</th>
                                                     <th>Tanggal Order</th>
-                                                    <th>Status Mahasiswa</th>
+                                                    <th>Bukti Pembayaran</th>
                                                     <th>Status Pesanan</th>
                                                     <th>Konfirmasi Pesanan</th>
                                                 </tr>
