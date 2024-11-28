@@ -11,8 +11,9 @@
                 <div class="topbar-left">
                     <div class="text-center bg-logo">
                         <a href="index" class="logo"
-                            ><i class="mdi mdi-bowling text-success"></i>
-                            MYC-Food</a
+                            >
+                            MYC-Food
+                            <i class="mdi mdi-food text-white"></i></a
                         >
                         <!-- <a href="index" class="logo"><img src="assets_backend/images/logo.png" height="24" alt="logo"></a> -->
                     </div>

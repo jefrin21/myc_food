@@ -48,7 +48,7 @@ File: Main Css File
 ===================*/
 body {
     background: #f5f5f5;
-    font-family: "Rubik", sans-serif;
+    font-family: "Roboto", sans-serif;
     margin: 0;
     font-size: 14px;
 }
@@ -3509,7 +3509,7 @@ File: Menu
 }
 
 .topbar-left .bg-logo {
-    background-color: #605daf;
+    background-color: #EAB41F;
 }
 
 .logo {
@@ -3526,7 +3526,7 @@ File: Menu
 }
 
 .navbar-custom {
-    background-color: #605daf;
+    background-color: #F38106;
     border: none;
     margin: -20px -25px 0 -25px;
     -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2);

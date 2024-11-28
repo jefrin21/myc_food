@@ -23,34 +23,14 @@
                                     >
                                         <form action="/logout" method="POST" id="logoutconfirm">
                                             @csrf
-                                            <button style="border: none; background:none" type="submit" onclick="alert('Anda yakin ingin keluar??')" class="fas fa-sign-out-alt  text-dark">Log Out</button>
+                                            <button style="border: none; background:none" type="submit" onclick="alert('Anda yakin ingin keluar??')" class="btn text-white"><i class="fas fa-sign-out-alt"></i>Log Out</button>
                                         </form>
 
                                     </a>
                                     
                                 </li>
                             </ul>
-                            <ul class="list-inline menu-left mb-0">
-                                <li class="float-left">
-                                    <button
-                                        class="button-menu-mobile open-left waves-light waves-effect"
-                                    >
-                                        <i class="mdi mdi-menu"></i>
-                                    </button>
-                                </li>
-                                <li class="hide-phone app-search">
-                                    <form role="search" class="">
-                                        <input
-                                            type="text"
-                                            placeholder="Search..."
-                                            class="form-control"
-                                        />
-                                        <a href=""
-                                            ><i class="fas fa-search"></i
-                                        ></a>
-                                    </form>
-                                </li>
-                            </ul>
+                            
 
                             <div class="clearfix"></div>
                         </nav>

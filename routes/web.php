@@ -19,7 +19,7 @@ use App\Http\Middleware\isAdmin;
 Route::get('/pages-login', function () {
     return view('components.backend.pages-login');
 });
-Route::middleware([isAdmin::class])->group(function(){
+// Route::middleware([isAdmin::class])->group(function(){
 Route::get('/', function () {
     return view('components.backend.index');
 });
@@ -92,7 +92,7 @@ Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmas
 Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
 Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf']);
 
-});
+// });
 
 
 
