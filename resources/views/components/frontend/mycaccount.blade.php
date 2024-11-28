@@ -445,10 +445,12 @@
                                                             {{ number_format($orders->first()->total_harga, 0, ',', '.') }}
                                                         </td>
                                                         <td>
-                                                            <a href="/invoice/{{ $orders->first()->order_id }}"
-                                                                class="btn btn-secondary btn-primary-hover">
-                                                                <span>View</span>
-                                                            </a>
+                                                            <Form action="/invoice/{{ $orders->id }}" method="GET">
+                                                                @csrf
+                                                                <button type="submit" class="btn btn-secondary btn-primary-hover">
+                                                                    <span>View</span>
+                                                                </button>
+                                                            </Form>
                                                         </td>
                                                     </tr>
                                                 @endforeach

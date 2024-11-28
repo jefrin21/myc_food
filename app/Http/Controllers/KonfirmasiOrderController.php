@@ -64,6 +64,31 @@ class KonfirmasiOrderController extends Controller
         // Mail::to($customer->customer->email_customer)->send(new InvoiceEmail($data));    
         // @dd($data);
     }
+    public function konfirmasiInvoice($id){
+        $customer = Order::with('customer')->findOrFail($id);
+        $order = Order::with('details')->findOrFail($id);
+
+        $data = [
+            'customer_name' => $customer->customer->name,
+            'total_price' => $order->total_harga,
+            'kupon_pesanan'=>$order->kupon_pesanan,
+            'harga_total'=>$order->total_harga,
+            'tanggal_pembelian' =>$order->created_at,
+           'pesanan' => $order->details->map(function ($detail) {
+            $formattedDate = \Carbon\Carbon::parse($detail->tanggal_pengambilan_pesanan)->format('d F Y');
+            // return  "[Tanggal Pengambilan] : {$formattedDate}  [nama pesanan] : {$detail->jenis_makanan}";
+            return [
+            'tanggal_pengambilan' => $formattedDate,
+            'jenis_paket' => $detail->jenis_paket_pesanan,
+            'kategori' => $detail->nama_paket_pesanan,
+            'harga' => $detail->harga_paket_pesanan,
+            ];
+        })->toArray(),
+        ];
+
+        return view ('components.backend.invoice',compact($data));
+
+    }
 
     public function printPdf($tanggal){
 

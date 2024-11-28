@@ -81,7 +81,6 @@
                                                     <td>No.</td>
                                                     <td>Nama</td>
                                                     <td>Email</td>
-                                                    <td>Action</td>
                                                </tr>
                                               
                                                 </thead>
@@ -91,7 +90,6 @@
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $users->name }}</td>
                                                         <td>{{ $users->email }}</td>
-                                                        <td> button</td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
