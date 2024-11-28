@@ -49,10 +49,11 @@ class RegisterController extends Controller
     public function add(Request $request){
         $validateData= $request->validate([
             'name'=> 'required|max:255',
-            'email'=>'required|email:dns',
+            'email'=>'required|email:dns|unique:Users',
             'password'=>'required|max:255',
         ]);
-@dd($validateData);
+
+        $validateData['is_admin'] = true;
         User::create($validateData);
         session()->flash('success', 'Admin Berhasil Ditambahkan');
         

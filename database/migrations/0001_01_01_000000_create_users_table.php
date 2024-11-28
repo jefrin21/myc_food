@@ -19,7 +19,7 @@ return new class extends Migration
             $table->char('no_hp_customer')->nullable();
             $table->string('lokasi_dorm_customer')->nullable();
             $table->char('no_kamar')->nullable();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->boolean('is_admin')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

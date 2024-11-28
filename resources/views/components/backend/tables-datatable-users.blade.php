@@ -54,13 +54,13 @@
                                                 </svg>
                                         </button>
                                 </form>
-                            </div>  
-                             @if (session()->has('success'))
-                                <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                                    <h5 class="text-success"> {{ session('success') }}</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            @endif
+                            </div> 
+                              @if (session()->has('success'))
+                                    <div class="alert alert-success alert-dismissible fade show text-center " role="alert">
+                                        <h6 class="text-success"> {{ session('success') }}</h6>
+                                        <button type="button" class="far fa-window-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
                             <!-- end page title end breadcrumb -->
                             <div class="row">
                                 <div class="col-12">
@@ -74,7 +74,7 @@
                                                     <td>No.</td>
                                                     <td>Nama</td>
                                                     <td>Email</td>
-                                                    <td>NO Handphone</td>
+                                                    <td>Action</td>
                                                </tr>
                                               
                                                 </thead>
@@ -84,7 +84,7 @@
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $users->name }}</td>
                                                         <td>{{ $users->email }}</td>
-                                                        <td>{{ $users->no_hp_customer }}</td>
+                                                        <td> button</td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
