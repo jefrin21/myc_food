@@ -13,6 +13,7 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
+
         $validatedData = $request->validate([
             'name'=> 'required|max:255',
             'last_name_customer'=> 'required|max:255',
@@ -25,6 +26,7 @@ class RegisterController extends Controller
             'confirmpassword'=> 'required|same:password'
         ]);
 
+        // @dd($validatedData);
         
         if($request->password !== $request->confirmpassword){
             return back()->withErrors(['confirmpassword'=>'konfirmasi password tidak sesuai'])->withInput();
@@ -32,12 +34,11 @@ class RegisterController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']); 
         unset($validatedData['confirmpassword']);
 
-        // @dd($validatedData);
 
         User::create($validatedData);
         
        session()->flash('success', 'registrasi berhasil.silahkan login!!');
         
-        return redirect('/home');
+        return redirect('/account');
     }
 }
