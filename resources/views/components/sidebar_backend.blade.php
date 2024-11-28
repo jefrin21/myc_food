@@ -24,7 +24,7 @@
                         alt="user"
                         class="rounded-circle img-thumbnail mb-1"
                     />
-                    <h6 class="">Mr. Michael Hill</h6>
+                    <h6 class="">{{ auth()->user()->name }}</h6>
                     <p class="online-icon text-dark">
                         <i class="mdi mdi-record text-success"></i>online
                     </p>
@@ -74,6 +74,14 @@
                                 <a href="tables-datatable-weekly" class="waves-effect"
                                     ><i class="dripicons-to-do"></i
                                     ><span>Pesanan Harian </span></a
+                                >
+                            </li>
+
+                            <li class="menu-title">Admin</li>
+                            <li>
+                                <a href="tables-datatable-user" class="waves-effect"
+                                    ><i class="dripicons-to-do"></i
+                                    ><span>Admin</span></a
                                 >
                             </li>
 

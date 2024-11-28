@@ -68,6 +68,7 @@ Route::get('/tables-basic', function () {
 Route::get('/tables-datatable', function () {
     return view('components.backend.tables-datatable');
 });
+Route::get('/tables-datatable-user',[IndexController::class,'dataUser']);
 Route::get('/tables-editable', function () {
     return view('components.backend.tables-editable');
 });
@@ -91,6 +92,8 @@ Route::get('/tables-story-pesanan',[OrderController::class,'storyPesanan']);
 Route::get('/konfirmasi-order/{id}',[KonfirmasiOrderController::class,'konfirmasi']);
 Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
 Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf']);
+Route::get('/addUsers',[RegisterController::class,'addAdmin']);
+Route::post('/addAdmin',[RegisterController::class,'add']);
 
 // });
 

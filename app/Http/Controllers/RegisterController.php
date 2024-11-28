@@ -41,4 +41,22 @@ class RegisterController extends Controller
         
         return redirect('/account');
     }
+
+    public function addAdmin(){
+        return view ('components.backend.pages-register');
+    }
+
+    public function add(Request $request){
+        $validateData= $request->validate([
+            'name'=> 'required|max:255',
+            'email'=>'required|email:dns',
+            'password'=>'required|max:255',
+            'is_admin'=>true
+        ]);
+@dd($validateData);
+        User::create($validateData);
+        session()->flash('success', 'Admin Berhasil Ditambahkan');
+        
+        return redirect('/tables-datatable-user');
+    }
 }
