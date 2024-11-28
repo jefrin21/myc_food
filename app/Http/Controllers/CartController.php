@@ -33,11 +33,11 @@ class CartController extends Controller
     //   }
 
         if ($user && in_array($user->lokasi_dorm_customer, ['Paddock-Dorm', 'G-Building-Dorm','GBFK','Grandstand'])) {
-            $harga_silver = 15000;
+            $harga_silver = 10000;
             $harga_gold = 20000;
         } else {
-            $harga_silver = 20000;
-            $harga_gold = 25000;
+            $harga_silver = 25000;
+            $harga_gold = 35000;
         }
 
 

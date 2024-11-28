@@ -781,7 +781,7 @@
                                                                                             <div class="col-10">
                                                                                                 <input class="mt-0 mb-0" type="password"
                                                                                                     placeholder="Password" id="passwordInput"
-                                                                                                    name="setpassword">
+                                                                                                    name="password">
                                                                                             </div>
                                                                                             <div class="col-2">
                                                                                                 <form id="mc-form">
