@@ -20,7 +20,7 @@
 			hoverColor : false,
 			regionStyle : {
 				initial : {
-					fill : '#605daf'
+					fill : '#f59a38'
 				}
 			},
 			 markerStyle: {

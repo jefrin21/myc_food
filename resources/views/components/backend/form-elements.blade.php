@@ -129,7 +129,7 @@
                                                     <div class="form-group row">
                                                         <label for="example-color-input" class="col-sm-2 col-form-label">Color</label>
                                                         <div class="col-sm-10">
-                                                            <input class="form-control" type="color" value="#605daf" id="example-color-input">
+                                                            <input class="form-control" type="color" value="#f59a38" id="example-color-input">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

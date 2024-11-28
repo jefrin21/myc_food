@@ -24,7 +24,7 @@
                 colors: {
                     Desktop: '#b4c39d',
                     Mobile: '#ad85ca',
-                    Tablet: '#605daf'
+                    Tablet: '#f59a38'
                 }
             }
         });
@@ -49,7 +49,7 @@
                 },
                 colors: {
                     SonyVaio: '#ad85ca',
-                    iMacs: '#605daf',
+                    iMacs: '#f59a38',
                     Tablets: '#f75d8c',
                     iPhones: '#739bea',
                     Macbooks: '#b4c39d'
@@ -77,7 +77,7 @@
                     Revenue: 'bar'
                 },
                 colors: {
-                    Revenue: '#605daf',
+                    Revenue: '#f59a38',
                     Pageview: '#b4c39d'
 	            }
             },
@@ -104,7 +104,7 @@
                 },
                 colors: {
                     Revenue: '#b4c39d',
-                    Pageview: '#605daf'
+                    Pageview: '#f59a38'
                 }
             }
         });

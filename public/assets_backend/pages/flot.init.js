@@ -261,7 +261,7 @@
           var uploads = [[0, 9], [1, 8], [2, 5], [3, 8], [4, 5], [5, 14], [6, 10]];
           var downloads = [[0, 5], [1, 12], [2,4], [3, 3], [4, 12], [5, 8], [6, 4]];
           var plabels = ["Marketplace","Other Market"];
-          var pcolors = ['#44bb9f', '#605daf'];
+          var pcolors = ['#44bb9f', '#f59a38'];
           var borderColor = '#f5f5f5';
           var bgColor = '#fff';
           this.createPlotGraph("#website-stats", uploads, downloads, plabels, pcolors, borderColor, bgColor);
@@ -274,7 +274,7 @@
 
 
             //real time data representation
-            var plot = this.createRealTimeGraph('#flotRealTime', this.randomData() , ['#605daf']);
+            var plot = this.createRealTimeGraph('#flotRealTime', this.randomData() , ['#f59a38']);
             plot.draw();
             var $this = this;
             function updatePlot() {
