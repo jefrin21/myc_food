@@ -142,9 +142,7 @@ Route::get('/register', function () {
     return view('components.frontend.mycregister');
 });
 
-Route::get('/orders', function () {
-    return view('components.frontend.mycorders');
-})->middleware('auth');
+Route::get('/orders',[DetailOrderController::class,'myOrder'])->middleware('auth');
 // ================================================================== routes frondend ===================================
 
 

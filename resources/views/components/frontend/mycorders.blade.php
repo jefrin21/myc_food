@@ -43,9 +43,11 @@
     <link rel="stylesheet" href="assets_frontend/css/style.css">
      <!-- Favicon -->
      <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon_io/apple-touch-icon.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }}">
-        <link rel="manifest" href="{{ asset('favicon_io/site.webmanifest') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('favicon_io/site.webmanifest') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 
     <!--modernizr min js here-->
     <script src="assets_frontend/js/vendor/modernizr-3.11.2.min.js"></script>
@@ -90,73 +92,82 @@
                     <h3>Keep Track Your Orders!</h3>
                 </div>
             </div>
+           <div class="row">
+                <div class="col-12">
+                    <div class="form-group col-3 mx-auto mb-3">
+                        <label for="pick_up_date ">Purchase Date</label>
+                        <input type="text" id="pick_up_date" class="datepicker form-control" placeholder="Select a date">
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-12">
-                    <form action="#">
+                    <form action="#" method="GET">
                         <div class="table-content table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th class="product_remove">Purchase Date</th>
                                         <th class="product-price">Pick Up Date</th>
-                                       
                                         <th class="cart-product-name">Food Package</th>
                                         <th class="product-price">Total Price</th>
                                         <th class="product-stock-status">Status</th>
-                                       
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td >
-                                            12/10/2023
-                                        </td>
-                                       <td>
-                                        12/14/2023
-                                       </td>
-                                        <td><a href="#">gold A </a></td>
-                                        <td ><span class="amount">$22.00</span></td>
-                                        <td class="text-bg-warning" ><span class="in-stock">On Progress</span></td> 
+                                <tbody id="orderTable">
+                                    @foreach($data as $items)
+                                    <tr data-tanggal="{{ \Carbon\Carbon::parse($items->tanggal_beli)->format('Y-m-d') }}">
+                                        <td>{{ \Carbon\Carbon::parse($items->tanggal_beli)->format('d F Y') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($items->tanggal)->format('d F Y') }}</td>
+                                        <td>{{ $items->nama_paket }}</td>
+                                        <td>Rp. {{ number_format($items->harga_paket, 0, ',', '.') }}</td>
+                                        <td class="{{ $items->status === 'Dikirim' ? 'text-bg-success' : ($items->status === 'diproses' ? 'text-bg-warning' : 'text-bg-success') }}">{{ $items->status }}</td>
                                     </tr>
-                                    <tr>
-                                        <td >
-                                            12/10/2023
-                                        </td>
-                                       <td>
-                                        12/11/2023
-                                       </td>
-                                        <td><a href="#">gold B </a></td>
-                                        <td ><span class="amount">$22.00</span></td>
-                                        <td class="text-bg-success" ><span class="in-stock">Completed</span></td> 
-                                    </tr>
-                                    <tr>
-                                        <td >
-                                            12/13/2023
-                                        </td>
-                                       <td>
-                                        12/15/2023
-                                       </td>
-                                        <td><a href="#">gold B </a></td>
-                                        <td ><span class="amount">$22.00</span></td>
-                                        <td class="text-bg-secondary" ><span class="in-stock">Pending</span></td> 
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </form>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
-
+    
+    
 
     <!--footer area end-->
     @endsection
     <!-- JS
 ============================================ -->
     @section('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            flatpickr('#pick_up_date', {
+                dateFormat: 'Y-m-d',
+                defaultDate: 'today', 
+                onChange: function (selectedDates) {
+                    let selectedDate = selectedDates[0] ? selectedDates[0].toISOString().split('T')[0] : '';
+                    filterOrdersByDate(selectedDate);
+                }
+            });
 
+            function filterOrdersByDate(selectedDate) {
+                let rows = document.querySelectorAll('#orderTable tr');
 
+                rows.forEach(row => {
+                    let orderDate = row.getAttribute('data-tanggal');
+                    if (selectedDate === '' || selectedDate === orderDate) {
+                        row.style.display = '';  
+                    } else {
+                        row.style.display = 'none'; 
+                    }
+                });
+            }
+
+            filterOrdersByDate(new Date().toISOString().split('T')[0]);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="assets_frontend/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets_frontend/js/vendor/jquery-migrate-3.3.2.min.js"></script>
     <script src="assets_frontend/js/vendor/bootstrap.bundle.min.js"></script>

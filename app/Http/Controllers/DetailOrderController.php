@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DetailOrder;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DetailOrderController extends Controller
 {
@@ -20,51 +21,19 @@ class DetailOrderController extends Controller
         return view('components.backend.tables-detailorder-pesanan',['orders'=>$order]);
     }
     
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    public function myOrder(){
+        $user = auth()->user()->id;
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $data = DB::table('detail_orders as d')
+        ->join('orders as o', 'd.order_id', '=', 'o.id')
+        ->join('users as u', 'o.user_id', '=', 'u.id') 
+        ->select(
+        'd.tanggal_pengambilan_pesanan as tanggal','o.created_at as tanggal_beli','d.nama_paket_pesanan as nama_paket','d.harga_paket_pesanan as harga_paket',
+                    'o.status_pesanan as status',
+    )
+    ->where('u.id', '=', $user)
+    ->get();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(DetailOrder $detailOrder)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(DetailOrder $detailOrder)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, DetailOrder $detailOrder)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(DetailOrder $detailOrder)
-    {
-        //
+        return view('components.frontend.mycorders',['data'=>$data]);
     }
 }
