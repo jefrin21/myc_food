@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DetailOrderController;
 use App\Http\Controllers\EditController;
+use App\Http\Controllers\ForgotPassController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\KonfirmasiOrderController;
@@ -151,7 +152,6 @@ Route::post('/mylogin',[LoginController::class,'authentication']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::post('/myregister',[RegisterController::class,'store']);
 Route::resource('/edit',EditController::class);
-// Route::get('/history', [HistoryController::class, 'showhistory'])->middleware('auth')->name('history');
 
 
 // =====================================================================================================================
@@ -168,3 +168,12 @@ Route::post('/confirmorder',[CartController::class,'confirm']);
 
 Route::put('/editprofile/{id}',[EditController::class,'update']);
 Route::get('/invoice/{order_id}',[KonfirmasiOrderController::class,'konfirmasiInvoice']);
+
+// =================================== Forgot password route ===========================================================
+Route::post('/forgotPass',[ForgotPassController::class,'resetPass'])->name('password.email');
+Route::get('/resetpass/{token}',[ForgotPassController::class,'showformreset'])->name('password.reset');
+Route::post('/updatePass',[ForgotPassController::class,'reset'])->name('password.update');
+
+// Route::get('/tes', function () {
+//     return view('components.frontend.reset-password');
+// });

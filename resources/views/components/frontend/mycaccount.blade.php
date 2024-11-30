@@ -562,7 +562,7 @@
                                                                                         <div class="row">
                                                                                             <div class="col-sm-4 pt-1 mt-md-0">
                                                                                                 <div class="forgotton-password_info">
-                                                                                                    <a href="#"> Forgot pasword?</a>
+                                                                                                    <a data-bs-target="#forgotpass" data-bs-toggle="modal"> Forgot pasword?</a>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="col"></div>
@@ -832,6 +832,58 @@
                                                             </div>
                                                         </div>
                                                     </form>
+                                                    {{-- end modal register --}}
+
+                                                     <!-- Modal forgot -->
+
+                                                    <form action="/forgotPass" method="POST">
+                                                        @csrf
+                                                        <div class="modal fade" id="forgotpass" data-bs-backdrop="static"
+                                                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="staticBackdropLabel"> Forget Password
+                                                                                </h5>
+                                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                                    aria-label="Close"></button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div class="login-form">
+                                                                                    <div class="row d-flex justify-content-center">
+                                                                                        <div class="col-lg-12">
+                                                                                            <label>Email Address*</label>
+                                                                                            <input class="@error('email') is-invalid @enderror"
+                                                                                                type="email" placeholder="Email Address"
+                                                                                                name="email" id="email"
+                                                                                                value="{{ old('email') }}" required>
+                                                                                                    @error('email')
+                                                                                                        <div class="invalid-feedback">
+                                                                                                            {{ $message }}
+                                                                                                        </div>
+                                                                                                    @enderror
+                                                                                        </div>
+
+                                                                                        <div class="newsletter_subscribe mb-0">
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn custom-btn md-size"
+                                                                                    data-bs-dismiss="modal" data-bs-target="#login"
+                                                                                    data-bs-toggle="modal">Back to Login</button>
+                                                                                <button class="btn custom-btn md-size"
+                                                                                    type="submit">Send</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                    </form>
+                                                    {{-- end modal forgot --}}
                                             </div>
                                         </div>
                                     </div>
