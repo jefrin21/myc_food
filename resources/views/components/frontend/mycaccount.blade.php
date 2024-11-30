@@ -445,7 +445,7 @@
                                                             {{ number_format($orders->first()->total_harga, 0, ',', '.') }}
                                                         </td>
                                                         <td>
-                                                            <Form action="/invoice/{{ $orders->id }}" method="GET">
+                                                            <Form action="/invoice/{{ $orders->first()->order_id }}" method="GET">
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-secondary btn-primary-hover">
                                                                     <span>View</span>

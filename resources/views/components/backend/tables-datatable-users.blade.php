@@ -70,7 +70,7 @@
                                 @endif
                             <!-- end page title end breadcrumb -->
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-9">
                                     <div class="card">
                                         <div class="card-body">
             
@@ -81,6 +81,7 @@
                                                     <td>No.</td>
                                                     <td>Nama</td>
                                                     <td>Email</td>
+                                                    <td>Action</td>
                                                </tr>
                                               
                                                 </thead>
@@ -90,7 +91,33 @@
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ $users->name }}</td>
                                                         <td>{{ $users->email }}</td>
+                                                        <td class="text-center">
+                                                                <button type="button" class="btn-danger ion-ios7-trash-outline"  data-bs-toggle="modal" data-bs-target="#confirmDeleteUser{{ $users->id }}"></button>
+                                                        </td>
                                                     </tr>
+                                                    {{-- modal delete  --}}
+                                                        <div class="modal fade" id="confirmDeleteUser{{ $users->id }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <form action="/Userdelete/{{ $users->id }}" method="POST">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Apakah Anda yakin ingin menghapus Admin ?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                                                </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {{-- modal delete  --}}
                                                     @endforeach
                                                 </tbody>
                                             </table>
@@ -99,7 +126,7 @@
                                     </div>
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
-
+                            
                         </div><!-- container -->
 
                     </div> <!-- Page content Wrapper -->
@@ -143,5 +170,7 @@
 
         <!-- App js -->
         <script src="assets_backend/js/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
         @endsection
   </x-layout_backend>

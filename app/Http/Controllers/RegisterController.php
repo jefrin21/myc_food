@@ -59,4 +59,10 @@ class RegisterController extends Controller
         
         return redirect('/tables-datatable-user');
     }
+
+    public function UserDelete($id){
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->back()->with('success','Admin berhasil di hapus');
+    }
 }

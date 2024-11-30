@@ -19,7 +19,7 @@
     <!-- For the og:image content, replace the # with a link of an image -->
     <meta property="og:image" content="#" />
     <meta property="og:description" content="Bucker – Blog Left Sidebar" />
-
+    <base href="/">
     <!-- Add site Favicon -->
     <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-192x192.png"
@@ -80,9 +80,9 @@
                                         <div class="col">
                                             <img src="assets_frontend/img/logo/logo.png" alt="">
                                         </div>
-                                        <div class="col d-flex justify-content-end me-5">
-                                            <h1>INVOICE</h1>
-                                            <h1>Kupon No. {{ $kupon_pesanan }}</h1>
+                                        <div class="col d-flex justify-content-end ">
+                                            <h4>INVOICE &nbsp;</h4>
+                                            <h4>Kupon No. {{ $kupon_pesanan }}</h4>
                                         </div>
                                     </div>
                                     <div class="row mt-5 ms-5">
@@ -91,12 +91,8 @@
                                             
                                             <h6>{{ $customer_name }}
                                                 <br> {{ \Carbon\Carbon::parse($tanggal_pembelian)->format('d F Y') }}
-                                                <br> MYC Dorm, E307
+                                               
                                             </h6>
-                                        </div>
-                                        <div class="col-6">
-                                            <h6 class="text-end me-5"> 26 October 2024</h6>
-
                                         </div>
                                     </div>
                                     
@@ -108,7 +104,6 @@
                                                             <th class="cart-product-name">Kategori</th>
                                                             <th class="cart-product-name">Jenis Paket</th>
                                                             <th class="cart-product-name">Harga</th>
-                                                            <th class="cart-product-total">Total</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -132,7 +127,6 @@
                                                             <th>Order Total</th>
                                                             <td></td>
                                                             <td></td>
-                                                            <td></td>
                                                             
                                                             <td>{{ $harga_total }}</td>
                                                         </tr>
@@ -149,7 +143,6 @@
                                                     <h3 class="mb-3">PAYMENT INFORMATION :</h3>
                                                     
                                                     <h6> Paid
-                                                        
                                                     </h6>
                                                 </div>
                                                 

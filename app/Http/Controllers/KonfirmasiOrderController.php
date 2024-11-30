@@ -64,9 +64,9 @@ class KonfirmasiOrderController extends Controller
         // Mail::to($customer->customer->email_customer)->send(new InvoiceEmail($data));    
         // @dd($data);
     }
-    public function konfirmasiInvoice($id){
-        $customer = Order::with('customer')->findOrFail($id);
-        $order = Order::with('details')->findOrFail($id);
+    public function konfirmasiInvoice($order_id){
+        $customer = Order::with('customer')->findOrFail($order_id);
+        $order = Order::with('details')->findOrFail($order_id);
 
         $data = [
             'customer_name' => $customer->customer->name,
@@ -86,7 +86,7 @@ class KonfirmasiOrderController extends Controller
         })->toArray(),
         ];
 
-        return view ('components.backend.invoice',compact($data));
+        return view ('components.frontend.mycinvoice',$data);
 
     }
 

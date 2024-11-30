@@ -94,6 +94,7 @@ Route::get('/tables-datatable-weekly',[WeeklyController::class,'index']);
 Route::get('/print-pdf/{tanggal}', [KonfirmasiOrderController::class, 'printPdf']);
 Route::get('/addUsers',[RegisterController::class,'addAdmin']);
 Route::post('/addAdmin',[RegisterController::class,'add']);
+Route::delete('/Userdelete/{id}',[RegisterController::class,'UserDelete']);
 
 });
 
@@ -166,3 +167,4 @@ Route::post('/confirmorder',[CartController::class,'confirm']);
 // =================================================================================================================
 
 Route::put('/editprofile/{id}',[EditController::class,'update']);
+Route::get('/invoice/{order_id}',[KonfirmasiOrderController::class,'konfirmasiInvoice']);

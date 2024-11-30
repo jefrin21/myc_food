@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('harga_paket_pesanan');
             $table->date('tanggal_pengambilan_pesanan');
             $table->timestamps();
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 
