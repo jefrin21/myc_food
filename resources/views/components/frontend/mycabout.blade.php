@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Bucker – About Us</title>
+        <title>MYC Food - About</title>
         <meta name="description" 
             content="Informasi mengenai layanan dan ketentuan pemesanan MYC." />
         <meta name="viewport" content="width=device-width, initial-scale=1">

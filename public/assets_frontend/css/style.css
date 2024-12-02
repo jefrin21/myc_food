@@ -5701,22 +5701,26 @@ span.ui-slider-handle.ui-corner-all.ui-state-default {
     font-size: 16px;
     font-weight: 500;
     color: #ec613b;
+    overflow-y: auto;
 }
 @media only screen and (max-width: 767px) {
     .sorting__by .nice-select {
         width: 105px;
         font-size: 15px;
+        overflow-y: auto;
     }
 }
 .sorting__by .nice-select .list {
     right: 0;
     width: 196px;
     left: auto;
+    overflow-y: auto; /* Aktifkan scroll pada sumbu Y */
 }
 .sorting__by .nice-select .list li {
     font-weight: 400;
     color: #000000;
     font-size: 15px;
+    overflow-y: auto; /* Aktifkan scroll pada sumbu Y */
 }
 .sorting__by .nice-select::after {
     border-bottom: 2px solid #ec613b;
@@ -5908,7 +5912,8 @@ span.ui-slider-handle.ui-corner-all.ui-state-default {
     background: #ec613b;
     border: 1px solid #ec613b;
     border-radius: 50%;
-    display: inline-block;
+    display: block;
+    overflow-y: auto; /* Aktifkan scroll pada sumbu Y */
 }
 .pagination ul li a {
     font-size: 18px;
@@ -6620,6 +6625,7 @@ span.ui-slider-handle.ui-corner-all.ui-state-default {
 }
 .variant_flaves_size .variant_list .nice-select .list {
     width: 100%;
+    
 }
 
 .product_review_form {
@@ -7563,6 +7569,7 @@ span.ui-slider-handle.ui-corner-all.ui-state-default {
 .variants_color .select_option .list {
     width: 100%;
     border-radius: 0;
+    overflow-y: auto; /* Aktifkan scroll pada sumbu Y */
 }
 
 .modal_add_to_cart {

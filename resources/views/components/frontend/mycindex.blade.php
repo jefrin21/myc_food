@@ -22,15 +22,11 @@
         <meta property="og:description" content="Bucker –  Bakery Shop Bootstrap 5 Template" />
 
         <!-- Add site Favicon -->
-        <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png"
-            sizes="32x32" />
-        <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-192x192.png"
-            sizes="192x192" />
-        <link rel="apple-touch-icon"
-            href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-180x180.png" />
-        <meta name="msapplication-TileImage"
-            content="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-270x270.png" />
-
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon_io/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('favicon_io/site.webmanifest') }}">
+    
         <!-- CSS 
     ========================= -->
         <link rel="stylesheet" href="assets_frontend/css/vendor/bootstrap.min.css">

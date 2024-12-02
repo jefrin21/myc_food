@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Bucker – My Account</title>
+        <title>MYC Food | My Account</title>
         <meta name="description"
             content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world." />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -622,10 +622,10 @@
                                                                                         name="last_name_customer" id="last_name_customer"
                                                                                         required>
                                                                                 </div>
-                                                                                <div class="col-12">
+                                                                                <div class="col-12" >
                                                                                     <label>Major</label>
                                                                                     <select name="fakultas_customer" id="fakultas_customer"
-                                                                                        required>
+                                                                                    style="width: 100%; max-height: 200px; overflow-y: auto; font-size: 16px; white-space: nowrap;" required>
                                                                                         <option selected value="1">
                                                                                             Select Major
                                                                                         </option>

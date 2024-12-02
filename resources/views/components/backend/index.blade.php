@@ -7,12 +7,17 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
         />
-        <title>MYC-Food | Dashboard</title>
+        <title>MYC Food | Dashboard</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon_io/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('favicon_io/site.webmanifest') }}">
 
-        <link rel="shortcut icon" href="assets_backend/images/favicon.ico" />
+        
 
         <link
             href="assets_backend/css/bootstrap.min.css"
@@ -29,11 +34,7 @@
             rel="stylesheet"
             type="text/css"
         />
-         <!-- Favicon -->
-     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon_io/apple-touch-icon.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon_io/favicon-32x32.png') }}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon_io/favicon-16x16.png') }}">
-        <link rel="manifest" href="{{ asset('favicon_io/site.webmanifest') }}">
+         
 
     </head>
 @endsection
