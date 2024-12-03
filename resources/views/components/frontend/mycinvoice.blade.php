@@ -78,10 +78,10 @@
                                 <div class="blog_content">
                                     <div class="row ms-5">
                                         <div class="col">
-                                            <img src="assets_frontend/img/logo/logo.png" alt="">
+                                            <img src="assets_frontend/img/logo/logomyc.png" alt="" style="width:100px;">
                                         </div>
-                                        <div class="col d-flex justify-content-end ">
-                                            <h4>INVOICE &nbsp;</h4>
+                                        <div class="col d-flex justify-content-end me-3">
+                                            
                                             <h4>Kupon No. {{ $kupon_pesanan }}</h4>
                                         </div>
                                     </div>
@@ -113,7 +113,8 @@
                                                                 <td class="cart-product-name">{{ $detail['tanggal_pengambilan'] }}</td>
                                                                 <td class="cart-product-name"> {{ $detail['jenis_paket'] }}</td>
                                                                 <td class="cart-product-name">{{ $detail['kategori'] }} </td>
-                                                                <td class="cart-product-total">{{ $detail['harga'] }}</td>
+                                                                <td class="cart-product-total">{{ 'Rp ' . number_format($detail['harga'], 0, ',', '.') }}</td>
+
                                                             </tr>
                                                             
                                                             @endforeach
@@ -128,25 +129,25 @@
                                                             <td></td>
                                                             <td></td>
                                                             
-                                                            <td>{{ $harga_total }}</td>
+                                                            <td>{{ 'Rp ' . number_format($harga_total, 0, ',', '.') }}</td>
+
                                                         </tr>
                                                     </tfoot>
                                                 </table>
                                             </div>
                                             <div class="row mt-5">
-                                                <div class="col">
-                                                    <h1>Thank You!</h1>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-5">
+                                                
                                                 <div class="col-6">
-                                                    <h3 class="mb-3">PAYMENT INFORMATION :</h3>
-                                                    
-                                                    <h6> Paid
+                                                    <h5 class="mb-3 ms-5">Payment Status :</h5>
+                    
+                                                    <h6 class="ms-5 "> Paid
                                                     </h6>
                                                 </div>
-                                                
+                                                <div class="col-6">
+                                                    <h1 class="me-5 d-flex justify-content-end">Thank You!</h1>
+                                                </div>
                                             </div>
+                            
                                         </div>
                                     </div>
                                 </div>
