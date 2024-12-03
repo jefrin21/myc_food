@@ -275,17 +275,18 @@ figure {
     height: 70px;
     padding: 0 45px;
     background: #ec613b;
-    position: relative;
-    z-index: 9;
+    position: relative; /* Tetap diatur sebagai relative */
+    z-index: 1; /* Elemen utama di depan ::before */
     color: #ffffff;
     border: 0;
     font-weight: 600;
     text-decoration: none;
     border-radius: 25px;
-    overflow: hidden;
+    overflow: hidden; /* Pastikan elemen tidak keluar dari batas tombol */
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .btn.btn-link {
         font-size: 16px;
@@ -295,6 +296,7 @@ figure {
         border-radius: 20px;
     }
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .btn.btn-link {
         font-size: 15px;
@@ -304,6 +306,7 @@ figure {
         border-radius: 15px;
     }
 }
+
 @media only screen and (max-width: 767px) {
     .btn.btn-link {
         font-size: 14px;
@@ -312,32 +315,39 @@ figure {
         padding: 0 25px;
     }
 }
+
+/* Background to back */
 .btn.btn-link::before {
     content: "";
     position: absolute;
-    z-index: -1;
+    z-index: -1; /* Pastikan elemen berada di belakang */
     top: 0;
     left: 0;
-    width: 0;
+    width: 0; /* Awal lebar 0 */
     height: 100%;
     background: #eec44f;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    -webkit-transition: 0.3s ease; /* Tambahkan transisi mulus */
+    transition: 0.3s ease;
     border-radius: 25px;
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .btn.btn-link::before {
         border-radius: 20px;
     }
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .btn.btn-link::before {
         border-radius: 15px;
     }
 }
+
+/* Hover effect */
 .btn.btn-link:hover::before {
-    width: 100%;
+    width: 100%; /* Latar belakang meluas penuh */
 }
+
 
 @media only screen and (max-width: 575px) {
     .section_title {
@@ -4643,6 +4653,10 @@ textarea:-ms-input-placeholder {
 
 .contact_form {
     padding: 60px 50px;
+    color: #000000;
+    border: 0.5px solid #ec613b;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px #ec613b;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .contact_form {

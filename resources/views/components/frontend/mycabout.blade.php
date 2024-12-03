@@ -223,7 +223,7 @@
                     <p>Hubungi kami melalui WhatsApp di nomor berikut:
                     <a href="https://wa.me/6281223366741" class="btn-whatsapp" target="_blank">
                         <img src="assets_frontend/img/logo/wa-logo.png" alt="WhatsApp Logo" width="35" class="me-2">
-                        0812.2336.6741</p>
+                         +62 812-2336-6741</p>
                     </a>
                 </div>
             </div>

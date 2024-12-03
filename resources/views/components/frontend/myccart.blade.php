@@ -131,7 +131,7 @@
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-5 col-md-6 mb-4">
-                            <div class="contact_form" data-bgimg="assets_frontend/img/others/contact-form-bg-shape.png">
+                            <div class="contact_form" >
                                 <h2 >Lunch</h2>
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket1" id="jenispaket1" >
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-6">
-                            <div class="contact_form" data-bgimg="assets_frontend/img/others/contact-form-bg-shape.png">
+                            <div class="contact_form" >
                                 <h2>Dinner</h2>
                                 <div class="country-select clearfix">
                                     <select class="myniceselect nice-select wide" name="jenispaket2" id="jenispaket2" >

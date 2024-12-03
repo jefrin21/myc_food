@@ -10,7 +10,7 @@
                                     <h3>Contact Us</h3>
                                     <div class="footer_contact_desc">
                                         <p>If you have any question.please
-                                            contact us at <a href="#">mycfood@.com</a></p>
+                                            contact us at <a href="#">mycfood@gmail.com</a></p>
                                     </div>
                                     <div class="footer_contact_info">
                                         <div class="footer_contact_info_list d-flex align-items-center">
@@ -27,10 +27,9 @@
                                             </div>
                                             <div class="footer_contact_info_text">
                                                 <ul>
-                                                    <li><a href="tel:+0123456789">+ 0 123 456
-                                                            789</a></li>
-                                                    <li><a href="tel:+0123456789">+ 0 123 456
-                                                            789</a></li>
+                                                    <li><a href="https://wa.me/6281223366741" class="btn-whatsapp" target="_blank">
+                         +62 812-2336-6741</p></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -38,22 +37,34 @@
                                     </div>
                                 </div>
                                 <div class="footer_menu_widget footer_list_width middle d-flex">
-                                    <div class="footer_widget_list">
-                                        <h3>Information</h3>
-                                        <div class="footer_menu">
+                                    
+                                    <div class="">
+                                    <h3></h3>
+                                        <div class="">
                                             <ul>
-                                                <li><a href="about.html"> About us</a></li>
-                                                <li><a href="contact.html">Terms & Conditions</a></li>
-                                               
+                                                <li><a href=""></a></li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="footer_widget_list">
+                                    <h3>Information</h3>
+                                        <div class="footer_menu">
+                                            <ul>
+                                                <li><a href="about">Terms & Conditions</a></li>
+                                                
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                        
+                    
+                                    <div class="footer_widget_list">
                                         <h3>Account</h3>
                                         <div class="footer_menu">
                                             <ul>
-                                                <li><a href="mycaccount.html"> My account</a></li>
-                                                <li><a href="mycorders.html">My orders</a></li>
+                                                <li><a href="account"> My account</a></li>
+                                                <li><a href="orders">My orders</a></li>
                                                 
                                             </ul>
                                         </div>
@@ -66,8 +77,7 @@
                 </div>
                 <div class="footer_bottom">
                     <div class="copyright_right text-center">
-                        <p> © 2024 <a href="index.html"> MYC Food.</a> Made with <i class="ion-heart"></i> by
-                            <a href="https://themeforest.net/user/codecarnival/portfolio">CodeCarnival</a>
+                        <p> © 2024 <a href="index.html"> MYC Food.</a> 
                         </p>
                     </div>
                 </div>

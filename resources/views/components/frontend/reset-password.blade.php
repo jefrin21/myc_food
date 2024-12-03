@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Bucker – Blog Left Sidebar</title>
+        <title>MYC Food | Reset Password</title>
         <meta name="description"
             content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world." />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,12 +14,12 @@
         <!-- Open Graph (OG) meta tags are snippets of code that control how URLs are displayed when shared on social media  -->
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Bucker – Blog Left Sidebar" />
+        <meta property="og:title" content="Bucker – Reset Password" />
         <meta property="og:url" content="PAGE_URL" />
-        <meta property="og:site_name" content="Bucker – Blog Left Sidebar" />
+        <meta property="og:site_name" content="Bucker – Reset Password" />
         <!-- For the og:image content, replace the # with a link of an image -->
         <meta property="og:image" content="#" />
-        <meta property="og:description" content="Bucker – Blog Left Sidebar" />
+        <meta property="og:description" content="Bucker – Reset Password" />
         <base href="/">
         <!-- Add site Favicon -->
         <link rel="icon" href="https://hasthemes.com/wp-content/uploads/2019/04/cropped-favicon-32x32.png"
@@ -67,13 +67,30 @@
     @endsection
 
     @section('app-content')
-    <div class="login-form">
+
+<!-- breadcrumbs area start -->
+<div class="breadcrumbs_aree breadcrumbs_bg mb-5" data-bgimg="assets_frontend/img/others/breadcrumbs-bg.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs_text">
+                    <h1>Reset Password</h1>
+                    <ul>
+                        <li><a href="mycindex.html">Login </a></li>
+                        <li> // Reset Password</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container login-form">
         <form action="/updatePass" method="post">
             @csrf
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-12">
                     <input type="hidden" name="token" id="token" value="{{ $token }}">
-                    <label>Email Address*</label>
+                    <h5>Email Address*</h5>
                     <input class="@error('email') is-invalid @enderror" type="email" placeholder="Email Address"
                         name="email" id="email" value="{{ old('email') }}" required>
                     @error('email')
@@ -91,12 +108,12 @@
                 </div>
                 <div class="col-lg-12">
 
-                    <label>Password*</label>
+                    <h5>Password*</h5>
 
                     <div class="newsletter_subscribe">
 
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-11">
                                 <input class="mt-0 mb-0 @error('password') is-invalid @enderror" type="password"
                                     placeholder="Password" name="password" id="loginpasswordInput" required>
                                 @error('password')
@@ -106,7 +123,7 @@
                                 @enderror
                             </div>
 
-                            <div class="col-2">
+                            <div class="col-1">
                                 <form id="mc-form">
                                     <button type="button" onclick="togglePasswordVisibility3()"><i
                                             class="pe-7s-look"></i></button>
@@ -117,12 +134,12 @@
 
                     </div>
 
-                    <label>Confirmasi Password*</label>
+                    <h5>Password Confirmation*</h5>
 
                     <div class="newsletter_subscribe">
 
                         <div class="row">
-                            <div class="col-10">
+                            <div class="col-11">
                                 <input class="mt-0 mb-0 @error('password') is-invalid @enderror" type="password"
                                     placeholder="Password" name="password_confirmation" id="loginconpasswordInput"
                                     required>
@@ -133,7 +150,7 @@
                                 @enderror
                             </div>
 
-                            <div class="col-2">
+                            <div class="col-1">
                                 <form id="mc-form">
                                     <button type="button" onclick="togglePasswordVisibility4()"><i
                                             class="pe-7s-look"></i></button>
@@ -144,15 +161,19 @@
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="modal-footer">
-                        <button class="btn custom-btn md-size" type="submit">Login</button>
-                    </div>
+                <div class="row mb-5">
+                <div style="display: flex; justify-content: center; align-items: center;">
+    <button class="btn custom-btn md-size">
+        Login
+    </button>
+</div>
+
                 </div>
             </div>
-    </div>
-    </div>
     </form>
+    
+    </div>
+    
 
     @endsection
     <!-- JS
